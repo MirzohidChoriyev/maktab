@@ -1,0 +1,103 @@
+
+.Header{
+    width: 100%;
+    margin-bottom: 0px;
+    height: auto;
+}
+.header-image{
+    position: absolute;
+    top: 47px;
+    z-index: -2; 
+    width: 100%;
+    height: 100vh;
+}
+.header-opacity{  
+    position: absolute;
+    top: 47px; 
+    z-index: -1; 
+    width: 100%;  
+    height: auto;
+    background: rgba(0, 0, 0, 0.404);
+    height: 100vh;
+}
+.header-image img{         
+    height: 100vh;
+    width: 100%;
+}
+.header-body{
+    margin-top: 100px;
+    padding: 0px 150px;
+}
+.header-text{
+    display: block;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+}
+.header-school{
+    display: block;
+    font-size: 55px;
+    color: white;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header-btn{
+    display: inline-block;
+    padding: 7px 23px;
+    background: rgb(252, 169, 16);
+    color: black;
+    font-size: 14px;
+    font-weight: bolder;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.header-page{
+    margin-top: 140px;
+    padding: 0px 170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-page-item{  
+    width: 380px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.705); 
+    padding-left: 115px; 
+    position: relative;
+    padding-top: 25px;
+}
+
+.header-page-icon{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    color: orange;
+    font-size: 50px;  
+}
+.header-span1{
+    display: block;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header-span2{
+    display:block;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header-more{
+    margin-top: 15px;
+    color: orange;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.header-more:hover{
+    color: rgb(252, 198, 99);
+    margin-left: 5px;  
+    font-size: 102%;
+}
