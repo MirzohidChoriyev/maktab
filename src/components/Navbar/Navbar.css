@@ -34,7 +34,14 @@
     font-weight: bolder;
     color: white;
     font-size: 14px;
-    border-bottom: 3px solid rgb(255, 177, 32);
-    border-radius: 2px;padding-bottom: 5px;
+    border-radius: 2px;
+    padding-bottom: 5px;  
     transition: 0.4s;
+}
+.navbar-item.active{
+    border-bottom: 3px solid rgb(255, 177, 32);
+}
+.navbar-item:hover{
+    border-bottom: 3px solid rgb(255, 177, 32);
+    cursor: pointer;    
 }

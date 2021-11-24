@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
+
+.Teachers{
+    padding: 80px 0px;
+    width: 1170px;
+    margin: auto;
+    height: auto;
+}
+.teacher-title{
+    display: flex;
+    justify-content: space-between;
+}
+.teacher-title-text{
+    font-size: 28px;
+    font-family: 'Arvo', serif;
+    font-weight: bolder;
+    padding-bottom: 13px;
+    color: rgb(63, 63, 63);
+}
+.teacher-title-line hr{
+    width: 50px;
+    color: black;
+    border: 1px solid black;
+    color: black;  
+}
+.teacher-item{  
+    display: flex;
+    align-items: center;  
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}  
+.teacher-item::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;  
+    cursor: pointer;
+}
+
+/* Track */
+.teacher-item::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.teacher-item::-webkit-scrollbar-thumb {
+  background: orange;    
+  border-radius: 5px;
+}
+
+/* Handle on hover */  
+.teacher-item::-webkit-scrollbar-thumb:hover{
+  background: rgb(153, 99, 0);   
+  cursor: pointer;
+}
+.teacher-cards{  
+    border: 1px solid rgb(175, 175, 175);
+    display: inline-block;  
+}
+.teacher-icon{
+    text-align: center;
+    margin-top: -20px;
+}
+.teacher-cards-title{
+    margin: auto;
+    width: 250px;
+    padding: 0px 15px;
+}
+.teacher-bookname{
+    display: block;  
+}
+.teacher-cards-image{
+    width: 250px;
+    height: 175px;    
+}
+.teacher-icon{
+    display: block;
+}
+.teacher-icon img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;  
+}
+.teacher-bookname{
+    margin-top: 15px; 
+    padding: 0px 10px; 
+}
+.teacher-bookcount{
+    margin-bottom: 15px;
+    padding: 0px 10px;
+}
+
+.teacher-title-span span{   
+   display: block;
+   text-align: center; 
+   font-family: 'Arvo', serif;
+   font-weight: bolder;
+   font-size: 17px; 
+}  
+.teacher-bookname{
+    display: block;
+}
+.teacher-eye{
+    padding: 10px 0px;
+    border-top: 1px solid gray;
+    color: rgb(116, 116, 116);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.teacher-eye .eye1{  
+    font-size: 17px; 
+}
+.teacher-count{
+    margin-left: 10px;
+}
+.teacher-eye .check{
+    margin-right: 10px;
+    color: white;
+    border-radius: 50%;
+    padding: 3px;
+    box-shadow: 0px 0px 2px green;
+    background-color: green;  
+}
+.teacher-eye-count{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+}
+
+.backIcon, .nextIcon{
+    border: 2px solid rgb(63, 63, 63);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: rgb(63, 63, 63);
+    font-size: 20px;
+    margin: 0px 7px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.backIcon:hover, .nextIcon:hover{
+    background: orange;
+    color: white;   
+}

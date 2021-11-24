@@ -1,0 +1,38 @@
+.p-count{
+    width: 100%;
+    position: relative;
+    height: 45vh;
+    background: rgb(40,164,219);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.p-container{
+    width: 1170px;
+    margin: auto;                   
+}
+.p-count{
+    
+}
+.p-count-container{  
+    border-right: 1px solid rgb(255, 255, 255);
+}   
+.p-count-item{
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    display: inline-block;
+    font-weight: bolder;
+}
+.p-count-container{
+    padding: 10px 100px;
+    text-align: center;
+}
+.p-count-title{
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    font-weight: bolder;    
+}
+.p-count-container.space{
+     border-right: none;    
+}

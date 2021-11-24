@@ -34,7 +34,7 @@ function Header() {
                       <span className="header-span1">MAKTAB ZO'RLARI</span>
                       <span className="header-span2">MAKTAB</span>
                       <span className="header-more">Batafsil <i class="fa fa-angle-right"></i></span>
-                 </div>
+                 </div>  
             </div>  
         </div>
     )
