@@ -1,36 +1,55 @@
 import React from 'react'
+import { Col, Row } from 'react-bootstrap'
 import "./PeopleCount.css"
 
 function PeopleCount() {
     return (
         <div className="p-count">
-            <div className="p-opacity">   
-
+            <div className="p-container">  
+                <Row>
+                     <Col lg = {3} md = {3} sm = {6}>   
+                         <div className="count-item">
+                              <span className="count-item-number">
+                                   1000
+                              </span>  
+                              <span className="count-item-title">
+                                   Users
+                              </span>  
+                         </div>
+                     </Col>
+                     <Col lg = {3} md = {3} sm = {6}>   
+                         <div className="count-item">
+                              <span className="count-item-number">
+                                   1000
+                              </span>
+                              <span className="count-item-title">
+                              Users
+                              </span>  
+                         </div>
+                     </Col>
+                     <Col lg = {3} md = {3} sm = {6}>   
+                         <div className="count-item">
+                              <span className="count-item-number">
+                                   1000
+                              </span>
+                              <span className="count-item-title">
+                              Users
+                              </span>  
+                         </div>
+                     </Col>
+                     <Col lg = {3} md = {3} sm = {6}>   
+                         <div className="count-item">
+                              <span className="count-item-number">
+                                   1000
+                              </span>
+                              <span className="count-item-title">
+                                    Users
+                              </span>  
+                         </div>
+                     </Col>
+                </Row>
+                </div>  
             </div>
-            <div className="p-background">  
-
-            </div>
-            <div className="p-container">
-                 <div className="p-count">
-                      <div className="p-count-container">
-                           <span className="p-pupils-count p-count-item">6789</span>
-                           <span className="p-count-title">Pupils</span>                           
-                      </div>    
-                      <div className="p-count-container">
-                           <span className="p-teachers-count p-count-item">6789</span>
-                           <span className="p-count-title">Pupils</span>                           
-                      </div>
-                      <div className="p-count-container">
-                           <span className="p-pupils-count p-count-item">6789</span>
-                           <span className="p-count-title">Pupils</span>                           
-                      </div>
-                      <div className="p-count-container space">
-                           <span className="p-pupils-count p-count-item">6789</span>
-                           <span className="p-count-title">PUPILS</span>                           
-                      </div>  
-                 </div>
-            </div>
-        </div>
     )
 }
 

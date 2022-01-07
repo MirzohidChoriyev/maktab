@@ -1,10 +1,9 @@
 
-.Header{
+.Header{  
     width: 100%;
     margin-bottom: 0px;
     height: auto;
-    border-bottom: 2px solid red;
-    padding-bottom: 95px;
+    padding-bottom: 95px;     
 }
 .header-image{
     position: absolute;
@@ -12,7 +11,7 @@
     z-index: -2; 
     width: 100%;
     height: 95vh;
-}
+}   
 .header-opacity{  
     position: absolute;  
     top: 47px; 
@@ -22,14 +21,50 @@
     background: rgba(0, 0, 0, 0.404);
     height: 95vh;
 }
+
+.header-image-exchange{
+    position: absolute; 
+    display: flex;
+    justify-content: space-between;
+    top: 330px;
+    padding: 0px 20px;   
+    width: 100%;
+    height: 100%;   
+    font-size: 20px;
+    color: white;
+}
+.header-image-next, .header-image-back{
+    border: 1px solid rgb(117, 117, 117);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    background: rgba(0, 0, 0, 0.219);
+}
+
+.header-image-back:hover{
+   box-shadow: 0px 0px 3px gray;
+   padding-left: 6px;
+   background: rgba(0, 0, 0, 0.219);
+}   
+.header-image-next:hover{
+    box-shadow: 0px 0px 3px gray;
+    padding-right: 6px;
+    background: rgba(0, 0, 0, 0.336);
+ }   
 .header-image img{         
     height: 95vh;
     width: 100%;
-}
+}   
 .header-body{
-    margin-top: 100px;
+    margin-top: 100px;   
     padding: 0px 150px;
-}
+}   
 .header-text{
     display: block;
     font-size: 20px;
@@ -52,32 +87,43 @@
     font-weight: bolder;
     border-radius: 2px;
     cursor: pointer;
+    transition: 0.3s;
+}
+.header-btn:hover{
+    background: rgb(255, 189, 67);
+    box-shadow: 0px 0px 10px gray;  
 }
 .header-page{
+    margin: auto;
+    width: auto;
     margin-top: 140px;
-    padding: 0px 170px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
+    justify-content: center;
+    padding: 0px 10px;
+}  
 .header-page-item{  
-    width: 380px;
+    width: auto;
     height: 150px;
     background: rgba(0, 0, 0, 0.705); 
-    padding-left: 115px; 
-    position: relative;
+    padding-left: 95px; 
+    position: relative;  
     padding-top: 25px;
+    padding-right: 30px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
 }
-
 .header-page-icon{
     position: absolute;
     top: 0px;
-    left: 20px;
+    left: 15px;
     color: orange;
     font-size: 50px;  
 }
 .header-span1{
     display: block;
+    width: 215px;
     font-size: 20px;
     font-weight: bolder;
     color: white;
@@ -87,7 +133,7 @@
     display:block;
     color: white;
     font-size: 20px;
-    font-weight: bolder;
+    font-weight: bolder;      
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .header-more{
@@ -96,11 +142,332 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: inline-block;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s;  
 }   
 .header-more:hover{
     color: rgb(252, 198, 99);
     margin-left: 5px;  
     font-size: 102%;  
 }
-  
+
+@media screen and (max-width: 1100px){
+    .header-school{
+        display: block;
+        font-size: 40px;   
+        color: white;
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    } 
+    .header-page-item{    
+        width: auto;
+        height: 140px;
+        background: rgba(0, 0, 0, 0.705); 
+        padding-left: 80px; 
+        position: relative;  
+        padding-top: 20px;
+        padding-right: 20px;
+        margin: 10px 0px;
+    }
+    
+    .header-page-icon{
+        position: absolute;
+        top: 0px;
+        left: 15px;
+        color: orange;
+        font-size: 40px;  
+    }  
+} 
+
+@media screen and (max-width: 1000px){
+    .header-page{
+        margin-top: 140px;
+    }
+    .header-body{
+        margin-top: 220px; 
+        padding: 0px 70px;  
+    }
+
+}
+
+@media screen and (max-width: 900px){
+    .header-school{
+        display: block;
+        font-size: 40px;
+        color: white;
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }   
+}
+@media screen and (max-width: 800px){
+    .header-school{
+        display: block;
+        font-size: 35px;   
+        color: white;
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-bottom: 7px;  
+    }   
+}
+
+@media screen and (max-width: 670px){
+    .Header{  
+        padding-bottom: 40px;
+    }
+    .sidebar-menu{
+        position: fixed;  
+        top: 10px;
+        color: rgb(255, 255, 255);
+        left: auto; 
+        right: 20px;  
+        font-size: 18px;        
+        cursor: pointer;
+        z-index: 999;
+    }
+    .header-image-exchange{
+        position: absolute; 
+        display: flex;
+        justify-content: space-between;
+        top: 360px;
+        padding: 0px 15px;   
+        width: 100%;
+        height: 100%;   
+        font-size: 20px;
+        color: white;
+    }
+    .header-image{
+        position: absolute;
+        top: 50px;
+        z-index: -2; 
+        width: 100%;
+        height: 60vh;  
+    } 
+    .header-opacity{  
+        position: absolute;  
+        top: 50px; 
+        z-index: -1; 
+        width: 100%;  
+        height: auto;
+        background: rgba(0, 0, 0, 0.404);
+        height: 60vh;
+    }   
+    .header-image img{         
+        height: 60vh;
+        width: 100%;
+    }   
+    .header-page{
+        margin-top: 170px;
+        padding: 0px 10px;
+
+    }
+    .header-page-item{  
+        width: auto;
+        height: 140px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.705); 
+        padding-left: 95px; 
+        position: relative;  
+        padding-top: 20px;
+        padding-right: 20px;
+        margin: 10px 0px;
+    }
+    
+    .header-page-icon{
+        position: absolute;   
+        top: 0px;
+        left: 15px;
+        color: orange;
+        font-size: 40px;    
+    }
+    .header-body{
+         padding: 0px 30px;
+    }
+    .header-school{
+        display: block;
+        font-size: 30px;
+        color: white;
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-bottom: 7px;
+    }
+       
+}
+
+@media screen and (max-width: 550px){
+    .Header{  
+        padding-bottom: 40px;
+    }
+    .header-school{
+        display: block;
+        font-size: 27px;  
+        color: white;
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-bottom: 7px;
+    }
+    .header-text{
+        font-size: 18px;
+    }
+    .header-body{
+        padding: 0px 20px;
+        padding-right: 10px;
+   }
+}
+@media screen and (max-width: 450px){
+    .Header{  
+        padding-bottom: 40px;
+    }
+    .header-image-exchange{
+        position: absolute; 
+        display: flex;
+        justify-content: space-between;
+        top: 350px;
+        padding: 0px 13px;   
+        width: 100%;
+        height: 100%;   
+        font-size: 20px;
+        color: white;
+    }
+    .header-image-next, .header-image-back{
+        width: 40px;
+        height: 40px;
+    }
+    .header-body{
+        padding-left: 30px;
+        padding-right: 5px;
+    }
+    .header-btn{
+        padding: 6px 20px;
+    }
+   .header-school{
+    display: block; 
+    font-size: 23px;  
+    color: white;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 7px;  
+}
+.header-text{
+    font-size: 17px;
+}
+.header-page{
+    margin-top: 115px;
+    padding: 0px 7px;  
+}
+.header-page-item{
+    border-radius: 5px;
+    height: 120px;
+    padding-top: 15px;
+    padding-left: 80px;
+    margin: 4px 0px;  
+}
+.header-image{
+    position: absolute;
+    top: 50px;
+    z-index: -2; 
+    width: 100%;
+    height: 50vh;
+} 
+.header-opacity{  
+    position: absolute;  
+    top: 50px; 
+    z-index: -1; 
+    width: 100%;  
+    height: auto;
+    background: rgba(0, 0, 0, 0.404);
+    height: 50vh;
+}   
+.header-image img{         
+    height: 50vh;
+    width: 100%;
+}   
+
+.header-page-icon{
+    position: absolute;   
+    top: 0px;
+    left: 15px;
+    color: orange;
+    font-size: 35px;    
+}
+.header-span1{
+    display: block;
+    font-size: 18px;
+    font-weight: bolder;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header-span2{
+    display:block;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+}
+
+@media screen and (max-width: 400px){
+    .Header{  
+        padding-bottom: 40px;    
+    }
+    .header-image-next, .header-image-back{
+        width: 37px;
+        height: 37px;
+    }
+    .header-school{
+        display: block; 
+        font-size: 21px;  
+        color: white;
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-bottom: 7px;  
+    }
+    .header-btn{
+        padding: 5px 20px; 
+    }
+    .header-body{
+        padding-left:25px;
+    }
+    .header-page-item{
+        height: 100px;
+        padding-left: 75px; 
+    }
+    .header-span1{
+        display: block;
+        font-size: 16px;
+        width: 180px;
+        font-weight: bolder;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .header-span2{
+        display:block;
+        color: white;
+        font-size: 16px;
+        font-weight: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .header-more{
+        margin-top: 5px;  
+    }
+}
+
+@media screen and (max-width: 350px){
+    .Header{
+        padding-bottom: 40px;
+    }
+    .header-body{
+        padding-left: 15px;
+    }
+    .header-school{  
+        font-size: 19px;
+    }
+    .header-page{
+        margin-top: 120px;
+        padding: 0px 7px;    
+    }
+    .header-text{
+        font-size: 15px;
+    }
+    .header-more{
+        margin-top: 5px;
+    }
+}

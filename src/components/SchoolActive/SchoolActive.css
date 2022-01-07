@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap");
+
+.active {
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid rgb(199, 199, 199);
+}
+.active-modal-item {
+  background-color: #99ddd418;
+}
+.modal-card-img {
+  height: 300px;
+}
+.active-header {
+  background-color: rgb(8, 102, 119);
+  font-size: 21px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+.active-modal-image {
+}
+.active-modal-image img {
+  width: 470px;
+  height: auto;
+  border-radius: 5px;
+}
+.active-modal-text {
+  font-weight: bolder;
+  font-size: 17px;
+  padding: 15px 5px 5px 5px;
+}
+
+.active-void {
+  height: 200px;
+  width: 100%;
+  font-size: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  color: gray;
+  background-color: green;
+  background-color: rgb(243, 243, 243);
+}
+.active-container {
+  padding: 80px 0px;
+  width: 1170px;
+  margin: auto;
+  height: auto;
+}
+.active-title {
+  display: flex;
+  justify-content: space-between;
+}
+.active-typeId {
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  color: gray;
+}
+.active-title-text {
+  font-size: 28px;
+  font-family: "Arvo", serif;
+  font-weight: bolder;
+  padding-bottom: 13px;
+  color: rgb(63, 63, 63);
+}
+.active-title-line hr {
+  width: 50px;
+  color: black;
+  border: 1px solid black;
+  color: black;
+}
+.active-item {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  border-top: 1px solid rgb(55, 255, 245);
+}
+.active-slider {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.active-item::-webkit-scrollbar {
+  width: 10px;
+  height: 3px;
+  cursor: pointer;
+}
+
+/* Track */
+.active-item::-webkit-scrollbar-track {
+  background: #00ffdd;
+}
+
+/* Handle */
+.active-item::-webkit-scrollbar-thumb {
+  background: rgb(255, 196, 0);
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+.active-item::-webkit-scrollbar-thumb:hover {
+  background: rgb(153, 99, 0);
+  cursor: pointer;
+}
+.active-cards {
+  border: 1px solid rgb(175, 175, 175);
+  display: inline-block;
+  margin: 0px 7px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.active-cards-title {
+  margin: auto;
+  width: 250px;
+  padding: 0px 0px;
+}
+.active-modal-item {
+  width: auto;
+}
+
+.active-cards-image {
+  width: 250px;
+  height: 175px;
+}
+.active-bookname {
+  padding: 0px 0px;
+  text-align: left;
+}
+.active-bookcount {
+  margin-bottom: 0px;
+  padding: 0px 0px;
+}
+
+.active-title-span {
+  overflow-y: auto;
+  position: relative;
+  text-align: left;
+  height: 100px;
+  padding: 10px 5px 10px 5px;
+  line-height: 1.3;
+}
+.active-all-text {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  outline: none;
+  background-color: royalblue;
+  padding: 2px 5px;
+  border: none;
+  color: white;
+  box-shadow: 0px 0px 10px rgb(170, 170, 170);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.active-all-text:hover {
+  box-shadow: 0px 0px 5px rgb(83, 83, 83);
+}
+
+.active-title-span::-webkit-scrollbar {
+  width: 2px;
+  height: 3px;
+  cursor: pointer;
+}
+
+/* Track */
+.active-title-span::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+.active-title-span::-webkit-scrollbar-thumb {
+  background: rgb(255, 196, 0);
+}
+
+/* Handle on hover */
+.active-title-span::-webkit-scrollbar-thumb:hover {
+  background: rgb(12, 12, 12);
+  cursor: pointer;
+}
+
+.active-title-span span {
+  font-family: "Arvo", serif;
+  font-weight: bolder;
+  font-size: 17px;
+  padding: 5px 8px;
+  text-align: left;
+}
+.active-eye {
+  padding: 7px 45px;
+  border-top: 1px solid gray;
+  color: rgb(116, 116, 116);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.active-eye .eye1 {
+  font-size: 14px;
+}
+.active-count {
+  margin-left: 10px;
+}
+.active-eye .check {
+  margin-right: 10px;
+  color: white;
+}
+.active-eye-count {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 7px;
+}
+
+@media screen and (max-width: 1300px) {
+  .active-container {
+    padding: 80px 0px;
+    width: 1100px;
+    margin: auto;
+    height: auto;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .active-container {
+    padding: 80px 0px;
+    width: 1050px;
+    margin: auto;
+    height: auto;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .active-container {
+    padding: 80px 0px;
+    padding-top: 40px;
+    width: 850px;
+    margin: auto;
+    height: auto;
+  }
+}
+@media screen and (max-width: 900px) {
+  .active-container {
+    padding: 80px 0px;
+    padding-top: 40px;
+    width: 780px;
+    margin: auto;
+    height: auto;
+  }
+  .active-title-text {
+    font-size: 26px;
+    font-family: "Arvo", serif;
+    font-weight: bolder;
+    padding-bottom: 13px;
+    color: rgb(63, 63, 63);
+  }
+  .active-title-line hr {
+    width: 50px;
+    color: black;
+    border: 1px solid black;
+    color: black;
+  }
+}
+@media screen and (max-width: 800px) {
+  .active-container {
+    padding: 80px 0px;
+    padding-top: 40px;
+    width: 550px;
+    margin: auto;
+    height: auto;
+  }
+}
+@media screen and (max-width: 700px) {
+  .active-title-text {
+    font-size: 23px;
+    font-family: "Arvo", serif;
+    font-weight: bolder;
+    padding-bottom: 13px;
+    color: rgb(63, 63, 63);
+  }
+  .active-title-line hr {
+    width: 50px;
+    color: black;
+    border: 1px solid black;
+    color: black;
+  }
+}
+@media screen and (max-width: 600px) {
+  .active-container {
+    padding: 80px 0px;
+    padding-top: 30px;
+    width: 400px;
+    margin: auto;
+    height: auto;
+  }
+  .book-count {
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    margin-right: 20px;
+    margin-top: -6px;
+  }
+  .active-title-text {
+    font-size: 20px;
+    font-family: "Arvo", serif;
+    font-weight: bolder;
+    padding-bottom: 13px;
+    color: rgb(63, 63, 63);
+  }
+  .active-title-line hr {
+    width: 50px;
+    color: black;
+    border: 1px solid black;
+    color: black;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .active-modal-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .active-void {
+    font-size: 20px;
+  }
+  .active-container {
+    padding: 30px 0px;
+    width: auto;
+    margin: auto;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .active-title {
+    width: auto;
+    padding: 0px 20px;
+  }
+  .active-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-right: 10px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .active-modal-image img {
+    width: 360px;
+    height: auto;
+    border-radius: 5px;
+  }
+  .modal-card-img {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .active-modal-image img {
+    width: 320px;
+    height: auto;
+    border-radius: 5px;
+  }
+  .modal-card-img {
+    height: 240px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .active-modal-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+  }
+  .modal-card-img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .active-modal-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .active-modal-image img {
+    width: 280px;
+    height: auto;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .active-title {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .active-title-text {
+    font-size: 18px;
+    font-family: "Arvo", serif;
+    font-weight: bolder;
+    padding-bottom: 13px;
+    color: rgb(82, 82, 82);
+  }
+  .backIcon,
+  .nextIcon {
+    border: 1px solid rgb(63, 63, 63);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: rgb(63, 63, 63);
+    font-size: 16px;
+    margin: 0px 2px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .active-container {
+    padding: 30px 0px;
+    width: auto;
+    margin: auto;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .active-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+  .book-count {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    margin-right: 20px;
+    margin-top: -6px;
+    color: rgb(78, 78, 78);
+  }
+}

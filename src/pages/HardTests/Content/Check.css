@@ -1,0 +1,57 @@
+.check {
+  padding: 30px;
+}
+.check-container {
+  border-radius: 3px;
+  width: 750px;
+}
+.check-result,
+.check-link,
+.check-danger {
+  border-radius: 4px;
+  position: relative;
+  color: white;
+}
+.check-question {
+  margin-top: 15px;
+}
+.check-head {
+  display: flex;
+  justify-content: space-between;
+}
+.check-content {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
+.check-check {
+  padding: 10px;
+  border: 1px solid gray;
+  margin-top: 30px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.check-icon {
+  font-size: 14px;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding-top: 1px;
+  width: 19px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.check-danger {
+  background-color: crimson;
+}
+.check-result {
+  background-color: rgb(55, 156, 72);
+}
+.check-link {
+  background-color: rgb(13, 116, 201);
+}

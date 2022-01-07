@@ -34,17 +34,12 @@ function Sidebar() {
          } else {
             $('.message-send').hide();  
          }   
-      })
-
-      $(window).scroll(()=>{
-         $('.sidebar').css({'left': '-275px'});
-      })  
+      }) 
    }
 
 
-
 useEffect(()=>{
-    barsHide();
+   barsHide();
 },[])
     return (         
         <div className='sidebar'>
@@ -71,63 +66,83 @@ useEffect(()=>{
                 </div>   
                 <div className="sidebar-select"> 
                     <select className="sidebar-select-item">
-                        <option>Item13333</option>
-                        <option>Item1</option>
-                        <option>Item1</option>
-                        <option>Item1</option>
+                        <option>Barcha sahifalar</option>
+                        <option>Ro'yxatdan o'tish</option>
+                        <option>Hisobingizga kirish</option>
+                        <option>Testlar</option>
+                        <option>Darsliklar</option>
+                        <option>Test natijalari</option>
+                        <option>Yangiliklar</option>
+                        <option>Online darslar</option>
+                        <option>Faol o'quvchilar</option>
+                        <option>Faol o'qituvchilar</option>
+                        <option>Maktab yutuqlari</option>
+                        <option>Maktab xodimlari</option>
+                        <option>Maktab hujjatlari</option>
                     </select>
                 </div>
                 <div className="sidebar-elements">
                      <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>    
+                        <i class='fa fa-user-plus'></i>
+                        <span>Ro'yxatdan o'tish</span>            
                      </span>    
                      <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>    
+                        <i class='fa fa-user'></i>
+                        <span>Hisobingizga kirish</span>    
                      </span>    
                 </div>      
                 <div className="sidebar-elements">
                      <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>    
+                        <i class='fa fa-question-circle'></i>
+                        <span>Testlar</span>    
+                     </span>      
+                     <span className="sidebar-element-item">
+                        <i class='fa fa-book'></i>
+                        <span>Darsliklar</span>    
+                     </span>    
+                </div>      
+                <div className="sidebar-elements">
+                     <span className="sidebar-element-item">
+                        <i class='fa fa-list-ol'></i>
+                        <span>Test natijalar</span>       
+                     </span>    
+                     <span className="sidebar-element-item">
+                        <i class='fa fa-newspaper-o'></i>
+                        <span>Yangiliklar</span>    
+                     </span>    
+                </div>      
+                <div className="sidebar-elements">
+                     <span className="sidebar-element-item">
+                        <i class='fa fa-file-video-o'></i>
+                        <span>Online darslar</span>    
                      </span>  
                      <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>    
-                     </span>    
-                </div>      
-                <div className="sidebar-elements">
-                     <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>       
-                     </span>    
-                     <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>    
-                     </span>    
-                </div>      
-                <div className="sidebar-elements">
-                     <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>    
-                     </span>  
-                     <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>    
+                        <i class='fa fa-users'></i>
+                        <span>Faol o'quvchilar</span>    
                      </span>    
                 </div> 
 
                 <div className="sidebar-elements">
                      <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>    
+                        <i class='fa fa-users'></i>
+                        <span>Faol o'qituvchilar</span>    
                      </span>  
                      <span className="sidebar-element-item">
-                        <i class='fa fa-bars'></i>
-                        <span>Text Editor</span>    
+                        <i class='fa fa-trophy'></i>
+                        <span>Maktab yutuqlari</span>    
                      </span>      
                 </div>     
+
+                <div className="sidebar-elements">
+                     <span className="sidebar-element-item">
+                        <i class='fa fa-users'></i>
+                        <span>Maktab xodimlari</span>    
+                     </span>      
+                     <span className="sidebar-element-item">
+                        <i class='fa fa-list'></i>
+                        <span>Maktab hujjatlari</span>       
+                     </span>      
+                </div> 
                 </div>  
 
 
@@ -152,6 +167,12 @@ useEffect(()=>{
                 </div>
 
             </div>
+
+            <div className="sidebar-bottom">
+                   <span className="sidebar-bottom-item">
+                       <i class="fa fa-phone" style={{color: 'green', fontSize: '19px', marginRight: '5px'}}></i> Admin bilan bog'lanish.
+                   </span>
+            </div> 
         </div>      
     )
 }

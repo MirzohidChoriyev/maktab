@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "question": "Fransiya poytaxtini belgilang",
+      "choices": ["Toshkent", "Paris", "Braziliya", "Yaponiya"],
+      "answer": "Paris"
+    },
+    {
+      "question": "Fransiya poytaxtini belgilang",
+      "choices": ["Toshkent", "Paris", "Braziliya", "Yaponiya"],
+      "answer": "Paris"
+    },
+    {
+      "question": "Fransiya poytaxtini belgilang",
+      "choices": ["Toshkent", "Paris", "Braziliya", "Yaponiya"],
+      "answer": "Paris"
+    },
+    {
+      "question": "Fransiya poytaxtini belgilang",
+      "choices": ["Toshkent", "Paris", "Braziliya", "Yaponiya"],
+      "answer": "Paris"
+    },
+    {
+      "question": "Fransiya poytaxtini belgilang",
+      "choices": ["Toshkent", "Paris", "Braziliya", "Yaponiya"],
+      "answer": "Paris"
+    },
+    {
+      "question": "Rossiya poytaxtini belgilang",
+      "choices": ["Toshkent", "Moskva", "Braziliya", "Yaponiya"],
+      "answer": "Moskva"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": "oson",
+      "title": "Oson darajadagi savollar",
+      "eyecount": 10,
+      "allresult": 78,
+      "questioncount": 20
+    },
+    {
+      "id": "qiyin",
+      "title": "Qiyin darajadagi savollar",
+      "eyecount": 10,
+      "allresult": 78,
+      "questioncount": 20
+    },
+    {
+      "id": "oson",
+      "title": "Oson darajadagi savollar",
+      "eyecount": 10,
+      "allresult": 78,
+      "questioncount": 20
+    },
+    {
+      "id": "qiyin",
+      "title": "Qiyin darajadagi savollar",
+      "eyecount": 10,
+      "allresult": 78,
+      "questioncount": 20
+    }
+  ]
+}

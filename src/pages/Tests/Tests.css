@@ -1,0 +1,41 @@
+.tests-container {
+  margin-top: 45px;
+  padding: 30px 40px 30px 40px;
+}
+.tests-open-container {
+  padding: 0px 30px 0px 0px;
+}
+.tests-open {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0px;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(218, 218, 218);
+}
+.tests-time {
+  color: red;
+}
+@media screen and (max-width: 550px) {
+  .tests-container {
+    margin-top: 75px;
+    padding: 30px 40px 30px 40px;
+  }
+  .tests-open-container {
+    padding: 0px 10px 0px 0px;
+  }
+  .tests-open {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0px;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(218, 218, 218);
+  }
+}
+@media screen and (max-width: 430px) {
+  .tests-container {
+    margin-top: 75px;
+    padding: 30px 10px 0px 10px;
+  }
+}
