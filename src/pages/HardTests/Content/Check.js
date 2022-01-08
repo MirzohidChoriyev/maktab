@@ -3,14 +3,15 @@ import { Button } from "antd";
 import "./Check.css";
 import { formatTimeStr } from "antd/lib/statistic/utils";
 import { formatTime } from "./utils";
+import { Link } from "react-router-dom";
 
-function Check({ data, results, time, natija }) {
+function Check({ data, results, time, natija, setStep }) {
   return (
     <div className="check">
       <div className="check-container">
         <div className="check-head">
           <span>Umumiy natijangiz</span>
-          <Button type="primary">Bosh sahifa</Button>
+          <Button type="primary" onClick = {()=> setStep(1)}>Bosh sahifa</Button>
         </div>
         <div className="check-body">
           <ul style={{ padding: "0px" }}>
@@ -55,7 +56,7 @@ function Check({ data, results, time, natija }) {
             <p>
               Umumiy natijangiz: {Math.floor((natija / data.length) * 100)}%
             </p>
-            <Button type="primary" style={{ background: "green" }}>
+            <Button className="button-download" type="primary" style={{ background: "green" }}>
               <i class="fa fa-download" style={{ marginRight: "5px" }}></i>
               Yuklab olish
             </Button>

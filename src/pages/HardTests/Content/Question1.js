@@ -57,9 +57,9 @@ function Question1({
     <div className="easy">
       <div className="easy-container">
         <div className="easy-question">
-          <h5>
+          <span className="easy-que">
             {activeQuestion + 1}. {data.question}
-          </h5>
+          </span>
           <div className="easy-content" ref={radioWrapper}>
             {data.choices.map((choice, index) => (
               <div className="easy-label-item">

@@ -66,7 +66,7 @@ function HardTest() {
       )}
 
       {step === 4 && (
-        <Check data={data} time={time} results={answers} natija={natija} />
+        <Check data={data} time={time} results={answers} natija={natija} setStep={setStep} />
       )}
     </div>
   );

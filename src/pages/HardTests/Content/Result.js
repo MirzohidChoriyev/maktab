@@ -27,14 +27,22 @@ function Result({ data, lengthData, results, resultCheck, time, setNatija }) {
     <div className="result">
       <div className="result-container">
         <div className="result-title">
-          <h4>Natijangiz</h4>
+          <span>Natijangiz</span>
         </div>
-        <div>
-          <div className="result-p">
-            <span className="result-p-title">Test natijangiz:</span>
+        <div className="result-con">
+        <div className="result-p">
+            <span className="result-p-title">Savollar soni:</span>
             <span>
               <strong>
-                {correct} of {lengthData}
+                {lengthData} ta
+              </strong>
+            </span>
+          </div>
+          <div className="result-p">
+            <span className="result-p-title">To'g'ri javoblar soni:</span>
+            <span>
+              <strong>
+                {correct} ta
               </strong>
             </span>
           </div>
@@ -51,9 +59,9 @@ function Result({ data, lengthData, results, resultCheck, time, setNatija }) {
             </span>
           </div>
           <div className="result-btn">
-            <Button type="primary" onClick={resultCheck}>
+            <button type="primary" className="result-button-button" onClick={resultCheck}>
               Natijani ko'rish
-            </Button>
+            </button>
           </div>
         </div>
       </div>
