@@ -58,17 +58,18 @@ function Question1({
       <div className="easy-container">
         <div className="easy-question">
           <span className="easy-que">
-            {activeQuestion + 1}. {data.question}
+            <span>{activeQuestion + 1}. </span> <span>{data.question}</span>
           </span>
           <div className="easy-content" ref={radioWrapper}>
             {data.choices.map((choice, index) => (
-              <div className="easy-label-item">
+              <div className="easy-label-item">    
                 <label className="easy-label">
                   <input
                     type="radio"
                     value={choice}
                     name="answer"
                     onChange={changeInput}
+                    className="label-input"
                   />
                   <span className="easy-answer">{choice}</span>
                 </label>

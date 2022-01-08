@@ -1,6 +1,11 @@
 {
   "data": [
     {
+      "question": "Sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      "choices": ["Toshkent", "Paris", "Braziliya", "Yaponiya"],
+      "answer": "Paris"
+    },
+    {
       "question": "Fransiya poytaxtini belgilang",
       "choices": ["Toshkent", "Paris", "Braziliya", "Yaponiya"],
       "answer": "Paris"

@@ -16,8 +16,10 @@
 .easy-que{
   margin-top: 5px;
   font-size: 17px;
-  padding-left: 7px;
+  padding-left: 2px;
   font-weight: 600;
+  display: block;
+  margin-right: 5px;
 }
 
 .easy-label-item {
@@ -68,6 +70,15 @@
   .easy{
     padding: 60px 10px 30px 10px;
   }
+  .easy-label {
+    padding: 5px 5px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 2px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
   .easy-container {
     width: 100%;
     margin: auto;
@@ -78,13 +89,16 @@
   .easy-que{
     margin-top: 5px;
     font-size: 15px;
-    padding-left: 10px;
+    padding-left: 3px;
     font-weight: 600;
+    margin-left:10px;
+    display: block;
+    margin-right: 7px;
   }
   .easy-answer {
-    margin-left: 4px;
+    margin-left: 3px;
     color: black;
-    font-size: 15px;
+    font-size: 14px;
     padding: 0px;
   }
 }
