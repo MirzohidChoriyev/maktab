@@ -11,7 +11,7 @@ function Question1({
   setStep,
   setAnswers,
   time,
-  dedline
+  dedline,
 }) {
   const [selected, setSelected] = useState("");
   const [error, setError] = useState("");
@@ -34,24 +34,24 @@ function Question1({
       setError("");
     }
   };
-  useEffect(()=>{
-      if(dedline === 0){
-         setStep(3);
-      }
-  }, [dedline])
+  useEffect(() => {
+    if (dedline === 0) {
+      setStep(3);
+    }
+  }, [dedline]);
 
   const nextQuiz = () => {
     if (selected === "") {
       return setError("Bitta variantni tanlashingiz shart!");
     }
-      setAnswers((answers) => [
-        ...answers,
-        {
-          questionItem: data.question,
-          answerItem: selected,
-        },
-      ]);
-      setSelected("");
+    setAnswers((answers) => [
+      ...answers,
+      {
+        questionItem: data.question,
+        answerItem: selected,
+      },
+    ]);
+    setSelected("");
 
     if (activeQuestion < lengthData - 1) {
       setActiveQuestion(activeQuestion + 1);
@@ -69,7 +69,7 @@ function Question1({
           </span>
           <div className="easy-content" ref={radioWrapper}>
             {data.choices.map((choice, index) => (
-              <div className="easy-label-item">    
+              <div className="easy-label-item">
                 <label className="easy-label">
                   <input
                     type="radio"
@@ -85,8 +85,13 @@ function Question1({
           </div>
           {error && <div className="easy-error">{error}</div>}
           <div className="easy-button">
-            <div className={dedline > 15 ? "easy-time-item" : "easy-time-item text-danger"}>
-            <i class="fa fa-clock-o" aria-hidden="true"></i> <span className="time-span">{formatTime(dedline)}</span>
+            <div
+              className={
+                dedline > 15 ? "easy-time-item" : "easy-time-item text-danger"
+              }
+            >
+              <i class="fa fa-clock-o" aria-hidden="true"></i>{" "}
+              <span className="time-span">{formatTime(dedline)}</span>
             </div>
             <Button style={{ width: "100%" }} type="primary" onClick={nextQuiz}>
               Keyingi savolga o'tish
