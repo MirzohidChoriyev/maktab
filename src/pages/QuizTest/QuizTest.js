@@ -59,20 +59,14 @@ function QuizTest() {
 
       <div className="quiz-main-container">
         <div className="quiz-main">
-          {data.map((item, index) => {
             return (
               <QuizTestMain
-                key={index}
                 data={data}
-                dataItem={item}
-                index={index}
                 lengthData={data.length}
                 activeQuestion={activeQuestion}
                 setActiveQuestion={setActiveQuestion}
                 setAnswers={setAnswers}
               />
-            );
-          })}
         </div>
         <div className="quiz-score">
           <QuizTestScore />
