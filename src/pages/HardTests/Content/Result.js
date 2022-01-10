@@ -11,6 +11,7 @@ function Result({ data, lengthData, results, resultCheck, time, setNatija }) {
     results.forEach((result, index) => {
       if (result.answerItem === data[index].answer) {
         count++;
+        console.log("qhjaqjaqha");
       }
     });
     setCorrect(count);
