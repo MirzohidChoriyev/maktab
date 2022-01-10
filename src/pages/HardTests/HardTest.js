@@ -6,6 +6,7 @@ import Result from "./Content/Result";
 import quizdata from "./Data/quizdata.json";
 
 let interval;
+let interval1;
 
 function HardTest() {
   const [data, setData] = useState(quizdata.data);
@@ -14,10 +15,12 @@ function HardTest() {
   const [answers, setAnswers] = useState([]);
   const [time, setTime] = useState(0);
   const [natija, setNatija] = useState();
+  const [dedline, setDedline] = useState(quizdata.time[0].dedlinetime);
 
   const clearTime = () => {
     if (step === 3) {
       clearInterval(interval);
+      clearInterval(interval1);
     }
   };
 
@@ -25,13 +28,14 @@ function HardTest() {
     clearTime();
   }, [step]);
 
-  console.log(time);
-
   const quizStart1 = (i) => {
     if (i === 0) {
       setStep(2);
       interval = setInterval(() => {
-        setTime((time) => time + 1);
+        setTime(time => time + 1);
+      }, 1000);
+      interval1 = setInterval(() => {
+        setDedline(time => time - 1);
       }, 1000);
     }
   };
@@ -52,6 +56,8 @@ function HardTest() {
           lengthData={data.length}
           setStep={setStep}
           setAnswers={setAnswers}
+          time = {time}
+          dedline={dedline}
         />
       )}
       {step === 3 && (

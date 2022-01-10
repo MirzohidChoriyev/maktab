@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import "./Question.css";
+import { formatTime } from "./utils";
 
 function Question1({
   data,
@@ -9,6 +10,8 @@ function Question1({
   lengthData,
   setStep,
   setAnswers,
+  time,
+  dedline
 }) {
   const [selected, setSelected] = useState("");
   const [error, setError] = useState("");
@@ -31,11 +34,16 @@ function Question1({
       setError("");
     }
   };
+  useEffect(()=>{
+      if(dedline === 0){
+         setStep(3);
+      }
+  }, [dedline])
 
   const nextQuiz = () => {
     if (selected === "") {
       return setError("Bitta variantni tanlashingiz shart!");
-    } else {
+    }
       setAnswers((answers) => [
         ...answers,
         {
@@ -44,7 +52,6 @@ function Question1({
         },
       ]);
       setSelected("");
-    }
 
     if (activeQuestion < lengthData - 1) {
       setActiveQuestion(activeQuestion + 1);
@@ -78,6 +85,9 @@ function Question1({
           </div>
           {error && <div className="easy-error">{error}</div>}
           <div className="easy-button">
+            <div className={dedline > 15 ? "easy-time-item" : "easy-time-item text-danger"}>
+            <i class="fa fa-clock-o" aria-hidden="true"></i> <span className="time-span">{formatTime(dedline)}</span>
+            </div>
             <Button style={{ width: "100%" }} type="primary" onClick={nextQuiz}>
               Keyingi savolga o'tish
             </Button>

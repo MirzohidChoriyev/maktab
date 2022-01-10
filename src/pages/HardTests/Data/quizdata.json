@@ -3,7 +3,8 @@
     {
       "question": "Sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
       "choices": ["Toshkent", "Paris", "Braziliya", "Yaponiya"],
-      "answer": "Paris"
+      "answer": "Paris",
+      "s": 23
     },
     {
       "question": "Fransiya poytaxtini belgilang",
@@ -35,5 +36,8 @@
       "choices": ["Toshkent", "Moskva", "Braziliya", "Yaponiya"],
       "answer": "Moskva"
     }
+  ],
+  "time":[
+    {"dedlinetime": 18}
   ]
 }

@@ -58,6 +58,12 @@ function Result({ data, lengthData, results, resultCheck, time, setNatija }) {
               <strong>{formatTime(time)}</strong>
             </span>
           </div>
+          <div className="result-p">
+            <span className="result-p-title">Natija statusi:</span>
+            <span>
+              <strong>A'lo natija</strong>
+            </span>
+          </div>
           <div className="result-btn">
             <button type="primary" className="result-button-button" onClick={resultCheck}>
               Natijani ko'rish
