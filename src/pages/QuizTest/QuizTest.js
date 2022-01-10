@@ -5,14 +5,14 @@ import QuizTestScore from "./QuizTestScore.js";
 import { datajson } from "../Tests/Data";
 import $ from "jquery";
 import quizdata from "./TestsData.json";
+import { Button } from "antd";
 
 function QuizTest() {
   const [data, setData] = useState(quizdata.data);
   const [answers, setAnswers] = useState([]);
-  const [activeQuestion, setActiveQuestion] = useState(0);
   const [step, setStep] = useState(1);
 
-  console.log(answers);
+  console.log("answers", answers);
 
   // console.log(data);
   const [count, setCount] = useState(0);
@@ -59,20 +59,7 @@ function QuizTest() {
 
       <div className="quiz-main-container">
         <div className="quiz-main">
-          {data.map((item, index) => {
-            return (
-              <QuizTestMain
-                key={index}
-                data={data}
-                dataItem={item}
-                index={index}
-                lengthData={data.length}
-                activeQuestion={activeQuestion}
-                setActiveQuestion={setActiveQuestion}
-                setAnswers={setAnswers}
-              />
-            );
-          })}
+          <QuizTestMain data={data} answers={answers} setAnswers={setAnswers} />
         </div>
         <div className="quiz-score">
           <QuizTestScore />
