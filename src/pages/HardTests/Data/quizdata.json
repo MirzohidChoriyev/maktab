@@ -37,7 +37,5 @@
       "answer": "Moskva"
     }
   ],
-  "time":[
-    {"dedlinetime": 18}
-  ]
+  "time": [{ "dedlinetime": 300 }]
 }

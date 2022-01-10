@@ -60,6 +60,14 @@ function QuizTest() {
       <div className="quiz-main-container">
         <div className="quiz-main">
           <QuizTestMain data={data} answers={answers} setAnswers={setAnswers} />
+          return (
+          <QuizTestMain
+            data={data}
+            lengthData={data.length}
+            activeQuestion={activeQuestion}
+            setActiveQuestion={setActiveQuestion}
+            setAnswers={setAnswers}
+          />
         </div>
         <div className="quiz-score">
           <QuizTestScore />
