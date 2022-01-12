@@ -1,10 +1,10 @@
 import { data } from "jquery";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./QuizTest.css";
 import { Button } from "antd";
 import { datajson } from "../Tests/Data";
 
-function QuizTestScore() {
+function QuizTestScore({ onendStep, onsetEndStep }) {
   const pathtitle = window.location.pathname.split("/")[2];
   return (
     <div className="quiztest-score">
@@ -40,7 +40,9 @@ function QuizTestScore() {
           </div>
         </div>
         <div className="qs-end">
-          <Button type="primary">Testni yakunlash</Button>
+          <Button type="primary" onClick={() => onsetEndStep("end")}>
+            Testni yakunlash
+          </Button>
         </div>
       </div>
     </div>

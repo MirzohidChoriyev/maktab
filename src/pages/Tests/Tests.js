@@ -12,6 +12,12 @@ function Tests() {
   const [data, setData] = useState(datajson);
   const [show, setShow] = useState(false);
   const [number, setNumber] = useState(0);
+  const [step, setStep] = useState(1);
+
+  const okStep = () => {
+    setStep(2);
+    localStorage.setItem("step", 2);
+  };
 
   const showModal = () => {
     setShow(true);
@@ -135,7 +141,13 @@ function Tests() {
         <Button type="primary" danger onClick={closeModal}>
           Yopish
         </Button>
-        <Button type="primary" style={{ marginLeft: "4px" }}>
+        <Button
+          type="primary"
+          style={{ marginLeft: "4px" }}
+          onClick={() => {
+            okStep();
+          }}
+        >
           <Link
             to={`/tests/${number}/${data[number].classId}/${data[number].scienseId}`}
           >

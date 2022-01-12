@@ -2,12 +2,20 @@ import { Button } from "antd";
 import React, { useRef, useState, useEffect } from "react";
 import "./QuizTest.css";
 
-function QuizTestMain({ data, answers, setAnswers }) {
+function QuizTestMain({
+  quiz,
+  answers,
+  setAnswers,
+  quizlength,
+  endStep,
+  setEndStep,
+}) {
   const [selected, setSelected] = useState([]);
   const [answersSort, setAnswersSort] = useState([]);
   const [aStep, setAstep] = useState(1);
-  const [answersItem, setAnswersItem] = useState([]);
   const [bStep, setBstep] = useState(1);
+  const [cStep, setCstep] = useState(0);
+  console.log(endStep);
 
   const onChangeInput = (e, i) => {
     console.log(e.target.name, e.target.value);
@@ -17,12 +25,13 @@ function QuizTestMain({ data, answers, setAnswers }) {
         indexItem: i,
         nameItem: e.target.name,
         answerItem: e.target.value,
-        questionItem: data[i].question.savol,
+        questionItem: quiz[i].question.savol,
       },
     ]);
   };
 
-  const testEnd = () => {
+  const quizEndHandler = () => {
+    console.log("Tugadi");
     setAnswersSort(
       selected.sort(function (a, b) {
         return a.indexItem - b.indexItem;
@@ -36,48 +45,34 @@ function QuizTestMain({ data, answers, setAnswers }) {
     const filtered = answersSort.filter(
       ({ indexItem }, e) => !ids.includes(indexItem, e + 1)
     );
-    setAnswersItem(filtered);
     setBstep(2);
+    setAnswers(filtered);
   };
-
-  const addAnswers = () => {
-    for (let j = 0; j < data.length; j++) {
-      if (answersItem[j].indexItem !== j) {
-        answersItem = answersItem.concat({
-          indexItem: j,
-          nameItem: `answer${j}`,
-          answerItem: "undefined",
-          questionItem: data[j].question.savol,
-        });
-      }
-
-      setAnswers(answersItem);
-    }
-  };
-
   useEffect(() => {
     answerFilter();
   }, [aStep]);
 
-  useEffect(() => {
-    addAnswers();
-  }, [bStep]);
+  useEffect(() => {}, []);
+
+  console.log("answers", answers);
 
   return (
     <div>
-      <Button type="primary" onClick={testEnd}>
-        Yakunlash
-      </Button>
-      {data.map((dataItem, index) => (
+      <div className="button-end-quiz">
+        <Button type="primary" onClick={quizEndHandler}>
+          Yakunlash
+        </Button>
+      </div>
+      {quiz.map((quizItem, index) => (
         <div className="quiztest-main">
           <div className="qm-container">
             <div className="qm-item">
               <div className="qm-item-question">
                 <span id="qm-number">{index + 1}. </span>
-                <span id="qm-question">{dataItem.question.savol}</span>
+                <span id="qm-question">{quizItem.question.savol}</span>
               </div>
               <div className="qm-question-container">
-                {data[index].question.choices.map((choice, i) => (
+                {quiz[index].question.choices.map((choice, i) => (
                   <div className="qm-item-answer">
                     <label className="qm-label" key={i}>
                       <input

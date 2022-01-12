@@ -11,8 +11,8 @@ function QuizTest() {
   const [data, setData] = useState(quizdata.data);
   const [answers, setAnswers] = useState([]);
   const [step, setStep] = useState(1);
-
-  console.log("answers", answers);
+  const [quiz, setQuiz] = useState([]);
+  const [endStep, setEndStep] = useState("start");
 
   // console.log(data);
   const [count, setCount] = useState(0);
@@ -20,13 +20,15 @@ function QuizTest() {
   const pathclass = window.location.pathname.split("/")[3];
   const pathsciense = window.location.pathname.split("/")[4];
 
+  console.log("answers", answers);
+
   useEffect(() => {
     let dataSort = data.filter(
       (item) =>
         Number(pathclass) === item.classId &&
         Number(pathsciense) === item.scienseId
     );
-    setData(dataSort);
+    setQuiz(dataSort);
   }, []);
   return (
     <div className="quiz">
@@ -59,18 +61,17 @@ function QuizTest() {
 
       <div className="quiz-main-container">
         <div className="quiz-main">
-          <QuizTestMain data={data} answers={answers} setAnswers={setAnswers} />
-          return (
           <QuizTestMain
-            data={data}
-            lengthData={data.length}
-            activeQuestion={activeQuestion}
-            setActiveQuestion={setActiveQuestion}
+            quiz={quiz}
+            quizlength={quiz.length}
+            answers={answers}
             setAnswers={setAnswers}
+            setEndStep={setEndStep}
+            endStep={endStep}
           />
         </div>
         <div className="quiz-score">
-          <QuizTestScore />
+          <QuizTestScore onsetEndStep={setEndStep} onendStep={endStep} />
         </div>
       </div>
     </div>
