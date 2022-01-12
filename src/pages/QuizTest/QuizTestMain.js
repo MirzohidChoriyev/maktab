@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import React, { useRef, useState, useEffect } from "react";
+import $ from 'jquery'
 import "./QuizTest.css";
 
 function QuizTestMain({
@@ -18,6 +19,14 @@ function QuizTestMain({
   console.log(endStep);
 
   const onChangeInput = (e, i) => {
+  
+  // quiz.forEach((item, i)=>{
+  //   return(
+  //     e.target.name === `answer${i}` ? $('.qm-label').css({"background-color": 'rgb(228, 122, 80)'}) : ""
+  //   )
+  // })
+    
+
     console.log(e.target.name, e.target.value);
     setSelected((selected) => [
       ...selected,
@@ -83,7 +92,7 @@ function QuizTestMain({
                         name={`answer${index}`}
                         onChange={(e) => onChangeInput(e, index)}
                       ></input>
-                      <span>{choice}</span>
+                      <span id = "qm-answer">{choice}</span>
                     </label>
                   </div>
                 ))}

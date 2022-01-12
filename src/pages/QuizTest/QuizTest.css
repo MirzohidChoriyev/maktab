@@ -61,6 +61,7 @@
 }
 .qm-label:hover {
   background-color: rgb(228, 122, 80);
+  color: white;
 }
 #qm-label-input {
   margin-left: -15px;
@@ -89,13 +90,19 @@
   padding: 15px 20px 10px 15px;
   box-shadow: 0px 0px 1px gray;
   border-bottom: 2px dashed rgb(168, 168, 168);
-}
+}label
 
 .qm-item-question {
   font-size: 18px;
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid rgb(204, 203, 203);
+}
+#qm-question{
+  font-size: 18px;
+}
+#qm-answer{
+  font-size: 18px;
 }
 
 .qm-item-answer {
@@ -106,6 +113,7 @@
   position: relative;
   margin-left: 20px;
 }
+
 .qm-item-answer.qm-space {
   border-bottom: none;
 }
@@ -268,6 +276,12 @@
     margin-bottom: 10px;
     border-bottom: 1px solid rgb(204, 203, 203);
   }
+  #qm-question{
+    font-size: 17px;
+  }
+  #qm-answer{
+    font-size: 17px;
+  }
 
   .qm-item-answer {
     margin: 5px 0px;
@@ -334,6 +348,12 @@
     margin-bottom: 10px;
     border-bottom: 1px solid rgb(204, 203, 203);
   }
+  #qm-question{
+    font-size: 15px;
+  }
+  #qm-answer{
+    font-size: 15px;
+  }
 
   .qm-item-answer {
     margin: 0px 0px;
@@ -363,6 +383,9 @@
 @media screen and (max-width: 500px) {
   .quiz-main {
     border: none;
+  }
+  .quiz-title-item{
+display: none;
   }
   .quiz-main-container {
     padding: 0px;
@@ -439,6 +462,13 @@
     margin-bottom: 5px;
     background: none;
     border-radius: 50%;
+  }
+  #qm-question{
+    font-size: 14px;
+    font-weight: 500;
+  }
+  #qm-answer{
+    font-size: 14px;
   }
   .quiz-title {
     justify-content: left;
