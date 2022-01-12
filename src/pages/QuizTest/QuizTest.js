@@ -6,6 +6,8 @@ import { datajson } from "../Tests/Data";
 import $ from "jquery";
 import quizdata from "./TestsData.json";
 import { Button } from "antd";
+import QuizEnd from "./QuizTestContainer/QuizEnd";
+
 
 function QuizTest() {
   const [data, setData] = useState(quizdata.data);
@@ -13,13 +15,15 @@ function QuizTest() {
   const [step, setStep] = useState(1);
   const [quiz, setQuiz] = useState([]);
   const [endStep, setEndStep] = useState("start");
+  const [time, setTime] = useState(0);
+  const [dedlineTime, setDedlineTime] = useState(quizdata.data[0].dedlineTime);
 
   // console.log(data);
   const [count, setCount] = useState(0);
   const pathtitle = window.location.pathname.split("/")[2];
   const pathclass = window.location.pathname.split("/")[3];
   const pathsciense = window.location.pathname.split("/")[4];
-
+  
   console.log("answers", answers);
 
   useEffect(() => {
@@ -31,7 +35,9 @@ function QuizTest() {
     setQuiz(dataSort);
   }, []);
   return (
-    <div className="quiz">
+    <div>
+    {
+      step === 1 && <div className="quiz">
       <div className="quiz-container">
         <div className="quiz-title">
           <div className="quiz-title-item">
@@ -60,6 +66,7 @@ function QuizTest() {
       </div>
 
       <div className="quiz-main-container">
+     
         <div className="quiz-main">
           <QuizTestMain
             quiz={quiz}
@@ -68,12 +75,17 @@ function QuizTest() {
             setAnswers={setAnswers}
             setEndStep={setEndStep}
             endStep={endStep}
+            step = {step}
+            setStep = {setStep}   
           />
         </div>
         <div className="quiz-score">
           <QuizTestScore onsetEndStep={setEndStep} onendStep={endStep} />
         </div>
       </div>
+    </div>
+    }
+    {step === 2 && <QuizEnd />}
     </div>
   );
 }

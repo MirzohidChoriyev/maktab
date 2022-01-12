@@ -11,22 +11,22 @@ import Tests from "./pages/Tests/Tests";
 import TestsClass from "./pages/TestsClass/TestsClass";
 import QuizTest from "./pages/QuizTest/QuizTest";
 import HardTest from "./pages/HardTests/HardTest";
+import QuizEnd from "./pages/QuizTest/QuizTestContainer/QuizEnd";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/createaccount" element={<CreateAccaunt />} />
-          <Route path="/accauntlogin" element={<AccauntLogin />} />
-          <Route path="/questionget" element={<QuestionGet />} />
-          <Route path="/bookdownload" element={<ListBook />} />
-          <Route path="/news" element={<NewsList />} />
-          <Route path="/classes" element={<TestsClass />} />
-          <Route path="/class/:id" element={<Tests />} />
-          <Route path="/tests/:id/:id/:id" element={<QuizTest />} />
-          <Route path="/hardtest" element={<HardTest />} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/createaccount" exact element={<CreateAccaunt />} />
+          <Route path="/accauntlogin" exact element={<AccauntLogin />} />
+          <Route path="/questionget" exact element={<QuestionGet />} />
+          <Route path="/bookdownload" exact element={<ListBook />} />
+          <Route path="/news" exact element={<NewsList />} />
+          <Route path="/classes" exact element={<TestsClass />} />
+          <Route path="/class/:id" exact element={<Tests />} />
+          <Route path="/hardtest" exact element={<HardTest />} />    
         </Routes>
       </Router>
     </div>

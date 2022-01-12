@@ -1,7 +1,8 @@
-import { Button } from "antd";
 import React, { useRef, useState, useEffect } from "react";
+import {Button, makeStyles} from '@mui/material'
 import $ from 'jquery'
 import "./QuizTest.css";
+import { Link } from "react-router-dom";
 
 function QuizTestMain({
   quiz,
@@ -10,7 +11,10 @@ function QuizTestMain({
   quizlength,
   endStep,
   setEndStep,
+  setStep, 
+  step
 }) {
+
   const [selected, setSelected] = useState([]);
   const [answersSort, setAnswersSort] = useState([]);
   const [aStep, setAstep] = useState(1);
@@ -47,6 +51,7 @@ function QuizTestMain({
       })
     );
     setAstep(2);
+    setStep(2);
   };
 
   const answerFilter = () => {
@@ -62,15 +67,15 @@ function QuizTestMain({
   }, [aStep]);
 
   useEffect(() => {}, []);
-
   console.log("answers", answers);
 
   return (
     <div>
+      <div>
       <div className="button-end-quiz">
-        <Button type="primary" onClick={quizEndHandler}>
-          Yakunlash
-        </Button>
+        <button className = "end-quiz-button" size = "small" variant = "contained" color="primary" onClick={quizEndHandler}>
+           Yakunlash
+        </button>
       </div>
       {quiz.map((quizItem, index) => (
         <div className="quiztest-main">
@@ -101,7 +106,8 @@ function QuizTestMain({
           </div>
         </div>
       ))}
-    </div>
+      </div>
+          </div>
   );
 }
 

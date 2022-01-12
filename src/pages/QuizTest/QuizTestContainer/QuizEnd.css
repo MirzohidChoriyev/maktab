@@ -1,0 +1,30 @@
+.e-quiz{
+    padding: 100px 30px 30px 30px;
+}
+.e-quiz-title span{
+    font-size: 21px;
+    color: black;
+    font-weight: bolder;
+}
+.e-title{
+    text-align: center;
+}
+.e-quiz-content{
+    width: 500px;
+    margin: auto;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgb(173, 173, 173);
+    padding: 20px 35px;
+}
+.e-quiz-p{
+    border-bottom: 1px solid rgb(231, 231, 231);
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+.e-quiz-p span{
+    color: black;
+    font-weight: 500;
+    font-size: 17px;
+}
+
