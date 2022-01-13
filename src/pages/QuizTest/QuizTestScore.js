@@ -5,7 +5,6 @@ import { Button } from "antd";
 import { datajson } from "../Tests/Data";
 
 function QuizTestScore({ onendStep, onsetEndStep }) {
-  const pathtitle = window.location.pathname.split("/")[2];
   return (
     <div className="quiztest-score">
       <div className="qs-container">
@@ -24,7 +23,7 @@ function QuizTestScore({ onendStep, onsetEndStep }) {
 
         <div className="qs-body">
           <div className="qs-fan">
-            <span id="qs-fan-item">{datajson[pathtitle].categorytitle}</span>
+            <span id="qs-fan-item">{datajson[1].categorytitle}</span>
             <span id="qs-fan-count">
               <span>01</span>
               <span>/</span>

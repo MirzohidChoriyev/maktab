@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-import {Button, makeStyles} from '@mui/material'
-import $ from 'jquery'
+import { Button, makeStyles } from "@mui/material";
+import $ from "jquery";
 import "./QuizTest.css";
 import { Link } from "react-router-dom";
 
@@ -11,10 +11,7 @@ function QuizTestMain({
   quizlength,
   endStep,
   setEndStep,
-  setStep, 
-  step
 }) {
-
   const [selected, setSelected] = useState([]);
   const [answersSort, setAnswersSort] = useState([]);
   const [aStep, setAstep] = useState(1);
@@ -23,13 +20,11 @@ function QuizTestMain({
   console.log(endStep);
 
   const onChangeInput = (e, i) => {
-  
-  // quiz.forEach((item, i)=>{
-  //   return(
-  //     e.target.name === `answer${i}` ? $('.qm-label').css({"background-color": 'rgb(228, 122, 80)'}) : ""
-  //   )
-  // })
-    
+    // quiz.forEach((item, i)=>{
+    //   return(
+    //     e.target.name === `answer${i}` ? $('.qm-label').css({"background-color": 'rgb(228, 122, 80)'}) : ""
+    //   )
+    // })
 
     console.log(e.target.name, e.target.value);
     setSelected((selected) => [
@@ -51,7 +46,7 @@ function QuizTestMain({
       })
     );
     setAstep(2);
-    setStep(2);
+    window.localStorage.setItem("setStep", 3);
   };
 
   const answerFilter = () => {
@@ -72,42 +67,48 @@ function QuizTestMain({
   return (
     <div>
       <div>
-      <div className="button-end-quiz">
-        <button className = "end-quiz-button" size = "small" variant = "contained" color="primary" onClick={quizEndHandler}>
-           Yakunlash
-        </button>
-      </div>
-      {quiz.map((quizItem, index) => (
-        <div className="quiztest-main">
-          <div className="qm-container">
-            <div className="qm-item">
-              <div className="qm-item-question">
-                <span id="qm-number">{index + 1}. </span>
-                <span id="qm-question">{quizItem.question.savol}</span>
-              </div>
-              <div className="qm-question-container">
-                {quiz[index].question.choices.map((choice, i) => (
-                  <div className="qm-item-answer">
-                    <label className="qm-label" key={i}>
-                      <input
-                        type="radio"
-                        id="qm-label-input"
-                        value={choice}
-                        key={i}
-                        name={`answer${index}`}
-                        onChange={(e) => onChangeInput(e, index)}
-                      ></input>
-                      <span id = "qm-answer">{choice}</span>
-                    </label>
-                  </div>
-                ))}
+        <div className="button-end-quiz">
+          <button
+            className="end-quiz-button"
+            size="small"
+            variant="contained"
+            color="primary"
+            onClick={quizEndHandler}
+          >
+            Yakunlash
+          </button>
+        </div>
+        {quiz.map((quizItem, index) => (
+          <div className="quiztest-main">
+            <div className="qm-container">
+              <div className="qm-item">
+                <div className="qm-item-question">
+                  <span id="qm-number">{index + 1}. </span>
+                  <span id="qm-question">{quizItem.question.savol}</span>
+                </div>
+                <div className="qm-question-container">
+                  {quiz[index].question.choices.map((choice, i) => (
+                    <div className="qm-item-answer">
+                      <label className="qm-label" key={i}>
+                        <input
+                          type="radio"
+                          id="qm-label-input"
+                          value={choice}
+                          key={i}
+                          name={`answer${index}`}
+                          onChange={(e) => onChangeInput(e, index)}
+                        ></input>
+                        <span id="qm-answer">{choice}</span>
+                      </label>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
       </div>
-          </div>
+    </div>
   );
 }
 
