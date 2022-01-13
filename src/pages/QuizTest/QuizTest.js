@@ -8,13 +8,17 @@ import quizdata from "./TestsData.json";
 import { Button } from "antd";
 import QuizEnd from "./QuizTestContainer/QuizEnd";
 
-function QuizTest() {
+function QuizTest({setStep, step, setResults, results, setQuizdata}) {
   const [data, setData] = useState(quizdata.data);
   const [answers, setAnswers] = useState([]);
   const [quiz, setQuiz] = useState([]);
-  const [endStep, setEndStep] = useState("start");
   const [time, setTime] = useState(0);
   const [dedlineTime, setDedlineTime] = useState(quizdata.data[0].dedlineTime);
+  const [stepEnd, setEndStep] = useState(step);
+
+  useEffect(()=>{  
+     setStep(stepEnd);
+  }, [stepEnd])
 
   // console.log(data);
   const [count, setCount] = useState(0);
@@ -38,6 +42,7 @@ function QuizTest() {
         Number(localStorage.getItem("fanId")) === item.scienseId
     );
     setQuiz(dataSort);
+    setQuizdata(dataSort);
   }, []);
 
   return (
@@ -75,12 +80,12 @@ function QuizTest() {
               quizlength={quiz.length}
               answers={answers}
               setAnswers={setAnswers}
+              setResults = {setResults}
               setEndStep={setEndStep}
-              endStep={endStep}
             />
           </div>
           <div className="quiz-score">
-            <QuizTestScore onsetEndStep={setEndStep} onendStep={endStep} />
+            <QuizTestScore />
           </div>
         </div>
       </div>

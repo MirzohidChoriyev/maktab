@@ -3,6 +3,7 @@ import { Button, makeStyles } from "@mui/material";
 import $ from "jquery";
 import "./QuizTest.css";
 import { Link } from "react-router-dom";
+import { Modal } from "antd";
 
 function QuizTestMain({
   quiz,
@@ -11,12 +12,14 @@ function QuizTestMain({
   quizlength,
   endStep,
   setEndStep,
+  setResults
 }) {
   const [selected, setSelected] = useState([]);
   const [answersSort, setAnswersSort] = useState([]);
   const [aStep, setAstep] = useState(1);
   const [bStep, setBstep] = useState(1);
   const [cStep, setCstep] = useState(0);
+  const [isVisible, setVisible] = useState(false);
   console.log(endStep);
 
   const onChangeInput = (e, i) => {
@@ -46,7 +49,7 @@ function QuizTestMain({
       })
     );
     setAstep(2);
-    window.localStorage.setItem("setStep", 3);
+    setEndStep(3);
   };
 
   const answerFilter = () => {
@@ -55,14 +58,11 @@ function QuizTestMain({
       ({ indexItem }, e) => !ids.includes(indexItem, e + 1)
     );
     setBstep(2);
-    setAnswers(filtered);
+    setResults(filtered);
   };
   useEffect(() => {
     answerFilter();
   }, [aStep]);
-
-  useEffect(() => {}, []);
-  console.log("answers", answers);
 
   return (
     <div>
@@ -73,7 +73,7 @@ function QuizTestMain({
             size="small"
             variant="contained"
             color="primary"
-            onClick={quizEndHandler}
+            onClick={()=> setVisible(true)}
           >
             Yakunlash
           </button>
@@ -108,6 +108,10 @@ function QuizTestMain({
           </div>
         ))}
       </div>
+      <Modal title = "Testni yakunlaysizmi" visible={isVisible} footer = {false} closable={false}>
+           <Button variant = "contained" color = "success" size = "small" onClick={quizEndHandler}>Ha</Button>
+           <Button style = {{marginLeft: '3px'}} variant = "contained" color = "info" size = "small" onClick = {()=> setVisible(false)}>Yo'q</Button>
+      </Modal>
     </div>
   );
 }

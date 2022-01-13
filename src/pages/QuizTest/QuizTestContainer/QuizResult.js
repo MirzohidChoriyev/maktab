@@ -1,0 +1,79 @@
+
+import React from 'react'
+import { formatTime } from '../../HardTests/Content/utils'
+import "../../HardTests/Content/Check.css"
+import { Button } from "antd"
+
+function QuizResult({data, results, setStep, time, natija}) {
+    return (
+        <div>
+        <div className="check">
+      <div className="check-container">
+
+
+        <div className="check-head">
+          <span>Umumiy natijangiz</span>
+          <span>
+          <Button type="primary" onClick = {()=> setStep(1)} style = {{marginRight: '3px', background: 'gray', border: '1px solid gray'}}>Bosh sahifa</Button>
+          <Button className="button-download" type = "primary">
+              <i class="fa fa-download" style={{ marginRight: "5px" }}></i>
+              Yuklab olish
+          </Button>
+          </span>
+        </div>
+        <div className="check-body">
+          <ul style={{ padding: "0px" }}>
+            {results.map((result, index) => (
+              <div className="check-content">
+                <li style={{ listStyle: "none" }}>
+                  <p className="check-question">
+                    <strong>
+                      {index + 1}.{data[index].question.savol}
+                    </strong>
+                  </p>
+                  <p
+                    className={
+                      data[index].question.answer === result.answerItem
+                        ? "check-result  p-2 mt-2 has-text-white"
+                        : "check-danger  p-2 mt-2 has-text-white"
+                    }
+                  >
+                    {result.answerItem}
+                    <i
+                      class={
+                        data[index].question.answer === result.answerItem
+                          ? "fa fa-check check-icon"
+                          : "fa fa-close check-icon"
+                      }
+                    ></i>
+                  </p>
+                  {data[index].question.answer !== result.answerItem && (
+                    <p className="check-link  p-2 mt-2 has-text-white">
+                      To'g'ri javob: {data[index].question.answer}
+                    </p>
+                  )}
+                </li>
+              </div>
+            ))}
+          </ul>
+          <div className="check-check">
+            <p>Test uchun ketgan vaqt: {formatTime(99)}</p>
+            <p>Savollar soni: {data.length} ta</p>
+            <p>To'g'ri javoblar soni: {natija} ta</p>
+
+            <p>
+
+
+                
+              Umumiy natijangiz: {Math.floor((natija / data.length) * 100)}%
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    )
+}
+
+export default QuizResult

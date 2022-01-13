@@ -9,18 +9,36 @@ import { Button, Modal } from "antd";
 import { Link } from "react-router-dom";
 import QuizTest from "../QuizTest/QuizTest";
 import QuizEnd from "../QuizTest/QuizTestContainer/QuizEnd";
+import QuizResult from '../QuizTest/QuizTestContainer/QuizResult'
+
+let interval;
 
 function Tests() {
   const [data, setData] = useState(datajson);
+  const [results, setResults] = useState([]);
   const [show, setShow] = useState(false);
   const [number, setNumber] = useState(0);
   const [step, setStep] = useState(1);
+  const [quizdata, setQuizdata] = useState([]);
+  const [time, setTime] = useState(0);
+  const [natija, setNatija] = useState(0);
+
+  const clearTime = () =>{
+     if(step === 3){
+      clearInterval(interval);
+     }
+  }
 
   const okStep = (c, s) => {
     setStep(2);
     window.localStorage.setItem("sinfId", c);
     window.localStorage.setItem("fanId", s);
+
+    interval = setInterval(()=>{
+       setTime((time) => time + 1);
+    }, 1000)
   };
+  console.log(time);
 
   const showModal = () => {
     setShow(true);
@@ -58,6 +76,10 @@ function Tests() {
   useEffect(() => {
     Toggle();
   }, []);
+
+  useEffect(()=>{
+      clearTime();
+  },[step])
 
   return (
     <div>
@@ -160,8 +182,9 @@ function Tests() {
           <Sidebar />
         </div>
       )}
-      {step === 2 && <QuizTest />}
-      {step === 3 && <QuizEnd />}
+      {step === 2 && <QuizTest setStep = {setStep} step={step} setResults={setResults} results={results} setQuizdata={setQuizdata}/>}
+      {step === 3 && <QuizEnd step = {step} setStep = {setStep} time = {time} data = {quizdata} results={results} setNatija={setNatija} />}
+      {step === 4 && <QuizResult setStep = {setStep} step = {step} results={results} data = {quizdata} time={time} natija={natija} />}
     </div>
   );
 }
