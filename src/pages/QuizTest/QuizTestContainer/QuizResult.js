@@ -1,10 +1,15 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { formatTime } from '../../HardTests/Content/utils'
 import "../../HardTests/Content/Check.css"
 import { Button } from "antd"
 
 function QuizResult({data, results, setStep, time, natija}) {
+
+    const windowDownload = () =>{
+       window.print();
+    }
+
     return (
         <div>
         <div className="check">
@@ -15,13 +20,13 @@ function QuizResult({data, results, setStep, time, natija}) {
           <span>Umumiy natijangiz</span>
           <span>
           <Button type="primary" onClick = {()=> setStep(1)} style = {{marginRight: '3px', background: 'gray', border: '1px solid gray'}}>Bosh sahifa</Button>
-          <Button className="button-download" type = "primary">
+          <Button className="button-download" onClick = {()=> windowDownload()} id = "download" type = "primary">
               <i class="fa fa-download" style={{ marginRight: "5px" }}></i>
               Yuklab olish
           </Button>
           </span>
         </div>
-        <div className="check-body">
+        <div className="check-body" id = "invoice">
           <ul style={{ padding: "0px" }}>
             {results.map((result, index) => (
               <div className="check-content">

@@ -4,6 +4,7 @@ import { Col, Row } from 'react-bootstrap'
 import {images} from './Images'
 import "./Header.css"
 import { data } from 'jquery';
+import { Link } from 'react-router-dom';
      
 function Header() {  
     const [index, setIndex] = useState(0);
@@ -76,7 +77,7 @@ useEffect(()=>{
             <div className="header-body">
                 <span className="header-text">SHOFIRKON TUMANI UMUMIY</span>
                 <span className="header-school">O'RTA TA'LIM MAKTABI</span>
-                <span className="header-btn">KIRISH</span>
+                <Link to = "/classes"><span className="header-btn">KIRISH</span></Link>
             </div> 
 
             <div className="header-page">
