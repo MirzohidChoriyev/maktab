@@ -5,7 +5,7 @@
       "classId": 10,
       "scienseId": 110,
       "questionId": 10,
-      "dedlineTime": 300,
+      "dedlineTime": 10,
       "question": {
         "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",
         "choices": ["20090 - yil", "2003 - yil", "2004 - yil", "2006 - yil"],

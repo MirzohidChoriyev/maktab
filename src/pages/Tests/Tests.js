@@ -9,9 +9,12 @@ import { Button, Modal } from "antd";
 import { Link } from "react-router-dom";
 import QuizTest from "../QuizTest/QuizTest";
 import QuizEnd from "../QuizTest/QuizTestContainer/QuizEnd";
-import QuizResult from '../QuizTest/QuizTestContainer/QuizResult'
+import QuizResult from "../QuizTest/QuizTestContainer/QuizResult";
+import quiztest from "../QuizTest/TestsData.json";
+import Notice from "../QuizTest/Notice/Notice";
 
 let interval;
+let interval1;
 
 function Tests() {
   const [data, setData] = useState(datajson);
@@ -22,21 +25,31 @@ function Tests() {
   const [quizdata, setQuizdata] = useState([]);
   const [time, setTime] = useState(0);
   const [natija, setNatija] = useState(0);
+  const [dedlineTime, setDedlineTime] = useState(quiztest.data[0].dedlineTime);
+  const [noticeShow, setNoticeShow] = useState(false);
+  const [quiz, setQuiz] = useState([]);
 
-  const clearTime = () =>{
-     if(step === 3){
+  const clearTime = () => {
+    if (step === 3) {
       clearInterval(interval);
-     }
-  }
+      clearInterval(interval1);
+    }
+  };
 
   const okStep = (c, s) => {
     setStep(2);
     window.localStorage.setItem("sinfId", c);
     window.localStorage.setItem("fanId", s);
 
-    interval = setInterval(()=>{
-       setTime((time) => time + 1);
-    }, 1000)
+    interval = setInterval(() => {
+      setTime((time) => time + 1);
+    }, 1000);
+
+    interval1 = setInterval(() => {
+      setDedlineTime((item) => item - 1);
+    }, 1000);
+
+    closeModal();
   };
   console.log(time);
 
@@ -77,9 +90,9 @@ function Tests() {
     Toggle();
   }, []);
 
-  useEffect(()=>{
-      clearTime();
-  },[step])
+  useEffect(() => {
+    clearTime();
+  }, [step]);
 
   return (
     <div>
@@ -182,9 +195,39 @@ function Tests() {
           <Sidebar />
         </div>
       )}
-      {step === 2 && <QuizTest setStep = {setStep} step={step} setResults={setResults} results={results} setQuizdata={setQuizdata}/>}
-      {step === 3 && <QuizEnd step = {step} setStep = {setStep} time = {time} data = {quizdata} results={results} setNatija={setNatija} />}
-      {step === 4 && <QuizResult setStep = {setStep} step = {step} results={results} data = {quizdata} time={time} natija={natija} />}
+      {step === 2 && (
+        <QuizTest
+          setStep={setStep}
+          step={step}
+          setResults={setResults}
+          results={results}
+          setQuizdata={setQuizdata}
+          dedlineTime={dedlineTime}
+          setNoticeShow={setNoticeShow}
+          quiz={quiz}
+          setQuiz={setQuiz}
+        />
+      )}
+      {step === 3 && (
+        <QuizEnd
+          step={step}
+          setStep={setStep}
+          time={time}
+          data={quizdata}
+          results={results}
+          setNatija={setNatija}
+        />
+      )}
+      {step === 4 && (
+        <QuizResult
+          setStep={setStep}
+          step={step}
+          results={results}
+          data={quizdata}
+          time={time}
+          natija={natija}
+        />
+      )}
     </div>
   );
 }

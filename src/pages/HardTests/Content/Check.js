@@ -10,8 +10,9 @@ function Check({ data, results, time, natija, setStep }) {
     <div className="check">
       <div className="check-container">
         <div className="check-head">
-          <span>Umumiy natijangiz</span>
-          <Button type="primary" onClick = {()=> setStep(1)}>Bosh sahifa</Button>
+          <Button type="primary" danger onClick={() => setStep(1)}>
+            Bosh sahifa
+          </Button>
         </div>
         <div className="check-body">
           <ul style={{ padding: "0px" }}>
@@ -56,7 +57,11 @@ function Check({ data, results, time, natija, setStep }) {
             <p>
               Umumiy natijangiz: {Math.floor((natija / data.length) * 100)}%
             </p>
-            <Button className="button-download" type="primary" style={{ background: "green" }}>
+            <Button
+              className="button-download"
+              type="primary"
+              style={{ background: "green" }}
+            >
               <i class="fa fa-download" style={{ marginRight: "5px" }}></i>
               Yuklab olish
             </Button>

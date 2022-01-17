@@ -26,7 +26,7 @@ function App() {
           <Route path="/news" exact element={<NewsList />} />
           <Route path="/classes" exact element={<TestsClass />} />
           <Route path="/class/:id" exact element={<Tests />} />
-          <Route path="/hardtest" exact element={<HardTest />} />    
+          <Route path="/hardtest" exact element={<HardTest />} />
         </Routes>
       </Router>
     </div>

@@ -12,7 +12,8 @@ function QuizTestMain({
   quizlength,
   endStep,
   setEndStep,
-  setResults
+  setResults,
+  dedlineTime,
 }) {
   const [selected, setSelected] = useState([]);
   const [answersSort, setAnswersSort] = useState([]);
@@ -64,6 +65,13 @@ function QuizTestMain({
     answerFilter();
   }, [aStep]);
 
+  useEffect(() => {
+    if (dedlineTime === 0) {
+      quizEndHandler();
+    }
+  }, [dedlineTime]);
+  console.log("dedline", dedlineTime);
+
   return (
     <div>
       <div>
@@ -73,7 +81,7 @@ function QuizTestMain({
             size="small"
             variant="contained"
             color="primary"
-            onClick={()=> setVisible(true)}
+            onClick={() => setVisible(true)}
           >
             Yakunlash
           </button>
@@ -83,8 +91,9 @@ function QuizTestMain({
             <div className="qm-container">
               <div className="qm-item">
                 <div className="qm-item-question">
-                  <span id="qm-number">{index + 1}. </span>
-                  <span id="qm-question">{quizItem.question.savol}</span>
+                  <span id="qm-question">
+                    {index + 1}. {quizItem.question.savol}
+                  </span>
                 </div>
                 <div className="qm-question-container">
                   {quiz[index].question.choices.map((choice, i) => (
@@ -108,9 +117,29 @@ function QuizTestMain({
           </div>
         ))}
       </div>
-      <Modal title = "Testni yakunlaysizmi" visible={isVisible} footer = {false} closable={false}>
-           <Button variant = "contained" color = "success" size = "small" onClick={quizEndHandler}>Ha</Button>
-           <Button style = {{marginLeft: '3px'}} variant = "contained" color = "info" size = "small" onClick = {()=> setVisible(false)}>Yo'q</Button>
+      <Modal
+        title="Testni yakunlaysizmi"
+        visible={isVisible}
+        footer={false}
+        closable={false}
+      >
+        <Button
+          variant="contained"
+          color="success"
+          size="small"
+          onClick={quizEndHandler}
+        >
+          Ha
+        </Button>
+        <Button
+          style={{ marginLeft: "3px" }}
+          variant="contained"
+          color="info"
+          size="small"
+          onClick={() => setVisible(false)}
+        >
+          Yo'q
+        </Button>
       </Modal>
     </div>
   );

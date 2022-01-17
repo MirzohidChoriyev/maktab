@@ -29,7 +29,7 @@
   margin-top: 30px;
   border-radius: 3px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .check-icon {
   font-size: 14px;
@@ -56,19 +56,19 @@
   background-color: rgb(13, 116, 201);
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
   .check-container {
     border-radius: 3px;
     width: 700px;
   }
 }
-@media screen and (max-width: 760px){
+@media screen and (max-width: 760px) {
   .check-container {
     border-radius: 3px;
     width: 100%;
   }
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   .check-container {
     border-radius: 3px;
     width: 100%;
@@ -77,7 +77,7 @@
     padding: 20px;
   }
 }
-@media screen and (max-width: 450px){
+@media screen and (max-width: 450px) {
   .check-container {
     border-radius: 3px;
     width: 100%;
@@ -91,7 +91,6 @@
     margin-top: 10px;
     border-radius: 3px;
     font-size: 14px;
-    font-weight: 500;
   }
   .check-content {
     border-bottom: 1px solid gray;
@@ -115,10 +114,10 @@
     top: 10px;
   }
   .check-result,
-.check-link,
-.check-danger {
-  border-radius: 4px;
-  position: relative;
-  color: white;
-}
+  .check-link,
+  .check-danger {
+    border-radius: 4px;
+    position: relative;
+    color: white;
+  }
 }

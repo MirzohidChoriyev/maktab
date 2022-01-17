@@ -8,17 +8,25 @@ import quizdata from "./TestsData.json";
 import { Button } from "antd";
 import QuizEnd from "./QuizTestContainer/QuizEnd";
 
-function QuizTest({setStep, step, setResults, results, setQuizdata}) {
+function QuizTest({
+  setStep,
+  step,
+  setResults,
+  results,
+  setQuizdata,
+  time,
+  dedlineTime,
+  setNoticeShow,
+  quiz,
+  setQuiz,
+}) {
   const [data, setData] = useState(quizdata.data);
   const [answers, setAnswers] = useState([]);
-  const [quiz, setQuiz] = useState([]);
-  const [time, setTime] = useState(0);
-  const [dedlineTime, setDedlineTime] = useState(quizdata.data[0].dedlineTime);
   const [stepEnd, setEndStep] = useState(step);
 
-  useEffect(()=>{  
-     setStep(stepEnd);
-  }, [stepEnd])
+  useEffect(() => {
+    setStep(stepEnd);
+  }, [stepEnd]);
 
   // console.log(data);
   const [count, setCount] = useState(0);
@@ -80,12 +88,13 @@ function QuizTest({setStep, step, setResults, results, setQuizdata}) {
               quizlength={quiz.length}
               answers={answers}
               setAnswers={setAnswers}
-              setResults = {setResults}
+              setResults={setResults}
               setEndStep={setEndStep}
+              dedlineTime={dedlineTime}
             />
           </div>
           <div className="quiz-score">
-            <QuizTestScore />
+            <QuizTestScore dedlineTime={dedlineTime} data={quiz} />
           </div>
         </div>
       </div>

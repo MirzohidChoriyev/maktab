@@ -31,20 +31,16 @@ function Result({ data, lengthData, results, resultCheck, time, setNatija }) {
           <span>Natijangiz</span>
         </div>
         <div className="result-con">
-        <div className="result-p">
+          <div className="result-p">
             <span className="result-p-title">Savollar soni:</span>
             <span>
-              <strong>
-                {lengthData} ta
-              </strong>
+              <strong>{lengthData} ta</strong>
             </span>
           </div>
           <div className="result-p">
             <span className="result-p-title">To'g'ri javoblar soni:</span>
             <span>
-              <strong>
-                {correct} ta
-              </strong>
+              <strong>{correct} ta</strong>
             </span>
           </div>
           <div className="result-p">
@@ -66,7 +62,11 @@ function Result({ data, lengthData, results, resultCheck, time, setNatija }) {
             </span>
           </div>
           <div className="result-btn">
-            <button type="primary" className="result-button-button" onClick={resultCheck}>
+            <button
+              type="primary"
+              className="result-button-button"
+              onClick={resultCheck}
+            >
               Natijani ko'rish
             </button>
           </div>
