@@ -1,0 +1,149 @@
+.check {
+  padding: 30px;
+}
+.check-container {
+  border-radius: 3px;
+  width: 750px;
+}
+.check-result,
+.check-link,
+.check-danger,
+.check-secondary {
+  border-radius: 4px;
+  position: relative;
+  color: white;
+}
+.check-question {
+  margin-top: 15px;
+}
+.check-head {
+  display: flex;
+  justify-content: space-between;
+}
+.check-content {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
+.check-check {
+  padding: 10px;
+  border: 1px solid rgb(221, 221, 221);
+  margin-top: 30px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.check-check p {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.068);
+  padding: 1px 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.check-check p span {
+  margin-right: 10px;
+}
+.final-check {
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  font-size: 18px;
+  background-color: rgb(25, 135, 185);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 4px 0px;
+  border-radius: 4px;
+}
+.check-icon {
+  font-size: 14px;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding-top: 1px;
+  width: 19px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.check-danger {
+  background-color: crimson;
+}
+.check-result {
+  background-color: rgb(55, 156, 72);
+}
+.check-link {
+  background-color: rgb(13, 116, 201);
+}
+.check-secondary {
+  background-color: rgb(167, 167, 167);
+}
+
+@media screen and (max-width: 900px) {
+  .check-container {
+    border-radius: 3px;
+    width: 700px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .check-container {
+    border-radius: 3px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .check-container {
+    border-radius: 3px;
+    width: 100%;
+  }
+  .check {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .check-container {
+    border-radius: 3px;
+    width: 100%;
+  }
+  .check {
+    padding: 20px 7px;
+  }
+  .check-check {
+    padding: 10px 10px;
+    border: 1px solid rgb(206, 206, 206);
+    margin-top: 10px;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  .check-content {
+    border-bottom: 1px solid gray;
+    padding-bottom: 0px;
+  }
+  .check-question {
+    margin-top: 8px;
+  }
+  .check-icon {
+    font-size: 12px;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding-top: 0px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 9px;
+    top: 10px;
+  }
+  .check-result,
+  .check-link,
+  .check-danger,
+  .check-secondary {
+    border-radius: 4px;
+    position: relative;
+    color: white;
+  }
+}

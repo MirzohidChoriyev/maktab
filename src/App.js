@@ -12,6 +12,7 @@ import TestsClass from "./pages/TestsClass/TestsClass";
 import QuizTest from "./pages/QuizTest/QuizTest";
 import HardTest from "./pages/HardTests/HardTest";
 import QuizEnd from "./pages/QuizTest/QuizTestContainer/QuizEnd";
+import Results from "./pages/Results/Results";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/classes" exact element={<TestsClass />} />
           <Route path="/class/:id" exact element={<Tests />} />
           <Route path="/hardtest" exact element={<HardTest />} />
+          <Route path="/results" exact element={<Results />} />
         </Routes>
       </Router>
     </div>

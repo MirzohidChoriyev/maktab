@@ -92,6 +92,23 @@
   width: 17px;
 }
 
+.input-icons-phone {
+  position: absolute;
+  right: 10px;
+  font-size: 13px;
+  padding: 3px;
+  top: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  color: green;
+  visibility: visible;
+  font-size: 15px;
+  width: 20px;
+}
+
 @media screen and (max-width: 700px) {
   .accaunt-login {
     height: 100%;
@@ -187,5 +204,22 @@
     background-color: red;
     color: white;
     width: 17px;
+  }
+
+  .input-icons-phone {
+    position: absolute;
+    right: 6px;
+    font-size: 13px;
+    padding: 3px;
+    top: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    color: green;
+    visibility: visible;
+    font-size: 14px;
+    width: 20px;
   }
 }

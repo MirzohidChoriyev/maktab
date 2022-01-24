@@ -1,5 +1,6 @@
 import { Button, Checkbox, Form, Input, Modal, Select } from "antd";
 import React, { useState } from "react";
+import dataTypes from "./Types.json";
 import "../AccauntLogin/AccauntLogin.css";
 import $ from "jquery";
 
@@ -14,6 +15,7 @@ function CreateAccaunt() {
   const { fullname, select, number } = user;
   const [error1, setError1] = useState("");
   const [error2, setError2] = useState("");
+  const [data, setData] = useState(dataTypes.data);
 
   const onValueChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -37,12 +39,15 @@ function CreateAccaunt() {
     }
   };
   const numberInput = () => {
-    if (number.length === 13) {
+    if (number.length === 12) {
       $("#number-icons").css({
         visibility: "visible",
       });
       $("#number").css({ border: "1px solid rgb(21, 223, 65)" });
       $("#number-error").css({
+        visibility: "hidden",
+      });
+      $("#number-phone").css({
         visibility: "hidden",
       });
       setError2("");
@@ -55,8 +60,11 @@ function CreateAccaunt() {
   };
 
   const createAccaunt = () => {
-    if (number.length === 13 && fullname.length > 11) {
+    if (number.length === 12 && fullname.length > 11) {
       $(".div").html("Ro'yxatdan o'tdingiz");
+      $("#number-phone").css({
+        visibility: "visible",
+      });
     } else {
       if (!(fullname.length > 11)) {
         $("#fullname").css({ border: "1px solid red" });
@@ -67,10 +75,13 @@ function CreateAccaunt() {
       } else {
         $("#fullname").css({ border: "1px solid rgb(21, 223, 65)" });
       }
-      if (!(number.length === 13)) {
+      if (!(number.length === 12)) {
         $("#number").css({ border: "1px solid red" });
         $("#number-error").css({
           visibility: "visible",
+        });
+        $("#number-phone").css({
+          visibility: "hidden",
         });
         setError2("Telefon raqamingizni to'liq kiriting.");
       } else {
@@ -110,26 +121,30 @@ function CreateAccaunt() {
               name="select"
               value={select}
             >
-              <option>O'quvchi</option>
-              <option>O'qituvchi</option>
-              <option>Talaba</option>
+              {data.map((item, index) => {
+                return <option>{item.type}</option>;
+              })}
             </select>
           </div>
 
           <div className="form-div">
             <label for="number">Telefon raqam kiriting</label>
             <input
-              id="number"
-              onChange={(e) => onValueChange(e)}
               name="number"
+              id="number"
+              type="number"
               value={number}
-              onKeyUp={numberInput}
+              onChange={onValueChange}
+              placeholder="+998991234567"
+              maxLength={12}
+              onKeyUp={() => numberInput()}
             />
             <i className="fa fa-check input-icons" id="number-icons"></i>
             <i
               className="fa fa-exclamation input-icons-error"
               id="number-error"
             ></i>
+            <i className="fa fa-phone input-icons-phone" id="number-phone"></i>
           </div>
           <div className="create-error-text">{error1}</div>
           <div className="create-error-text">{error2}</div>

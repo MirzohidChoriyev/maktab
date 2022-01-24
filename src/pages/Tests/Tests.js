@@ -36,10 +36,11 @@ function Tests() {
     }
   };
 
-  const okStep = (c, s) => {
+  const okStep = (c, s, i) => {
     setStep(2);
     window.localStorage.setItem("sinfId", c);
     window.localStorage.setItem("fanId", s);
+    window.localStorage.setItem("fanIndexId", i);
 
     interval = setInterval(() => {
       setTime((time) => time + 1);
@@ -93,6 +94,12 @@ function Tests() {
   useEffect(() => {
     clearTime();
   }, [step]);
+
+  const refreshFunc = () => {};
+
+  useEffect(() => {
+    refreshFunc();
+  }, []);
 
   return (
     <div>
@@ -185,7 +192,7 @@ function Tests() {
               type="primary"
               style={{ marginLeft: "4px" }}
               onClick={() => {
-                okStep(data[number].classId, data[number].scienseId);
+                okStep(data[number].classId, data[number].scienseId, number);
               }}
             >
               Boshlash

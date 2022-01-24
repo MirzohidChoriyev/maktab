@@ -18,7 +18,9 @@ function Navbar() {
           <Link to="/classes" style={{ color: "white" }}>
             <span className="navbar-item">TESTLAR</span>
           </Link>
-          <span className="navbar-item">NATIJALAR</span>
+          <Link to="/results">
+            <span className="navbar-item">NATIJALAR</span>
+          </Link>
           <span className="navbar-item">DARSLIKLAR</span>
           <span className="navbar-item">MAKTAB FAOLLARI</span>
           <Link to="/news" style={{ color: "white" }}>

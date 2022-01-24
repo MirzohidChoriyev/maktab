@@ -7,6 +7,7 @@ import $ from "jquery";
 import quizdata from "./TestsData.json";
 import { Button } from "antd";
 import QuizEnd from "./QuizTestContainer/QuizEnd";
+import { formatTime } from "../HardTests/Content/utils";
 
 function QuizTest({
   setStep,
@@ -21,8 +22,8 @@ function QuizTest({
   setQuiz,
 }) {
   const [data, setData] = useState(quizdata.data);
-  const [answers, setAnswers] = useState([]);
   const [stepEnd, setEndStep] = useState(step);
+  const [isVisible, setVisible] = useState(false);
 
   useEffect(() => {
     setStep(stepEnd);
@@ -42,7 +43,6 @@ function QuizTest({
   }, []);
   console.log("sinfid", sinfId);
   console.log("fanId", fanId);
-  console.log("answers", answers);
   useEffect(() => {
     let dataSort = data.filter(
       (item) =>
@@ -60,22 +60,13 @@ function QuizTest({
           <div className="quiz-title">
             <div className="quiz-title-item"></div>
             <div className="quiz-title-time" style={{ fontWeight: "bolder" }}>
-              <span>20</span>
+              <span>{1}</span>
               <span>/</span>
-              <span>10</span>
+              <span>{quiz.length < 10 ? "0" + quiz.length : quiz.length}</span>
             </div>
             <div className="quiz-title-number">
               <span id="quiz-minutes" style={{ fontWeight: "bolder" }}>
-                16
-              </span>
-              <span
-                className="quiz-on-off"
-                style={{ fontWeight: "bolder", visibility: "visible" }}
-              >
-                :
-              </span>
-              <span id="quiz-second" style={{ fontWeight: "bolder" }}>
-                25
+                {formatTime(dedlineTime)}
               </span>
             </div>
           </div>
@@ -86,15 +77,19 @@ function QuizTest({
             <QuizTestMain
               quiz={quiz}
               quizlength={quiz.length}
-              answers={answers}
-              setAnswers={setAnswers}
               setResults={setResults}
               setEndStep={setEndStep}
               dedlineTime={dedlineTime}
+              isVisible={isVisible}
+              setVisible={setVisible}
             />
           </div>
           <div className="quiz-score">
-            <QuizTestScore dedlineTime={dedlineTime} data={quiz} />
+            <QuizTestScore
+              dedlineTime={dedlineTime}
+              data={quiz}
+              setVisible={setVisible}
+            />
           </div>
         </div>
       </div>

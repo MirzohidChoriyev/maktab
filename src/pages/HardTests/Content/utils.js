@@ -5,7 +5,7 @@ const formatTime = (time) => {
     return (
       Math.floor(time / 60) +
       " min " +
-      (time % 60 !== 0 ? (time % 60) + " sek" : " sek")
+      (time % 60 !== 0 ? (time % 60) + " sek" : (time % 60) + " sek")
     );
   }
 };

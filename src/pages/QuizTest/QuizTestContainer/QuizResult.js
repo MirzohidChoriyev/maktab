@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { formatTime } from "../../HardTests/Content/utils";
-import "../../HardTests/Content/Check.css";
+import "./QuizResult.css";
 import { Button } from "antd";
+import { classUtils, statusUtils } from "./statusUtils";
 
 function QuizResult({ data, results, setStep, time, natija }) {
   const windowDownload = () => {
@@ -45,39 +46,62 @@ function QuizResult({ data, results, setStep, time, natija }) {
                         {index + 1}.{data[index].question.savol}
                       </strong>
                     </p>
-                    <p
-                      className={
-                        data[index].question.answer === result.answerItem
-                          ? "check-result  p-2 mt-2 has-text-white"
-                          : "check-danger  p-2 mt-2 has-text-white"
-                      }
-                    >
-                      {result.answerItem}
-                      <i
-                        class={
+                    {result.answerItem !== "belgilanmagan" && (
+                      <p
+                        className={
                           data[index].question.answer === result.answerItem
-                            ? "fa fa-check check-icon"
-                            : "fa fa-close check-icon"
+                            ? "check-result  p-2 mt-2 has-text-white"
+                            : "check-danger  p-2 mt-2 has-text-white"
                         }
-                      ></i>
-                    </p>
-                    {data[index].question.answer !== result.answerItem && (
-                      <p className="check-link  p-2 mt-2 has-text-white">
-                        To'g'ri javob: {data[index].question.answer}
+                      >
+                        {result.answerItem}
+                        <i
+                          class={
+                            data[index].question.answer === result.answerItem
+                              ? "fa fa-check check-icon"
+                              : "fa fa-close check-icon"
+                          }
+                        ></i>
+                      </p>
+                    )}
+                    {result.answerItem !== "belgilanmagan" &&
+                      data[index].question.answer !== result.answerItem && (
+                        <p className="check-link  p-2 mt-2 has-text-white">
+                          To'g'ri javob: {data[index].question.answer}
+                        </p>
+                      )}
+                    {"belgilanmagan" === result.answerItem && (
+                      <p className="check-secondary  p-2 mt-2 has-text-white">
+                        Belgilanmagan
                       </p>
                     )}
                   </li>
                 </div>
               ))}
             </ul>
-            <div className="check-check">
-              <p>Test uchun ketgan vaqt: {formatTime(time)}</p>
-              <p>Savollar soni: {data.length} ta</p>
-              <p>To'g'ri javoblar soni: {natija} ta</p>
-
+            <div
+              className={classUtils(Math.floor((natija / data.length) * 100))}
+            >
               <p>
-                Umumiy natijangiz: {Math.floor((natija / data.length) * 100)}%
+                <span>Test uchun ketgan vaqt:</span>{" "}
+                <span>{formatTime(time)}</span>
               </p>
+              <p>
+                <span>Savollar soni:</span> <span>{data.length} ta</span>
+              </p>
+              <p>
+                <span>To'g'ri javoblar soni:</span> <span>{natija} ta</span>
+              </p>
+              <p>
+                <span>Natija statusi:</span>
+                <span>
+                  {statusUtils(Math.floor((natija / data.length) * 100))}
+                </span>
+              </p>
+
+              <span className="final-check">
+                Umumiy natijangiz: {Math.floor((natija / data.length) * 100)}%
+              </span>
             </div>
           </div>
         </div>
