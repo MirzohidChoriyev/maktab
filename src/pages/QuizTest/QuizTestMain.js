@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Button, makeStyles } from "@mui/material";
-import $ from "jquery";
+import $, { data } from "jquery";
 import "./QuizTest.css";
 import { Link } from "react-router-dom";
 import { Modal } from "antd";
@@ -37,14 +37,85 @@ function QuizTestMain({
   dedlineTime,
   setVisible,
   isVisible,
+  setSanagich,
+  setChange,
+  change,
 }) {
   const [answer, setAnswer] = useState(initialValue);
+  const [number, setNumber] = useState("");
+  const [number1, setNumber1] = useState("");
   console.log(endStep);
 
   const onChangeInput = (e, i) => {
     setAnswer({ ...answer, [e.target.name]: e.target.value });
+    console.log(answer);
+    setNumber(i);
   };
-  console.log(answer);
+
+  const sanagichValue = () => {
+    setChange([
+      {
+        id: 1,
+        answerItem: answer.answer1,
+      },
+      {
+        id: 2,
+        answerItem: answer.answer2,
+      },
+      {
+        id: 3,
+        answerItem: answer.answer3,
+      },
+      {
+        id: 4,
+        answerItem: answer.answer4,
+      },
+      {
+        id: 5,
+        answerItem: answer.answer5,
+      },
+      {
+        id: 6,
+        answerItem: answer.answer6,
+      },
+      {
+        id: 7,
+        answerItem: answer.answer7,
+      },
+      {
+        id: 8,
+        answerItem: answer.answer8,
+      },
+      {
+        id: 9,
+        answerItem: answer.answer9,
+      },
+      {
+        id: 10,
+        answerItem: answer.answer10,
+      },
+    ]);
+
+    setNumber1(number);
+  };
+
+  useEffect(() => {
+    sanagichValue();
+  }, [number]);
+
+  const sanagichFunc = () => {
+    let count = 0;
+    for (let index = 0; index < change.length; index++) {
+      if (change[index].answerItem !== "belgilanmagan") {
+        count++;
+      }
+    }
+    setSanagich(count);
+  };
+
+  useEffect(() => {
+    sanagichFunc();
+  }, [number1]);
 
   const quizEndHandler = () => {
     setResults([
@@ -68,36 +139,36 @@ function QuizTestMain({
         answerItem: answer.answer4,
         questionItem: quiz[3].question.savol,
       },
-      // {
-      //   id: 5,
-      //   answerItem: answer.answer5,
-      //   questionItem: quiz[4].question.savol,
-      // },
-      // {
-      //   id: 6,
-      //   answerItem: answer.answer6,
-      //   questionItem: quiz[5].question.savol,
-      // },
-      // {
-      //   id: 7,
-      //   answerItem: answer.answer7,
-      //   questionItem: quiz[6].question.savol,
-      // },
-      // {
-      //   id: 8,
-      //   answerItem: answer.answer8,
-      //   questionItem: quiz[7].question.savol,
-      // },
-      // {
-      //   id: 9,
-      //   answerItem: answer.answer9,
-      //   questionItem: quiz[8].question.savol,
-      // },
-      // {
-      //   id: 10,
-      //   answerItem: answer.answer10,
-      //   questionItem: quiz[9].question.savol,
-      // },
+      {
+        id: 5,
+        answerItem: answer.answer5,
+        questionItem: quiz[4].question.savol,
+      },
+      {
+        id: 6,
+        answerItem: answer.answer6,
+        questionItem: quiz[5].question.savol,
+      },
+      {
+        id: 7,
+        answerItem: answer.answer7,
+        questionItem: quiz[6].question.savol,
+      },
+      {
+        id: 8,
+        answerItem: answer.answer8,
+        questionItem: quiz[7].question.savol,
+      },
+      {
+        id: 9,
+        answerItem: answer.answer9,
+        questionItem: quiz[8].question.savol,
+      },
+      {
+        id: 10,
+        answerItem: answer.answer10,
+        questionItem: quiz[9].question.savol,
+      },
       // {
       //   id: 11,
       //   answerItem: answer.answer11,

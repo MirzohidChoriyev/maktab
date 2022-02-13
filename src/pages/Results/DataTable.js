@@ -16,18 +16,27 @@ function DataTable({ item }) {
                 <th id="result-space">Natijasi</th>
                 <th id="date-space">Sana</th>
                 <th id="date-space">Fan nomi</th>
+                <th id="date-space" className="text-center">
+                  Ma'lumot
+                </th>
               </tr>
             </thead>
             <tbody className="datatable-tbody">
               {item.map((res, i) => {
                 return (
                   <tr className="datatable-tbody-tr">
-                    <td id="id-space">{res.id}</td>
-                    <td>{res.userId}</td>
-                    <td>Mirzohid</td>
-                    <td>Mirzohid</td>
-                    <td>Mirzohid</td>
+                    <td id="id-space">{i + 1}</td>
+                    <td>{res.fullname}</td>
+                    <td>{res.category}</td>
+                    <td style={{ textAlign: "center" }}>{res.result} %</td>
+                    <td>{res.date}</td>
                     <td>Matematika</td>
+                    <td
+                      className="text-center data-space"
+                      style={{ cursor: "pointer" }}
+                    >
+                      <i class="fa fa-edit"></i> Ma'lumot
+                    </td>
                   </tr>
                 );
               })}

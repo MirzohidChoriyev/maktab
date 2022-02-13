@@ -28,6 +28,9 @@ function Tests() {
   const [dedlineTime, setDedlineTime] = useState(quiztest.data[0].dedlineTime);
   const [noticeShow, setNoticeShow] = useState(false);
   const [quiz, setQuiz] = useState([]);
+  const [sanagich, setSanagich] = useState(0);
+  const [change, setChange] = useState([]);
+  const [isVisible, setVisible] = useState(false);
 
   const clearTime = () => {
     if (step === 3) {
@@ -95,11 +98,16 @@ function Tests() {
     clearTime();
   }, [step]);
 
-  const refreshFunc = () => {};
-
+  const refreshChange = () => {
+    window.onbeforeunload = () => {
+      return "Testdan chiqib ketasizmi";
+    };
+  };
   useEffect(() => {
-    refreshFunc();
-  }, []);
+    if (step === 2) {
+      refreshChange();
+    }
+  }, [step === 2]);
 
   return (
     <div>
@@ -213,6 +221,12 @@ function Tests() {
           setNoticeShow={setNoticeShow}
           quiz={quiz}
           setQuiz={setQuiz}
+          setSanagich={setSanagich}
+          sanagich={sanagich}
+          setChange={setChange}
+          change={change}
+          isVisible={isVisible}
+          setVisible={setVisible}
         />
       )}
       {step === 3 && (

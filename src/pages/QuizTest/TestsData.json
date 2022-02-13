@@ -13,6 +13,30 @@
       }
     },
     {
+      "id": 1,
+      "classId": 10,
+      "scienseId": 110,
+      "questionId": 10,
+      "dedlineTime": 200,
+      "question": {
+        "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",
+        "choices": ["20090 - yil", "2003 - yil", "2004 - yil", "2006 - yil"],
+        "answer": "20090 - yil"
+      }
+    },
+    {
+      "id": 1,
+      "classId": 10,
+      "scienseId": 110,
+      "questionId": 10,
+      "dedlineTime": 200,
+      "question": {
+        "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",
+        "choices": ["20090 - yil", "2003 - yil", "2004 - yil", "2006 - yil"],
+        "answer": "20090 - yil"
+      }
+    },
+    {
       "id": 2,
       "classId": 10,
       "scienseId": 110,
@@ -38,6 +62,72 @@
       "id": 4,
       "classId": 10,
       "scienseId": 110,
+      "questionId": 10,
+      "question": {
+        "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",
+        "choices": ["2002 - yil", "2003 - yil", "2004 - yil", "2006 - yil"],
+        "answer": "2002 - yil"
+      }
+    },
+    {
+      "id": 4,
+      "classId": 10,
+      "scienseId": 110,
+      "questionId": 10,
+      "question": {
+        "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",
+        "choices": ["2002 - yil", "2003 - yil", "2004 - yil", "2006 - yil"],
+        "answer": "2002 - yil"
+      }
+    },
+    {
+      "id": 4,
+      "classId": 10,
+      "scienseId": 110,
+      "questionId": 10,
+      "question": {
+        "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",
+        "choices": ["2002 - yil", "2003 - yil", "2004 - yil", "2006 - yil"],
+        "answer": "2002 - yil"
+      }
+    },
+    {
+      "id": 4,
+      "classId": 10,
+      "scienseId": 110,
+      "questionId": 10,
+      "question": {
+        "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",
+        "choices": ["2002 - yil", "2003 - yil", "2004 - yil", "2006 - yil"],
+        "answer": "2002 - yil"
+      }
+    },
+    {
+      "id": 4,
+      "classId": 10,
+      "scienseId": 110,
+      "questionId": 10,
+      "question": {
+        "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",
+        "choices": ["2002 - yil", "2003 - yil", "2004 - yil", "2006 - yil"],
+        "answer": "2002 - yil"
+      }
+    },
+    {
+      "id": 5,
+      "classId": 10,
+      "scienseId": 111,
+      "questionId": 10,
+      "question": {
+        "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",
+        "choices": ["2002 - yil", "2003 - yil", "2004 - yil", "2006 - yil"],
+        "answer": "2002 - yil"
+      }
+    },
+    {
+      "id": 5,
+      "classId": 10,
+      "scienseId": 111,
       "questionId": 10,
       "question": {
         "savol": "O'zbekiston tarixi nechanchi yil yaratilgan",

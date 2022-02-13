@@ -32,10 +32,10 @@ function HardTest() {
     if (i === 0) {
       setStep(2);
       interval = setInterval(() => {
-        setTime(time => time + 1);
+        setTime((time) => time + 1);
       }, 1000);
       interval1 = setInterval(() => {
-        setDedline(time => time - 1);
+        setDedline((time) => time - 1);
       }, 1000);
     }
   };
@@ -56,7 +56,7 @@ function HardTest() {
           lengthData={data.length}
           setStep={setStep}
           setAnswers={setAnswers}
-          time = {time}
+          time={time}
           dedline={dedline}
         />
       )}
@@ -72,7 +72,13 @@ function HardTest() {
       )}
 
       {step === 4 && (
-        <Check data={data} time={time} results={answers} natija={natija} setStep={setStep} />
+        <Check
+          data={data}
+          time={time}
+          results={answers}
+          natija={natija}
+          setStep={setStep}
+        />
       )}
     </div>
   );

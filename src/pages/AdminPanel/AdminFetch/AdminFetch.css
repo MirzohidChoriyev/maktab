@@ -1,0 +1,26 @@
+.adminfetch-ad-content {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px rgb(204, 204, 204);
+  padding: 20px 25px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+#adminfetch-ad-content-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  font-weight: 700;
+}
+#adminfetch-ad-content-number {
+  color: black;
+}
+#adminfetch-ad-content-icon {
+  color: #dd2f6e;
+}
+#adminfetch-ad-content-users {
+  color: gray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  padding-left: 2px;
+}

@@ -3,29 +3,27 @@ import { useState } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import DataTable from "./DataTable";
 import datajson from "./Types.json";
+import dataTable from "./dataTable.json";
 import "./Results.css";
 import Pagenation from "./Pagenation";
 import axios from "axios";
 
 function Results() {
   const [type, setType] = useState(datajson.data);
+  const [result, setResult] = useState(dataTable.data);
   const [data, setData] = useState([]);
   const [lastIndex, setLastIndex] = useState(10);
   const [firstIndex, setFirstIndex] = useState(1);
   const [len, setLen] = useState(data.length);
+  const [category, setCategory] = useState(1);
 
-  const dataSource = () => {
-    axios({
-      url: "https://jsonplaceholder.typicode.com/posts",
-      method: "GET",
-    })
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const dataSort = () => {
+    let datasort = result.filter((item) => item.categoryId === category);
+    setData(datasort);
   };
+  useEffect(() => {
+    dataSort();
+  }, [category]);
 
   // Pagenation
   const indexOfLastPosts = lastIndex * firstIndex;
@@ -35,10 +33,6 @@ function Results() {
   const pagenate = (number) => {
     setFirstIndex(number);
   };
-
-  useEffect(() => {
-    dataSource();
-  }, []);
 
   return (
     <div className="natija">
@@ -66,8 +60,16 @@ function Results() {
         </div>
 
         <div className="natija-buttons">
-          {type.map((item, key) => {
-            return <button className="natija-button-item">{item.type}</button>;
+          {type.map((item, i) => {
+            return (
+              <button
+                key={i + 1}
+                onClick={() => setCategory(i + 1)}
+                className="natija-button-item"
+              >
+                {item.type}
+              </button>
+            );
           })}
         </div>
         <div className="datatable-content">

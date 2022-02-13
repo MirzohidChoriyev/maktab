@@ -5,7 +5,8 @@ import { Button } from "antd";
 import { datajson } from "../Tests/Data";
 import { formatTime } from "../HardTests/Content/utils";
 
-function QuizTestScore({ data, dedlineTime, setVisible, count }) {
+function QuizTestScore({ data, dedlineTime, setVisible, sanagich, change }) {
+  console.log(1811819, change);
   return (
     <div className="quiztest-score">
       <div className="qs-container">
@@ -27,14 +28,24 @@ function QuizTestScore({ data, dedlineTime, setVisible, count }) {
               {datajson[localStorage.getItem("fanIndexId")].categorytitle}
             </span>
             <span id="qs-fan-count">
-              <span>{count ? "0" + count : count}</span>
+              <span>{sanagich < 10 ? "0" + sanagich : sanagich}</span>
               <span>/</span>
               <span>{data.length < 10 ? "0" + data.length : data.length}</span>
             </span>
           </div>
           <div className="qs-btn-container">
             {data.map((item, index) => {
-              return <button id="qs-btn">{index + 1}</button>;
+              return (
+                <button
+                  className={
+                    change[index].answerItem !== "belgilanmagan"
+                      ? "qs-btn qs-black"
+                      : "qs-btn qs-none"
+                  }
+                >
+                  {index + 1}
+                </button>
+              );
             })}
           </div>
         </div>

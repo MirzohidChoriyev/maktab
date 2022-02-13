@@ -14,7 +14,7 @@ function Category({ onQuizStart1 }) {
 
   return (
     <div className="category">
-      <div className="news-topbar-container" style={{ background: "crimson" }}>
+      <div className="news-topbar-container">
         <div className="news-topbar">
           <div className="news-bars">
             <i class="fa fa-bars"></i>

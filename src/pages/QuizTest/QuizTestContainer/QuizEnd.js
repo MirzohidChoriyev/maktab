@@ -53,7 +53,12 @@ function QuizEnd({ setStep, step, time, data, results, setNatija }) {
         Natijani ko'rish
       </Button>
       <Link to="/classes" style={{ color: "white" }}>
-        <Button type="primary" danger style={{ marginLeft: "3px" }}>
+        <Button
+          type="primary"
+          onClick={() => setStep(1)}
+          danger
+          style={{ marginLeft: "3px" }}
+        >
           Ortga qaytish
         </Button>
       </Link>

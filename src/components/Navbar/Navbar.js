@@ -9,9 +9,9 @@ function Navbar() {
         <div className="navbar-left">
           <div className="navbar-logo">
             <span className="navbar-logo-icon">
-              <i class="fa fa-graduation-cap"></i>
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
             </span>
-            <span className="navbar-logo-text">MAKTAB</span>
+            <span className="navbar-logo-text">Choriyev Mirzohid</span>
           </div>
         </div>
         <div className="navbar-right">

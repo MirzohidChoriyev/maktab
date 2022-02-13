@@ -1,0 +1,324 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Mirzohid",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurbekjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Mirzohid",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurali",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Rustamjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 6,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Ahmadjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurbekjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Mirzohid",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurali",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Rustamjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 6,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Ahmadjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurbekjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Mirzohid",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 4,
+      "categoryId": 2,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurali",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 5,
+      "categoryId": 2,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Rustamjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 6,
+      "categoryId": 2,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Ahmadjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 2,
+      "categoryId": 2,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurbekjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 3,
+      "categoryId": 2,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Mirzohid",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 4,
+      "categoryId": 2,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurali",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 5,
+      "categoryId": 2,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Rustamjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 6,
+      "categoryId": 2,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Ahmadjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 1,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Mirzohid",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurbekjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Mirzohid",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurali",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 5,
+      "categoryId": 3,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Rustamjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 6,
+      "categoryId": 3,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Ahmadjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 2,
+      "categoryId": 3,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurbekjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 3,
+      "categoryId": 3,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Mirzohid",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 4,
+      "categoryId": 3,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Nurali",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 5,
+      "categoryId": 3,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Rustamjon",
+      "result": 78,
+      "date": "20.10.2022"
+    },
+    {
+      "id": 6,
+      "categoryId": 3,
+      "scienseId": 110,
+      "classId": 10,
+      "resultId": 1,
+      "fullname": "Choriyev Ahmadjon",
+      "result": 78,
+      "date": "20.10.2022"
+    }
+  ]
+}

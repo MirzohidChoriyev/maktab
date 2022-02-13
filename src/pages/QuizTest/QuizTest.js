@@ -20,10 +20,15 @@ function QuizTest({
   setNoticeShow,
   quiz,
   setQuiz,
+  setSanagich,
+  sanagich,
+  setChange,
+  change,
+  isVisible,
+  setVisible,
 }) {
   const [data, setData] = useState(quizdata.data);
   const [stepEnd, setEndStep] = useState(step);
-  const [isVisible, setVisible] = useState(false);
 
   useEffect(() => {
     setStep(stepEnd);
@@ -58,9 +63,8 @@ function QuizTest({
       <div className="quiz">
         <div className="quiz-container">
           <div className="quiz-title">
-            <div className="quiz-title-item"></div>
             <div className="quiz-title-time" style={{ fontWeight: "bolder" }}>
-              <span>{1}</span>
+              <span>{sanagich < 10 ? "0" + sanagich : sanagich}</span>
               <span>/</span>
               <span>{quiz.length < 10 ? "0" + quiz.length : quiz.length}</span>
             </div>
@@ -82,6 +86,9 @@ function QuizTest({
               dedlineTime={dedlineTime}
               isVisible={isVisible}
               setVisible={setVisible}
+              setSanagich={setSanagich}
+              setChange={setChange}
+              change={change}
             />
           </div>
           <div className="quiz-score">
@@ -89,6 +96,8 @@ function QuizTest({
               dedlineTime={dedlineTime}
               data={quiz}
               setVisible={setVisible}
+              sanagich={sanagich}
+              change={change}
             />
           </div>
         </div>

@@ -1,0 +1,27 @@
+.AppAdminPanel {
+  padding-top: 50px;
+  background-color: aliceblue;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+}
+
+.app-navbar-ad {
+  position: fixed;
+  top: 0px;
+  left: 300px;
+  right: 0px;
+  transition: 0.2s;
+}
+
+.app-admin1 {
+  width: 300px;
+  transition: 0.2s;
+}
+.app-admin2 {
+  padding-left: 300px;
+  transition: 0.2s;
+}
+.app-admin-routes {
+  padding: 40px 30px;
+}

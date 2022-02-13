@@ -1,198 +1,215 @@
-.Topbar{
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    position: fixed;
-    top: 0px;  
-    left: 0px;   
-    right: 0px;
-    z-index: 999;
+.Topbar {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 999;
 }
-.topbar-container{
+.topbar-container {
+  width: 100%;
+  height: 47px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 0px 150px;
+}
+.topbar-item {
+  margin-right: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.topbar-icon {
+  margin-right: 5px;
+  color: rgb(224, 224, 224);
+}
+.topbar-item:hover {
+  color: rgb(79, 172, 209);
+  border-bottom: 1px solid rgb(182, 182, 182);
+}
+.topbar-item-user {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+.topbar-item-user:hover {
+  color: rgb(207, 207, 207);
+}
+.topbar-item-search {
+  position: absolute;
+  right: 40px;
+  color: white;
+  font-size: 20px;
+  top: 6px;
+  cursor: pointer;
+}
+.topbar-search {
+  position: fixed;
+  right: 75px;
+  display: none;
+}
+.topbar-search-item {
+  width: 300px;
+  border: 1px solid rgb(100, 250, 255);
+  outline: none;
+  padding: 4px 7px;
+  border-radius: 4px;
+  color: black;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1200px) {
+  .topbar-container {
     width: 100%;
     height: 47px;
-    display: flex;  
-    justify-content: space-between;  
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
-    padding: 0px 150px;
+    padding: 0px 80px;
+  }
 }
-.topbar-item{
+@media screen and (max-width: 1100px) {
+  .topbar-container {
+    width: 100%;
+    height: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0px 80px;
+  }
+  .topbar-item {
     margin-right: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
     transition: 0.3s;
+    display: inline-block;
+  }
 }
-.topbar-icon{
-    margin-right: 5px;
-    color: rgb(224, 224, 224);
-}
-.topbar-item:hover{
-    color: rgb(79, 172, 209);
-    border-bottom: 1px solid rgb(182, 182, 182);
-}
-.topbar-item-search{
-    position: absolute;
-    right: 40px;
+
+@media screen and (max-width: 770px) {
+  .topbar-container {
+    width: 100%;
+    height: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
-    font-size: 20px;
-    top: 6px;
+    padding: 0px 60px;
+  }
+  .topbar-item {
+    margin-right: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
     cursor: pointer;
-}
-.topbar-search{
+    transition: 0.3s;
+    display: inline-block;
+  }
+  .topbar-search {
     position: fixed;
-    right: 75px;
+    right: 60px;
     display: none;
-}
-.topbar-search-item{
+  }
+  .topbar-search-item {
     width: 300px;
     border: 1px solid rgb(100, 250, 255);
     outline: none;
     padding: 4px 7px;
     border-radius: 4px;
     color: black;
-    font-size: 16px;
+    font-size: 15px;
+  }
 }
-  
-
-@media screen and (max-width: 1200px){
-    .topbar-container{
-        width: 100%;
-        height: 47px;
-        display: flex;  
-        justify-content: space-between;  
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: white;
-        padding: 0px 80px;
-    }
-          
+@media screen and (max-width: 710px) {
+  .topbar-container {
+    width: 100%;
+    height: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0px 60px;
+  }
+  .topbar-item {
+    margin-right: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+  }
+  .topbar-search {
+    position: fixed;
+    right: 60px;
+    display: none;
+  }
+  .topbar-search-item {
+    width: 300px;
+    border: 1px solid rgb(100, 250, 255);
+    outline: none;
+    padding: 4px 7px;
+    border-radius: 4px;
+    color: black;
+    font-size: 13px;
+  }
 }
-@media screen and (max-width: 1100px){
-    .topbar-container{
-        width: 100%;
-        height: 47px;
-        display: flex;  
-        justify-content: space-between;  
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: white;
-        padding: 0px 80px;
-    }
-    .topbar-item{
-        margin-right: 15px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 13px;
-        cursor: pointer;   
-        transition: 0.3s;
-        display: inline-block;
-    }  
-}
-
-@media screen and  (max-width: 770px){
-    .topbar-container{
-        width: 100%;
-        height: 47px;
-        display: flex;    
-        justify-content: space-between;  
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: white;
-        padding: 0px 60px;
-    }
-    .topbar-item{
-        margin-right: 10px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 13px;
-        cursor: pointer;   
-        transition: 0.3s;
-        display: inline-block;
-    }  
-    .topbar-search{
-        position: fixed;
-        right: 60px;
-        display: none;
-    }
-    .topbar-search-item{
-        width: 300px;
-        border: 1px solid rgb(100, 250, 255);
-        outline: none;
-        padding: 4px 7px;
-        border-radius: 4px;
-        color: black;
-        font-size: 15px;
-    }
-}
-@media screen and  (max-width: 710px){
-    .topbar-container{
-        width: 100%;
-        height: 47px;
-        display: flex;    
-        justify-content: space-between;  
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: white;
-        padding: 0px 60px;
-    }
-    .topbar-item{
-        margin-right: 10px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 12px;
-        cursor: pointer;   
-        transition: 0.3s;
-        display: inline-block;
-    }  
-    .topbar-search{
-        position: fixed;
-        right: 60px;
-        display: none;
-    }
-    .topbar-search-item{
-        width: 300px;
-        border: 1px solid rgb(100, 250, 255);
-        outline: none;
-        padding: 4px 7px;
-        border-radius: 4px;
-        color: black;
-        font-size: 13px;
-    }
-}
-@media screen and  (max-width: 670px){
-    .Topbar{       
-         display: none;
-    }
-    .topbar-container{
-        width: 100%;  
-        height: 47px;
-        display: flex;    
-        justify-content: space-between;  
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: white;
-        padding: 0px 60px;
-    }
-    .topbar-item{
-        margin-right: 10px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 12px;
-        cursor: pointer;   
-        transition: 0.3s;
-        display: inline-block;
-    }  
-    .topbar-search{
-        position: fixed;
-        right: 60px;
-        display: none;
-    }
-    .topbar-search-item{
-        width: 300px;
-        border: 1px solid rgb(100, 250, 255);
-        outline: none;
-        padding: 4px 7px;
-        border-radius: 4px;
-        color: black;
-        font-size: 13px;
-    }
+@media screen and (max-width: 670px) {
+  .Topbar {
+    display: none;
+  }
+  .topbar-container {
+    width: 100%;
+    height: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0px 60px;
+  }
+  .topbar-item {
+    margin-right: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+  }
+  .topbar-item-user {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+  }
+  .topbar-search {
+    position: fixed;
+    right: 60px;
+    display: none;
+  }
+  .topbar-search-item {
+    width: 300px;
+    border: 1px solid rgb(100, 250, 255);
+    outline: none;
+    padding: 4px 7px;
+    border-radius: 4px;
+    color: black;
+    font-size: 13px;
+  }
 }
