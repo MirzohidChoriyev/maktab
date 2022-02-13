@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&family=Mulish&family=Redressed&family=Roboto:ital,wght@0,400;0,500;0,700;1,500&family=Space+Mono:wght@700&display=swap");
 
-.admindata-ad {
-}
 #admindata-table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -46,15 +44,14 @@ tr #admindata-id-th {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 600;
 }
-.admindata-table-user-text {
+
+.admindata-table-user-title {
   display: block;
   font-size: 22px;
   font-weight: 700;
-  color: black;
-  background-color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 10px;
   font-family: "Cabin", sans-serif;
+  background-color: none;
 }
 .admindata-edit {
   border: none;

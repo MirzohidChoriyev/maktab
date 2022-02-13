@@ -1,12 +1,12 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import "./ClassAdd.css";
+import "./ScienceAdd.css";
 
-function ClassAdd() {
+const ScienceAdd = () => {
   return (
     <div className="class-add">
       <div className="class-add-title" style={{ color: "rgb(100, 100, 100)" }}>
-        <span>Class add activation</span>
+        <span>Science add activation</span>
         <button type="submit" class="btn btn-success" disabled>
           Data storage
         </button>
@@ -77,6 +77,6 @@ function ClassAdd() {
       </div>
     </div>
   );
-}
+};
 
-export default ClassAdd;
+export default ScienceAdd;

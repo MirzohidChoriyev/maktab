@@ -6,7 +6,10 @@ function AdminData() {
     <div className="admindata-ad">
       <div className="admindata-container">
         <div className="admindata-table-user-text">
-          <div style={{ color: "rgb(100, 100, 100)" }}>
+          <div
+            className="admindata-table-user-title"
+            style={{ color: "rgb(100, 100, 100)" }}
+          >
             Sayt foydalanuvchilari
           </div>
           <div>

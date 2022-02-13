@@ -61,20 +61,26 @@ function Sidebar({ eni }) {
                 )}
               </li>
             </Link>
+            <Link to="/scienceadd" id="speciallink">
+              <li>
+                <span className="sidebar-li-icon">
+                  <i class="fa fa-list-ol"></i>
+                </span>
+                {eni === "300px" && (
+                  <span className="sidebar-li-text">
+                    Science add activation
+                  </span>
+                )}
+              </li>
+            </Link>
             <li>
               <span className="sidebar-li-icon">
                 <i class="fa fa-list-ol"></i>
               </span>
               {eni === "300px" && (
-                <span className="sidebar-li-text">Science add activation</span>
-              )}
-            </li>
-            <li>
-              <span className="sidebar-li-icon">
-                <i class="fa fa-list-ol"></i>
-              </span>
-              {eni === "300px" && (
-                <span className="sidebar-li-text">Science add activation</span>
+                <span className="sidebar-li-text">
+                  Add a question activation
+                </span>
               )}
             </li>
           </ul>
