@@ -73,16 +73,18 @@ function Sidebar({ eni }) {
                 )}
               </li>
             </Link>
-            <li>
-              <span className="sidebar-li-icon">
-                <i class="fa fa-list-ol"></i>
-              </span>
-              {eni === "300px" && (
-                <span className="sidebar-li-text">
-                  Add a question activation
+            <Link to="/quizadd" id="speciallink">
+              <li>
+                <span className="sidebar-li-icon">
+                  <i class="fa fa-list-ol"></i>
                 </span>
-              )}
-            </li>
+                {eni === "300px" && (
+                  <span className="sidebar-li-text">
+                    Add a question activation
+                  </span>
+                )}
+              </li>
+            </Link>
           </ul>
         </div>
       </div>

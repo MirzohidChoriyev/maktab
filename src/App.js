@@ -22,13 +22,14 @@ import Allusers from "./pages/AdminPanel/AllUsers/Allusers";
 import AdminStatistics from "./pages/AdminPanel/AdminStatistics/AdminStatistics";
 import ClassAdd from "./pages/AdminPanel/ClassAdd/ClassAdd";
 import ScienceAdd from "./pages/AdminPanel/ScienceAdd/ScienceAdd";
+import TestAdd from "./pages/AdminPanel/TestAdd/TestAdd";
 
 function App() {
   const [direction, setDirection] = useState("");
   const [eni, setEni] = useState("300px");
 
   const directionFunc = () => {
-    setDirection("admin");
+    setDirection("site");
   };
 
   const setWeight = () => {
@@ -96,6 +97,7 @@ function App() {
                     />
                     <Route path="/classadd" exact element={<ClassAdd />} />
                     <Route path="/scienceadd" exact element={<ScienceAdd />} />
+                    <Route path="/quizadd" exact element={<TestAdd />} />
                   </Routes>
                 </div>
               </div>
