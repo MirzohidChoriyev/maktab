@@ -23,6 +23,7 @@ import AdminStatistics from "./pages/AdminPanel/AdminStatistics/AdminStatistics"
 import ClassAdd from "./pages/AdminPanel/ClassAdd/ClassAdd";
 import ScienceAdd from "./pages/AdminPanel/ScienceAdd/ScienceAdd";
 import TestAdd from "./pages/AdminPanel/TestAdd/TestAdd";
+import ClassAddContent from "./pages/AdminPanel/ClassAddContent/ClassAddContent";
 
 function App() {
   const [direction, setDirection] = useState("");
@@ -80,7 +81,7 @@ function App() {
 
               <div className="app-admin2">
                 <div className="app-navbar-ad">
-                  <Navbar setWeight={setWeight} />
+                  <Navbar setWeight={setWeight} setDirection={setDirection} />
                 </div>
                 <div className="app-admin-routes">
                   <Routes>
@@ -95,7 +96,11 @@ function App() {
                       exact
                       element={<AdminStatistics />}
                     />
-                    <Route path="/classadd" exact element={<ClassAdd />} />
+                    <Route
+                      path="/classadd"
+                      exact
+                      element={<ClassAddContent />}
+                    />
                     <Route path="/scienceadd" exact element={<ScienceAdd />} />
                     <Route path="/quizadd" exact element={<TestAdd />} />
                   </Routes>

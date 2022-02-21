@@ -26,3 +26,6 @@
   padding: 10px;
   font-family: "Cabin", sans-serif;
 }
+.class-add-button {
+  visibility: hidden;
+}
