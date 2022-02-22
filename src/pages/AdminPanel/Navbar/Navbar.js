@@ -35,7 +35,7 @@ function Navbar({ setWeight, setDirection }) {
         </div>
 
         <div className="">
-          <Link to="/">
+          <a href = "http://kun.uz">
             <Button
               type="primary"
               style={{ fontFamily: "verdana", borderRadius: "5px" }}
@@ -43,7 +43,7 @@ function Navbar({ setWeight, setDirection }) {
             >
               Site
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
       <div>
