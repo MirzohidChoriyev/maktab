@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Style.css";
 import db from "./data.json";
-import { getData } from "./api";
+import { deleteData, getData } from "./api";
 
 function ClassAddData() {
   const [json, setJson] = useState([]);
@@ -9,6 +9,16 @@ function ClassAddData() {
   const getDataAll = async () => {
     const response = await getData();
     setJson(response.data);
+  };
+
+  const deleteDatas = async (e) => {
+    await deleteData(e);
+    console.log(e);
+    getDataAll();
+  };
+
+  const editdatasStorage = (id) => {
+    window.localStorage.setItem("ref", id);
   };
 
   useEffect(() => {
@@ -41,17 +51,27 @@ function ClassAddData() {
               <tr>
                 <td id="classadddata-id">{i + 1}</td>
                 <td>{item.id}</td>
-                <td>{item.name}</td>
+                <td>{item.classname}</td>
                 <td>{item.active}</td>
                 <td>{item.discription}</td>
                 <td id="classadddata-edit-td">
-                  <button className="classadddata-edit">
+                  <button
+                    className="classadddata-edit"
+                    onClick={() => {
+                      editdatasStorage(item.id);
+                    }}
+                  >
                     <i className="fa fa-edit"></i>
                     <span>Edit</span>
                   </button>
                 </td>
                 <td id="classadddata-delete-td">
-                  <button className="classadddata-delete">
+                  <button
+                    className="classadddata-delete"
+                    onClick={() => {
+                      deleteDatas(item.id);
+                    }}
+                  >
                     <i className="fa fa-trash"></i>
                     <span>Delete</span>
                   </button>

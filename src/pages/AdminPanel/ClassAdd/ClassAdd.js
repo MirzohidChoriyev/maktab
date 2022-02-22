@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import $ from "jquery";
 import "./ClassAdd.css";
+import { getData, saveData } from "../ClassAddContent/api";
+import { message } from "antd";
 
 const initialValue = {
   id: "",
   classname: "",
-  active: "",
+  active: "on",
   discription: "Class add",
 };
 
@@ -14,27 +16,47 @@ function ClassAdd() {
   const [data, setData] = useState(initialValue);
   const { id, classname, active, discription } = data;
   const [visible, setVisible] = useState("hidden");
+  const [param, setParam] = useState(null);
 
   const inputChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
     console.log(e.target.value);
 
     let a = $(".class-add-fan-name").val();
-    if (a !== 0) {
+    if (a.length !== 0) {
       $(".class-add-fan-name").css({ border: "1px solid rgb(0, 255, 55)" });
     }
 
     let b = $(".class-add-fan-id").val();
-    if (b === 4) {
+    if (b.length === 4) {
       $(".class-add-fan-id").css({ border: "1px solid rgb(0, 255, 55)" });
     }
 
-    //    $(".class-add-button").css({ visibility: "visible" });
+    if (b.length === 4 && a.length !== 0) {
+      setVisible("visible");
+    } else {
+      setVisible("hidden");
+    }
   };
 
-  const saveButtonEquals = () => {};
+  const success = () => {
+    message.success("This is a success message");
+  };
+
+  const saveButtonEquals = async () => {
+    await saveData(data);
+    $(".class-add-fan-name").val("");
+    $(".class-add-fan-id").val("");
+    setVisible("hidden");
+    success();
+  };
 
   console.log(data);
+
+  const editdatas = async () => {
+    const response = await getData(localStorage.getItem("ref"));
+    setData(response);
+  };
 
   return (
     <div className="class-add">
@@ -42,6 +64,7 @@ function ClassAdd() {
         <span>Class add activation</span>
         <button
           type="submit"
+          style={{ visibility: visible }}
           onClick={() => saveButtonEquals()}
           className="btn btn-success class-add-button"
         >
@@ -84,6 +107,7 @@ function ClassAdd() {
                     name="id"
                     maxLength={4}
                     max={9999}
+                    placeholder="8989"
                     id="exampleInputEmail1"
                     onChange={(e) => inputChange(e)}
                     aria-describedby="emailHelp"
