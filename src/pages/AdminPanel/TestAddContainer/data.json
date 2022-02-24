@@ -11,6 +11,42 @@
       "answer2": "2005 - yil 23 April",
       "answer3": "2003 - yil 23 April",
       "answer4": "2007 - yil 23 April"
+    },
+    {
+      "id": 2,
+      "questionId": "",
+      "classId": "",
+      "scienceId": "",
+      "question": "uwrhjqwrhgfhwrghklwehflwjefkljewklfjwkejfklewfjlkqjlfkjklqfjlkqjfkljqklfjlqkfjklqjflkjqelkf",
+      "answer": "A",
+      "answer1": "fefqefeffwefwefwefwefwefwefwefewfwefwef",
+      "answer2": "wefweffwfwefef  ewfwfwefweqfwefweqfwqfq",
+      "answer3": "fwefewfwefewffewfwefwefwefwefwefwe",
+      "answer4": "fwefwefwefwefwefwefwe  egwqerfwefwefwefwe"
+    },
+    {
+      "id": 3,
+      "questionId": "",
+      "classId": "",
+      "scienceId": "",
+      "question": "",
+      "answer": "A",
+      "answer1": "",
+      "answer2": "",
+      "answer3": "",
+      "answer4": ""
+    },
+    {
+      "id": 4,
+      "questionId": "3",
+      "classId": "1002",
+      "scienceId": "10002",
+      "question": "O'zbekiston Respublikasi qachon tashkil etilgan.",
+      "answer": "D",
+      "answer1": "2001 - yil",
+      "answer2": "1995 - yil",
+      "answer3": "2001 - yil",
+      "answer4": "1992 - yil"
     }
   ]
 }

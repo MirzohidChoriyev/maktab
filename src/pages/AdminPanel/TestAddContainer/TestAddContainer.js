@@ -9,7 +9,7 @@ function TestAddContainer() {
   return (
     <div>
         <TestSelect />  
-        <TestAdd setRefresh = {setRefresh} />
+        <TestAdd setRefresh = {setRefresh} refresh = {refresh} />
         <TestAddData refresh = {refresh} setRefresh = {setRefresh} />   
     </div>
   )

@@ -18,7 +18,7 @@ const initialValue = {
 }
 
 
-function TestAdd({setRefresh}) {
+function TestAdd({setRefresh, refresh}) {
     const [json, setJson] = useState(initialValue);
     const {id, questionId, classId, scienceId, question, answer, answer1, answer2, answer3, answer4} = json;
 
@@ -36,7 +36,7 @@ function TestAdd({setRefresh}) {
     <div className='test-add'>
         <div className='test-add-container'>
             <div className='test-add-textarea'>
-                <button onClick={()=> saveDataObject()}>Save</button>
+                <button style = {{marginTop: '-10px', background: 'green', color: 'white', width: '60px'}} onClick={()=> saveDataObject()}>Save</button>
                 <div className='test-select-content'>
                 <Row>
                     <Col lg = {3} md = {6} sm = {12}>
@@ -46,7 +46,7 @@ function TestAdd({setRefresh}) {
   <option value = {1001}>6 - Sinflar uchun</option>
   <option value = {1002}>7 - Sinflar uchun</option>
   <option value = {1003}>8 - Sinflar uchun</option>
-</select>
+</select>   
                     </Col>
                     <Col lg = {3} md = {6} sm = {12}>
                         <label>Select a science</label>
