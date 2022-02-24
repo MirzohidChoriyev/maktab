@@ -1,14 +1,14 @@
 {
   "classdata": [
     {
-      "id": "1000",
-      "classname": "Ona tili",
-      "active": "off",
+      "id": "2626",
+      "classname": "Matematika",
+      "active": "on",
       "discription": "Class add"
     },
     {
-      "id": "2728",
-      "classname": "Mirzohid",
+      "id": "3838",
+      "classname": "Ona tili",
       "active": "on",
       "discription": "Class add"
     }

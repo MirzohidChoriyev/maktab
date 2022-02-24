@@ -2,9 +2,8 @@ import axios from "axios";
 
 const url = "http://localhost:3003/classdata";
 
-export const getData = async (id) => {
-  id = id || "";
-  return await axios.get(`${url}/${id}`);
+export const getData = async () => {
+  return await axios.get(url);
 };
 
 export const saveData = async (object) => {

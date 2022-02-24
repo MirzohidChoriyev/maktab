@@ -3,7 +3,7 @@ import "./Style.css";
 import db from "./data.json";
 import { deleteData, getData } from "./api";
 
-function ClassAddData() {
+function ClassAddData({setRefId}) {
   const [json, setJson] = useState([]);
 
   const getDataAll = async () => {
@@ -15,10 +15,6 @@ function ClassAddData() {
     await deleteData(e);
     console.log(e);
     getDataAll();
-  };
-
-  const editdatasStorage = (id) => {
-    window.localStorage.setItem("ref", id);
   };
 
   useEffect(() => {
@@ -57,9 +53,7 @@ function ClassAddData() {
                 <td id="classadddata-edit-td">
                   <button
                     className="classadddata-edit"
-                    onClick={() => {
-                      editdatasStorage(item.id);
-                    }}
+                    onClick={() => setRefId(item.id)}
                   >
                     <i className="fa fa-edit"></i>
                     <span>Edit</span>

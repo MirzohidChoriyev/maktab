@@ -1,0 +1,16 @@
+{
+  "testdata": [
+    {
+      "id": 1,
+      "questionId": "",
+      "classId": "",
+      "scienceId": "10001",
+      "question": "O'zbekiston respublikasi qachon tashkil etilgan.",
+      "answer": "D",
+      "answer1": "2002 - yil 23 April",
+      "answer2": "2005 - yil 23 April",
+      "answer3": "2003 - yil 23 April",
+      "answer4": "2007 - yil 23 April"
+    }
+  ]
+}

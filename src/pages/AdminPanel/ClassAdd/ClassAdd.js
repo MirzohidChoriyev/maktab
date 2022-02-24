@@ -1,36 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import $ from "jquery";
 import "./ClassAdd.css";
 import { getData, saveData } from "../ClassAddContent/api";
 import { message } from "antd";
+import { useParams } from "react-router-dom";
 
 const initialValue = {
   id: "",
   classname: "",
   active: "on",
-  discription: "Class add",
+  discription: "Class add"
 };
 
-function ClassAdd() {
+function ClassAdd({refId}) {
   const [data, setData] = useState(initialValue);
   const { id, classname, active, discription } = data;
   const [visible, setVisible] = useState("hidden");
   const [param, setParam] = useState(null);
+  const [json, setJson] = useState([]);
 
   const inputChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
-    console.log(e.target.value);
+    console.log(data.active);
 
     let a = $(".class-add-fan-name").val();
-    if (a.length !== 0) {
-      $(".class-add-fan-name").css({ border: "1px solid rgb(0, 255, 55)" });
-    }
 
     let b = $(".class-add-fan-id").val();
-    if (b.length === 4) {
-      $(".class-add-fan-id").css({ border: "1px solid rgb(0, 255, 55)" });
-    }
 
     if (b.length === 4 && a.length !== 0) {
       setVisible("visible");
@@ -49,13 +45,6 @@ function ClassAdd() {
     $(".class-add-fan-id").val("");
     setVisible("hidden");
     success();
-  };
-
-  console.log(data);
-
-  const editdatas = async () => {
-    const response = await getData(localStorage.getItem("ref"));
-    setData(response);
   };
 
   return (

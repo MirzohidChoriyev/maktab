@@ -22,8 +22,8 @@ import Allusers from "./pages/AdminPanel/AllUsers/Allusers";
 import AdminStatistics from "./pages/AdminPanel/AdminStatistics/AdminStatistics";
 import ClassAdd from "./pages/AdminPanel/ClassAdd/ClassAdd";
 import ScienceAdd from "./pages/AdminPanel/ScienceAdd/ScienceAdd";
-import TestAdd from "./pages/AdminPanel/TestAdd/TestAdd";
 import ClassAddContent from "./pages/AdminPanel/ClassAddContent/ClassAddContent";
+import TestAddContainer from "./pages/AdminPanel/TestAddContainer/TestAddContainer";
 
 function App() {
   const [direction, setDirection] = useState("");
@@ -102,7 +102,7 @@ function App() {
                       element={<ClassAddContent />}
                     />
                     <Route path="/scienceadd" exact element={<ScienceAdd />} />
-                    <Route path="/quizadd" exact element={<TestAdd />} />
+                    <Route path="/quizadd" exact element={<TestAddContainer />} />
                   </Routes>
                 </div>
               </div>
