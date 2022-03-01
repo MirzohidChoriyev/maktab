@@ -10,10 +10,10 @@ const initialValue = {
   id: "",
   classname: "",
   active: "on",
-  discription: "Class add"
+  discription: "Class add",
 };
 
-function ClassAdd({refId}) {
+function ClassAdd({ refId }) {
   const [data, setData] = useState(initialValue);
   const { id, classname, active, discription } = data;
   const [visible, setVisible] = useState("hidden");
