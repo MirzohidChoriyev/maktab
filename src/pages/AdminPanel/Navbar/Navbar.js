@@ -2,8 +2,9 @@ import { Button, Modal } from "antd";
 import React, { useState } from "react";
 import $ from "jquery";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
-function Navbar({ setWeight }) {
+function Navbar({ setWeight, setDirection }) {
   const [visible, setVisible] = useState(false);
 
   return (
@@ -32,26 +33,38 @@ function Navbar({ setWeight }) {
             <span className="navbar-ad-name">Choriyev Mirzohid</span>
           </div>
         </div>
-        <div>
-          <Modal visible={visible} footer={false} closable={false}>
-            <div className="navbar-admin-image-modal">
-              <img src="https://choriyevabout.netlify.app/image/mirzohid.jpg" />
-            </div>
-            <div style={{ marginTop: "20px" }}>
-              <Button onClick={() => setVisible(false)} type="primary" danger>
-                Close
-              </Button>
-              <Button type="primary" style={{ marginLeft: "6px" }}>
-                <i className="fa fa-phone" style={{ marginRight: "4px" }}></i>
-                Call
-              </Button>
-              <Button type="primary" style={{ marginLeft: "6px" }}>
-                Message
-                <i className="fa fa-share" style={{ marginLeft: "4px" }}></i>
-              </Button>
-            </div>
-          </Modal>
+
+        <div className="">
+          <a href = "http://kun.uz">
+            <Button
+              type="primary"
+              style={{ fontFamily: "verdana", borderRadius: "5px" }}
+              onClick={() => setDirection("site")}
+            >
+              Site
+            </Button>
+          </a>
         </div>
+      </div>
+      <div>
+        <Modal visible={visible} footer={false} closable={false}>
+          <div className="navbar-admin-image-modal">
+            <img src="https://choriyevabout.netlify.app/image/mirzohid.jpg" />
+          </div>
+          <div style={{ marginTop: "20px" }}>
+            <Button onClick={() => setVisible(false)} type="primary" danger>
+              Close
+            </Button>
+            <Button type="primary" style={{ marginLeft: "6px" }}>
+              <i className="fa fa-phone" style={{ marginRight: "4px" }}></i>
+              Call
+            </Button>
+            <Button type="primary" style={{ marginLeft: "6px" }}>
+              Message
+              <i className="fa fa-share" style={{ marginLeft: "4px" }}></i>
+            </Button>
+          </div>
+        </Modal>
       </div>
     </div>
   );

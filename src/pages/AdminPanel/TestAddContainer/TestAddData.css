@@ -1,0 +1,49 @@
+#testadd-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgb(204, 204, 204);
+  border-radius: 5px;
+}
+
+#testadd-table td,
+#testadd-table th {
+  border: 1px solid #ddd;
+  padding: 10px;
+  position: relative;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#testadd-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#testadd-table tr:hover {
+  background-color: #ddd;
+}
+
+#testadd-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
+#information-not{
+  width: 100%;
+  background-color: rgb(204, 204, 204);
+  color: rgb(80, 80, 80);
+}
+#test-que-id{
+   width: 30px;
+   color: black;
+   font-weight: 600;
+   text-align: center;
+}
+.test-add-icon-see{
+  position: absolute;
+  right: 5px;
+  color: rgb(236, 101, 22);
+  top: 7px;
+  cursor: pointer;
+}

@@ -174,18 +174,6 @@ function Sidebar() {
           </div>
         </div>
       </div>
-
-      <Link to="/adminpanel">
-        <div className="sidebar-bottom">
-          <span className="sidebar-bottom-item">
-            <i
-              class="fa fa-user"
-              style={{ color: "white", fontSize: "19px", marginRight: "5px" }}
-            ></i>
-            Admin panelga kirish
-          </span>
-        </div>
-      </Link>
     </div>
   );
 }
