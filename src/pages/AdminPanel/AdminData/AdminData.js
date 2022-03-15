@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./AdminData.css";
 
 function AdminData() {
@@ -13,9 +14,11 @@ function AdminData() {
             Sayt foydalanuvchilari
           </div>
           <div>
+            <Link to = "/allusers">
             <button id="admindata-see-data">
               See all <i class="fa fa-share"></i>
             </button>
+            </Link>
           </div>
         </div>
         <table id="admindata-table">
