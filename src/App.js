@@ -30,7 +30,7 @@ function App() {
   const [eni, setEni] = useState("300px");
 
   const directionFunc = () => {
-    setDirection("site");
+    setDirection("admin");
   };
 
   const setWeight = () => {
