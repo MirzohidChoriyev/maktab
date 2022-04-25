@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div>
-      {direction === "admin" ? (
+      {direction === "site" ? (
         <div className="App">
           <Router>
             <Routes>
