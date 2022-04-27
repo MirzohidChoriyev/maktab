@@ -1,35 +1,30 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import React from 'react'
+import "./Navbar.css"
+import {Link} from 'react-router-dom'
 
-function Navbar() {
-  return (
-    <div className="Navbar">
-      <div className="navbar-container">
-        <div className="navbar-left">
-          <div className="navbar-logo">
-            <span className="navbar-logo-icon">
-              <i class="fa fa-user-circle" aria-hidden="true"></i>
-            </span>
-            <span className="navbar-logo-text">Choriyev Mirzohid</span>
-          </div>
-        </div>
-        <div className="navbar-right">
-          <Link to="/classes" style={{ color: "white" }}>
-            <span className="navbar-item">TESTLAR</span>
-          </Link>
-          <Link to="/results">
-            <span className="navbar-item">NATIJALAR</span>
-          </Link>
-          <span className="navbar-item">DARSLIKLAR</span>
-          <span className="navbar-item">MAKTAB FAOLLARI</span>
-          <Link to="/news" style={{ color: "white" }}>
-            <span className="navbar-item">YANGILIKLAR</span>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
+function Navbar(){
+    return(
+            <div className="navbar-container">
+                <div className="navbar-links">
+                    <ul>
+                        <li>Testlar</li>
+                        <li>Testlar</li>
+                        <li>Testlar</li>
+                        <li>Testlar</li>
+                        <li>Testlar</li>
+                    </ul>
+                </div>
 
-export default Navbar;
+                <div className="navbar-user">
+                    <span className="navbar-user-icon">
+                        <i className='fa fa-user'></i>
+                    </span>
+                    <span className="navbar-user-item">
+                        <Link to='/accauntlogin'>
+                            Kirish
+                        </Link>
+                    </span>
+                </div>
+            </div>
+    );
+} export default Navbar;

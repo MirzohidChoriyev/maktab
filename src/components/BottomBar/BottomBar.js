@@ -10,7 +10,7 @@ function BottomBar() {
         <Link to="/questionget" style={{ color: "white" }}>
           <span className="bottom-item">
             <i class="fa fa-question-circle-o bottom-question"></i>
-            <span>Savolingiz bo'lsa marhamat?</span>
+            <span>Savol va takliflar uchun</span>
           </span>
         </Link>
         <span className="bottom-item">
@@ -19,19 +19,6 @@ function BottomBar() {
           </span>
           <span>+998 (99) 033 31 79</span>
         </span>
-        <span className="bottom-item">
-          <span className="bottom-icon">
-            <i class="fa fa-envelope-o bottom-email"></i>
-          </span>
-          <span>buxorobuxoro2001@gmail.com</span>
-        </span>
-
-        <Link to="/accauntlogin" style={{ color: "white" }}>
-          <span className="bottom-item">
-            <i class="fa fa-user bottom-login"></i>
-            <span>Ma'lumotlaringiz</span>
-          </span>
-        </Link>
       </div>
     </div>
   );

@@ -12,13 +12,16 @@ import QuizEnd from "../QuizTest/QuizTestContainer/QuizEnd";
 import QuizResult from "../QuizTest/QuizTestContainer/QuizResult";
 import quiztest from "../QuizTest/TestsData.json";
 import Notice from "../QuizTest/Notice/Notice";
+import axios from "axios";
+import {url} from "../../components/Utils/Api/Api";
 
 let interval;
 let interval1;
 
 function Tests() {
-  const [data, setData] = useState(datajson);
+  const [data, setData] = useState([]);
   const [results, setResults] = useState([]);
+
   const [show, setShow] = useState(false);
   const [number, setNumber] = useState(0);
   const [step, setStep] = useState(1);
@@ -31,6 +34,19 @@ function Tests() {
   const [sanagich, setSanagich] = useState(0);
   const [change, setChange] = useState([]);
   const [isVisible, setVisible] = useState(false);
+
+  const data_get_all = () => {
+    axios({
+      url: `${url}/science/getall`,
+      method: 'GET'
+    }).then((response) => setData(response.data.object))
+        .catch(error => console.log(error));
+    console.log("Data:", data);
+  }
+
+  useEffect(() => {
+    data_get_all();
+  }, [])
 
   const clearTime = () => {
     if (step === 3) {
@@ -81,6 +97,7 @@ function Tests() {
   const searchText = (event) => {
     setFilter(event.target.value);
   };
+
   let dataSearch = data.filter((item) => {
     return Object.keys(item).some((key) =>
       item[key]
@@ -139,7 +156,7 @@ function Tests() {
                 <Row>
                   {dataSearch.map(
                     (item, index) =>
-                      Number(path) === item.classId && (
+                      Number(path) === item.classes.id && (
                         <TestsCategory
                           key={item.id}
                           item={item}
@@ -172,7 +189,7 @@ function Tests() {
               <div className="tests-open">
                 <span className="tests-open-title">Fan nomi:</span>
                 <span className="tests-class test-open">
-                  {data[number].categorytitle}
+
                 </span>
               </div>
               <div className="tests-open">
@@ -182,13 +199,13 @@ function Tests() {
               <div className="tests-open">
                 <span className="tests-open-title">Test soni:</span>
                 <span className="tests-count test-open">
-                  {data[number].testcount} ta
+
                 </span>
               </div>
               <div className="tests-open" style={{ marginBottom: "20px" }}>
                 <span className="tests-open-title">Belgilangan vaqt:</span>
                 <span className="tests-time test-open">
-                  {data[number].time} min
+
                 </span>
               </div>
             </div>

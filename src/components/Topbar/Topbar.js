@@ -1,60 +1,90 @@
-import React, { useEffect } from "react";
-import "./Topbar.css";
+import React, {useEffect} from 'react'
+import "./Topbar.css"
+import {Link} from "react-router-dom";
+import Sidebar from "../Sidebar/Sidebar";
 import $ from "jquery";
-import { Link } from "react-router-dom";
 
-function Topbar() {
-  const searchShow = () => {
-    $(".topbar-item-search").click(() => {
-      $(".topbar-search").slideToggle();
-    });
-  };
-  const barsShow = () => {
-    $(".sidebar-menu-span").click(() => {
-      $(".sidebar").css({ left: "0px" });
-    });
-  };
-  useEffect(() => {
-    searchShow();
-    barsShow();
-  }, []);
-  return (
-    <div className="Topbar">
-      <div className="topbar-container">
-        <div className="topbar-left">
-          <Link to="/questionget" style={{ color: "white" }}>
-            <span className="topbar-item">Savolingiz bo'lsa marhamat?</span>
-          </Link>
-          <span className="topbar-item">
-            <span className="topbar-icon">
-              <i class="fa fa-phone"></i>
-            </span>
-            +998 (99) 033 31 79
-          </span>
-          <span className="topbar-item">
-            <span className="topbar-icon">
-              <i class="fa fa-envelope-o"></i>
-            </span>
-            buxorobuxoro2001@gmail.com
-          </span>
-        </div>
-        <div className="topbar-right">
-          <span className="topbar-item-user">Ma'lumotlaringiz</span>
+function Topbar(){
 
-          <span className="topbar-item-search">
-            <i className="fa fa-search"></i>
-          </span>
-        </div>
-        <div className="topbar-search">
-          <input
-            type="search"
-            placeholder="Qidiruv"
-            className="topbar-search-item"
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
+    const Toggle = () => {
+        $(".bars-icons").click(() => {
+            $(".sidebar").css({ left: "0px" });
+        });
+    };
 
-export default Topbar;
+    useEffect(() =>{
+        Toggle();
+    }, [])
+
+    return(
+        <div>
+            <Sidebar />
+            <div className="navbar-content">
+                <div className="navbar-menu-icon">
+                    <i className='fa fa-bars bars-icons'></i>
+                </div>
+                <div className="site-input-search">
+                    <input type="text" id = "search-item" placeholder="Qidirish" />
+                </div>
+            </div>
+
+            <div className="body-content">
+                <div className="row">
+                    <div className="col-lg-6 col-md-12 col-sm-12">
+                        <div className="image-content">
+                            <div className="image-div">
+                                <img
+                                    id="image"
+                                    alt="Image"
+                                    src="http://static.norma.uz/images/138882_f82480491ac024e3b36ba6d16656.jpg"
+                                />
+                            </div>
+                            <div className="opacity-content"></div>
+                        </div>
+                    </div>
+
+                    <div className="col-lg-6 col-md-12 col-sm-12">
+                        <div className="data-content">
+                            <div className="data-item">
+                                <div className="data-item1">
+                                    <span id="data-title">Masalalarga urinib ko'ring</span>
+                                    <Link to={`/class/${1}`}>
+                                        <button id="data-btn">Kirish</button>
+                                    </Link>
+                                </div>
+                                <div className="data-item2">
+                                    <i className="fa fa-question-circle data-icons"></i>
+                                </div>
+                            </div>
+
+                            <div className="data-item">
+                                <div className="data-item1">
+                                    <span id="data-title">Masalalaringizni yuboring</span>
+                                    <Link to={`/class/${1}`}>
+                                        <button id="data-btn">Kirish</button>
+                                    </Link>
+                                </div>
+                                <div className="data-item2">
+                                    <i className="fa fa-share data-icons"></i>
+                                </div>
+                            </div>
+
+                            <div className="data-item">
+                                <div className="data-item1">
+                                    <span id="data-title">Barcha test savollari</span>
+                                    <Link to={`/class/${1}`}>
+                                        <button id="data-btn">Kirish</button>
+                                    </Link>
+                                </div>
+                                <div className="data-item2">
+                                    <i className="fa fa-question-circle data-icons"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+} export default Topbar;

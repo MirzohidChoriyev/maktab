@@ -1,225 +1,87 @@
-.accaunt-login {
-  height: 100%;
-  width: 100%;
-  padding-top: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.accaunt-login{
+  padding: 50px 0px;
 }
-.form-div {
-  position: relative;
-}
-.accaunt-container {
-  width: 500px;
+.accaunt-container{
+  width: 80%;
   margin: auto;
-  background-color: aliceblue;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0px 0px 3px rgb(206, 206, 206);
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 17px #dcdcdc;
+  padding: 40px 40px;
 }
-.accaunt-title {
-  font-size: 20px;
-  font-weight: 500;
-  display: block;
+.account-item1{
+
+  background: #be13d9;
+}
+.account-image{
+}
+
+.login-title{
   text-align: center;
-  margin-bottom: 23px;
-  color: rgb(56, 56, 56);
+  font-size: 23px;
+  font-family: "Cabin", sans-serif;
+  font-weight: 600;
+  color: #888888;
 }
-.accaunt-container #fullname,
-#type,
-#number {
+
+.input-class, .select-class{
+  outline: none;
+  border: 1px solid #b2b2b2;
   display: block;
   width: 100%;
-  border: 1px solid rgb(190, 190, 190);
-  outline: none;
-  padding: 5px 8px;
-  border-radius: 4px;
-  color: rgb(77, 77, 77);
+  margin-bottom: 15px;
+  padding: 4px 7px;
+  font-size: 17px;
+  border-radius: 3px;
   font-weight: 500;
-  margin-bottom: 7px;
+}
+
+.input-class:focus{
+  border: 1px solid deepskyblue;
+}
+
+.select-class{
+  padding: 6px 7px;
+}
+.label-class{
+  display: block;
+  font-size: 17px;
+  color: #6a6a6a;
+  font-weight: 500;
+}
+.account-item2{
+  padding: 10px 40px;
+
+}
+.login-body{
+  margin-top: 25px;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
-.accaunt-container label {
-  font-size: 15px;
-  font-weight: 500;
-  color: rgb(104, 104, 104);
-  margin-bottom: 2px;
+#space{
+  color: crimson;
+  margin-right: 2px;
 }
-.create-error-text {
-  color: red;
-}
-.accaunt-container #button {
-  width: 100%;
-  margin-top: 10px;
-  background-color: rgb(0, 140, 255);
+#accaunt-submit{
+  background: #be13d9;
   color: white;
-  border: none;
+  font-size: 16px;
+  width: 100px;
+  margin-top: 10px;
+  border: 1px solid white;
+  border-radius: 3px;
   outline: none;
   padding: 5px 0px;
-  border-radius: 3px;
-  margin-top: 15px;
-  margin-bottom: 10px;
 }
-.accaunt-container #button:focus {
-  box-shadow: 0px 0px 6px gray;
-  background-color: rgb(6, 126, 224);
+#accaunt-submit:hover, #accaunt-submit:focus{
+  background: #d036ea;
 }
-.input-icons {
-  position: absolute;
-  right: 10px;
+.label-class-checkbox{
+  margin-left: 4px;
+}
+#is_username{
+  color: red;
   font-size: 13px;
-  padding: 2px;
-  top: 34px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(21, 223, 65);
-  color: white;
-  visibility: hidden;
-}
-
-.input-icons-error {
-  position: absolute;
-  right: 10px;
-  font-size: 13px;
-  padding: 2px;
-  top: 34px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: red;
-  color: white;
-  visibility: hidden;
-  width: 17px;
-}
-
-.input-icons-phone {
-  position: absolute;
-  right: 10px;
-  font-size: 13px;
-  padding: 3px;
-  top: 34px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(255, 255, 255);
-  color: green;
-  visibility: visible;
-  font-size: 15px;
-  width: 20px;
-}
-
-@media screen and (max-width: 700px) {
-  .accaunt-login {
-    height: 100%;
-    width: 100%;
-    padding-top: 100px;
-  }
-  .accaunt-container {
-    width: 450px;
-    margin: auto;
-    background-color: aliceblue;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 3px rgb(206, 206, 206);
-  }
-  .accaunt-title {
-    font-size: 18px;
-    font-weight: 500;
-    display: block;
-    text-align: center;
-    margin-bottom: 23px;
-    color: rgb(56, 56, 56);
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .accaunt-login {
-    height: 100%;
-    width: 100%;
-    padding-top: 85px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-  .accaunt-container {
-    width: 100%;
-    margin: auto;
-    background-color: aliceblue;
-    padding: 18px 15px 20px 15px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 3px rgb(206, 206, 206);
-  }
-  .accaunt-title {
-    font-size: 18px;
-    font-weight: 500;
-    display: block;
-    text-align: center;
-    margin-bottom: 23px;
-    color: rgb(56, 56, 56);
-  }
-  .accaunt-container #fullname,
-  #type,
-  #number {
-    display: block;
-    width: 100%;
-    border: 1px solid rgb(190, 190, 190);
-    outline: none;
-    padding: 5px 8px;
-    border-radius: 4px;
-    color: rgb(77, 77, 77);
-    font-weight: 500;
-    margin-bottom: 7px;
-    font-size: 15px;
-  }
-  .accaunt-container label {
-    font-size: 14px;
-    font-weight: 500;
-    color: rgb(104, 104, 104);
-    margin-bottom: 2px;
-  }
-  .input-icons {
-    position: absolute;
-    right: 7px;
-    font-size: 13px;
-    padding: 2px;
-    top: 34px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(21, 223, 65);
-    color: white;
-  }
-
-  .input-icons-error {
-    position: absolute;
-    right: 7px;
-    font-size: 13px;
-    padding: 2px;
-    top: 34px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: red;
-    color: white;
-    width: 17px;
-  }
-
-  .input-icons-phone {
-    position: absolute;
-    right: 6px;
-    font-size: 13px;
-    padding: 3px;
-    top: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
-    color: green;
-    visibility: visible;
-    font-size: 14px;
-    width: 20px;
-  }
 }
