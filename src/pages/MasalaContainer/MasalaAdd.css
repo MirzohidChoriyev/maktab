@@ -1,0 +1,107 @@
+.masala-textarea{
+    border: 1px solid rgb(155, 155, 155);
+    padding: 1px 5px;
+    border-radius: 3px;
+    outline: none;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+.body-to-back{
+    position: absolute;
+    top: 57px;
+    right: 20px;     
+    z-index: 1010;
+}  
+.back-button{
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #854fff;
+    padding: 2px 8px;   
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border-radius: 3px;
+}  
+.masala-add{
+    box-shadow: 0px 0px 5px #d8d8d8;
+    border-radius: 3px 3px 2px 2px;
+    background-color: white;
+    width: 550px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-top: 3px solid rgb(26, 237, 26);
+}
+.masala-add-button{
+    margin-left: 20px;
+}
+.masala-add-comment{
+    outline: none;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    padding: 5px 5px;
+    width: 200px;
+}
+.masala-data-content{
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 600px){
+
+}
+
+@media screen and (max-width: 600px){
+    .masala-add{
+        box-shadow: 0px 0px 5px #d8d8d8;
+        border-radius: 3px 3px 2px 2px;
+        background-color: white;
+        width: 100%;
+        padding: 5px 10px;
+        margin-bottom: 15px;
+        border-top: 3px solid rgb(26, 237, 26);
+    }
+}
+
+@media screen and (max-width: 550px){
+    .masala-add{
+        box-shadow: 0px 0px 5px #d8d8d8;
+        border-radius: 3px 3px 2px 2px;
+        background-color: white;
+        width: 100%;
+        padding: 5px 5px;
+        margin-bottom: 15px;
+        border-top: 3px solid rgb(26, 237, 26);
+    }
+    .body-to-back{
+        position: absolute;  
+        top: 55px;
+        right: 20px;     
+        z-index: 1010;
+    }  
+    .masala-container{
+        padding-top: 75px;
+    }
+    .masala-add-comment{
+        outline: none;
+        border: 1px solid rgb(220, 220, 220);
+        border-bottom: 1px solid rgb(163, 163, 163);
+        border-radius: 2px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        padding: 3px 3px;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .masala-add-comment{
+        outline: none;
+        border: 1px solid rgb(199, 199, 199);
+        border-radius: 2px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        padding: 4px 5px;
+        width: auto;
+    }    
+}

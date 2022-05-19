@@ -8,7 +8,6 @@ function TestAddContainer() {
   const [refresh, setRefresh] = useState("save");
   return (
     <div>
-        <TestSelect />  
         <TestAdd setRefresh = {setRefresh} refresh = {refresh} />
         <TestAddData refresh = {refresh} setRefresh = {setRefresh} />   
     </div>

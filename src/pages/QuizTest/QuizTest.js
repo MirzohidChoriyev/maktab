@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./QuizTest.css";
 import QuizTestMain from "./QuizTestMain.js";
 import QuizTestScore from "./QuizTestScore.js";
-import { datajson } from "../Tests/Data";
-import $ from "jquery";
-import quizdata from "./TestsData.json";
-import { Button } from "antd";
 import QuizEnd from "./QuizTestContainer/QuizEnd";
 import { formatTime } from "../HardTests/Content/utils";
+import axios from "axios";
+import {url} from "../../components/Utils/Api/Api";
 
 function QuizTest({
   setStep,
@@ -27,36 +25,53 @@ function QuizTest({
   isVisible,
   setVisible,
 }) {
-  const [data, setData] = useState(quizdata.data);
+  
+  const [data, setData] = useState([]);
+
+  const get_data_all = () => {
+     axios({
+       url: `${url}/question/getall`,
+       method: 'GET'
+     }).then((response) => setData(response.data.object))
+         .catch((error) => console.log(error));
+  }
+
+  useEffect(() => {
+    get_data_all();
+  }, [])
+
   const [stepEnd, setEndStep] = useState(step);
 
   useEffect(() => {
     setStep(stepEnd);
   }, [stepEnd]);
 
-  // console.log(data);
   const [count, setCount] = useState(0);
-  const [sinfId, setSinfId] = useState(0);
-  const [fanId, setFanId] = useState(0);
 
-  const getId = () => {
-    setSinfId();
-    setFanId();
-  };
-  useEffect(() => {
-    getId();
-  }, []);
-  console.log("sinfid", sinfId);
-  console.log("fanId", fanId);
   useEffect(() => {
     let dataSort = data.filter(
       (item) =>
-        Number(localStorage.getItem("sinfId")) === item.classId &&
-        Number(localStorage.getItem("fanId")) === item.scienseId
+        Number(localStorage.getItem("sinfId")) === item.class_id &&
+        Number(localStorage.getItem("fanId")) === item.science_id
     );
-    setQuiz(dataSort);
-    setQuizdata(dataSort);
   }, []);
+
+  useEffect(() => {
+    setQuiz(data.filter(
+        (item) =>
+            Number(localStorage.getItem("sinfId")) === item.class_id &&
+            Number(localStorage.getItem("fanId")) === item.science_id
+    ));
+
+    setQuizdata(data.filter(
+        (item) =>
+            Number(localStorage.getItem("sinfId")) === item.class_id &&
+            Number(localStorage.getItem("fanId")) === item.science_id
+    ));
+  }, []);
+
+
+  console.log("question", quiz);
 
   return (
     <div>
@@ -89,6 +104,7 @@ function QuizTest({
               setSanagich={setSanagich}
               setChange={setChange}
               change={change}
+              data={data}
             />
           </div>
           <div className="quiz-score">

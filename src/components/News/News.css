@@ -29,16 +29,18 @@
     right: 0px;
     width: 100%;
     height: 45px;
-    background-color: rgb(9, 57, 85);
+    background-color: white;
     color: white;
     display: flex;
     align-items: center;
     padding-left: 80px; 
-    z-index: 999;  
+    z-index: 999;
+    box-shadow: 0px 0px 5px #cecece;
 }
 .news-title{
-    font-size: 17px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: #529090;
 }
 .news-badge{
     margin-left: 20px;
@@ -62,7 +64,7 @@
 }
 .news-search-item{
     border-radius: 3px;
-    border: 1px solid rgb(67, 231, 231);
+    border: 1px solid gray;
     outline: none;
     padding: 3px 10px;
     color: rgb(29, 29, 29);
@@ -71,7 +73,7 @@
 }
 .fa-search-icon{
     margin-left: -20px;
-    color: rgb(70, 70, 70);     
+    color: rgb(125, 125, 125);
     cursor: pointer;
 }
 .news-bars{
@@ -79,8 +81,11 @@
     top: 9px;
     left: 20px;
     font-size: 17px;
-    color: white;
+    color: #696969;
     cursor: pointer;
+}
+.news-bars:hover, .news-bars:focus{
+    color: #404040;
 }
 .news-container{
     padding: 65px 30px 20px 30px;
@@ -174,15 +179,12 @@
         right: 0px;
         width: 100%;
         height: 45px;
-        background-color: rgb(9, 57, 85);
-        color: white;
         display: flex;
         align-items: center;
         padding-left: 80px;   
     }
     .news-title{
-        font-size: 17px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 18px;
     }
     .news-badge{
         margin-left: 20px;
@@ -212,8 +214,6 @@
         top: 9px;
         left: 20px;
         font-size: 17px;
-        color: white;
-        cursor: pointer;
     }
     .news-container{
         padding-right: 30px;
@@ -243,8 +243,6 @@
         right: 0px;
         width: 100%;
         height: 45px;
-        background-color: rgb(9, 57, 85);
-        color: white;
         display: flex;
         align-items: center;
         padding-left: 25px;     
@@ -290,7 +288,7 @@
         top: 53px;
         left: 20px;
         font-size: 16px;
-        color: rgb(22, 11, 119);
+        color: #52687a;
         cursor: pointer;
         border: 1px solid rgb(175, 175, 175);
         display: inline;
@@ -323,15 +321,12 @@
         right: 0px;
         width: 100%;
         height: 45px;
-        background-color: rgb(9, 57, 85);
-        color: white;
         display: flex;
         align-items: center;
         padding-left: 20px;   
     }
     .news-title{
-        font-size: 15px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 17px;
     }
     .news-badge{
         margin-left: 13px;
@@ -370,8 +365,6 @@
         top: 53px;
         left: 20px;
         font-size: 16px;
-        color: rgb(22, 11, 119);
-        cursor: pointer;
         border: 1px solid rgb(175, 175, 175);
         display: inline;
         width: 25px;
@@ -400,5 +393,18 @@
     .news-count{
         font-size: 11px;
         padding: 0px 2px;
+    }
+}
+@media screen and (max-width: 350px){
+    .news-search-item{
+        border-radius: 3px;
+        width: 200px;
+        background-color: rgb(221, 255, 255);
+        color: rgb(53, 53, 53);
+        border: 1px solid rgb(114, 114, 114);
+        outline: none;
+        padding: 4px 10px;
+        padding-right: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 }

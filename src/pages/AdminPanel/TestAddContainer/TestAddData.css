@@ -5,6 +5,13 @@
   box-shadow: 0px 0px 10px rgb(204, 204, 204);
   border-radius: 5px;
 }
+.test-add-data-container{
+  overflow-x: auto;
+}
+.question-data-table{
+  width: 100%;
+  background-color: white;
+}
 
 #testadd-table td,
 #testadd-table th {

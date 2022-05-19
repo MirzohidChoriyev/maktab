@@ -4,11 +4,12 @@ import ClassAdd from "../ClassAdd/ClassAdd";
 import ClassAddData from "./ClassAddData";
 
 function ClassAddContent() {
-  const [refId, setRefId] = useState(null);
+    const [data_ref, setData_ref] = useState("1");
+
   return (
     <div>
-      <ClassAdd refId = {refId} />
-      <ClassAddData setRefId = {setRefId} />
+      <ClassAdd setData_ref={setData_ref} data_ref={data_ref} />
+      <ClassAddData data_ref={data_ref} setData_ref={setData_ref} />
     </div>
   );
 }

@@ -1,23 +1,40 @@
 .sitebottom {
   width: 100%;
-  height: 40px;
-  background-color: #1b1b1b;
-  color: rgb(212, 212, 212);
+  height: 60px;
+  background-color: white;
+  color: rgb(63, 100, 151);
   padding: 0px 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgb(212, 212, 212);
 }
 .sitebottom-item {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .sitebottom-version {
   margin-left: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .sitebottom-text {
   margin-left: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
 }
+.sitebottom-number{
+  border: 1px solid rgb(141, 160, 178);
+  border-radius: 3px;
+  padding: 3px 10px;
+  font-weight: 500;
+}
+.sitebottom-number{
+  display: flex;
+  align-items: center;
+}
+#number-site{
+  margin-left: 5px;
+}
+
 @media screen and (max-width: 670px) {
   .sitebottom {
     width: 100%;
@@ -66,7 +83,7 @@
     width: 100%;
     padding: 0px 20px;
     padding-left: 10px;
-    display: flex;
+    display: none;
     align-items: center;
     font-size: 13px;
   }

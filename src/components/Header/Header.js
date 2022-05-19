@@ -14,6 +14,7 @@ function Header(){
             method: 'GET'
         }).then(response => setData(response.data.object))
             .catch(err => console.error(err));
+        console.log(data);
     }
 
 useEffect(() =>{
@@ -21,7 +22,7 @@ useEffect(() =>{
 }, [])
 
     return(
-        <div>
+        <div style={{backgroundColor: '#f5f6fa'}}>
             <div className="courses-content">
                 <div className="course-content-title">
                     <span id="cs-text">Savollar va testlar</span>
@@ -33,9 +34,9 @@ useEffect(() =>{
                             <div className="col-lg-4 col-md-6 col-sm-12">
                                 <div className="course-item">
                                     <span id="course-title">{item.class_name}</span>
-                                    <div id="course-body" style={{borderLeft: `4px solid ${'blue'}`}}>Matematika</div>
-                                    <Link to={`/class/${1}`}>
-                                        <button id="course-btn" style={{background: `${'darkorange'}`}}>Kirish</button>
+                                    <div id="course-body">Matematika</div>
+                                    <Link to={`/class/${item.id}`}>
+                                        <button id="course-btn">Kirish</button>
                                     </Link>
                                 </div>
                             </div>

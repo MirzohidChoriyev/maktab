@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useHistory } from "react-router-dom";
 import QuestionGet from "./pages/QuestionGet/QuestionGet";
 import AccauntLogin from "./pages/AccauntLogin/AccauntLogin";
-import CreateAccaunt from "./pages/CreateAccount/CreateAccaunt";
+import OpenAccaunt from "./pages/CreateAccount/OpenAccaunt";
 import Home from "./pages/Home/Home";
 import NewsList from "./pages/NewsList/NewsList";
 import ListBook from "./pages/ListBook/ListBook";
@@ -20,13 +20,18 @@ import AdminStatistics from "./pages/AdminPanel/AdminStatistics/AdminStatistics"
 import ScienceAdd from "./pages/AdminPanel/ScienceAdd/ScienceAdd";
 import ClassAddContent from "./pages/AdminPanel/ClassAddContent/ClassAddContent";
 import TestAddContainer from "./pages/AdminPanel/TestAddContainer/TestAddContainer";
+import MasalaContainer from "./pages/MasalaContainer/MasalaContainer";
+import MasalaAdd from "./pages/MasalaContainer/MasalaAdd";
+import AllMasala from "./pages/AllMasala/AllMasala";
+import Notification from "./components/Topbar/Notification";
 
 function App() {
   const [direction, setDirection] = useState("");
   const [eni, setEni] = useState("300px");
+  const [save, setSave] = useState("");
 
   const directionFunc = () => {
-    setDirection("admin");
+    setDirection("site");
   };
 
   const setWeight = () => {
@@ -54,9 +59,9 @@ function App() {
         <div className="App">
           <Router>
             <Routes>
-              <Route path="/" exact element={<Home />} />
-              <Route path="/createaccount" exact element={<CreateAccaunt />} />
-              <Route path="/accauntlogin" exact element={<AccauntLogin />} />
+              <Route path="/" exact element={<Home save={save} setSave={setSave} />} />
+              <Route path="/openaccount" exact element={<OpenAccaunt />} />
+              <Route path="/accountlogin" exact element={<AccauntLogin save={save} setSave={setSave} />} />
               <Route path="/questionget" exact element={<QuestionGet />} />
               <Route path="/bookdownload" exact element={<ListBook />} />
               <Route path="/news" exact element={<NewsList />} />
@@ -64,9 +69,13 @@ function App() {
               <Route path="/class/:id" exact element={<Tests />} />
               <Route path="/hardtest" exact element={<HardTest />} />
               <Route path="/results" exact element={<Results />} />
+              <Route path="/masalar" exact element={<MasalaContainer />} />
+              <Route path="/addmasala" exact element={<MasalaAdd />} />
+              <Route path="/allmasala" exact element={<AllMasala />} />  
+              <Route path = "/notification" exact element={<Notification />} />
             </Routes>
-          </Router>
-        </div>
+          </Router>   
+        </div>   
       ) : (
         <div className="AppAdminPanel">
           <Router>
@@ -85,7 +94,7 @@ function App() {
                       path="/"
                       exact
                       element={<AdminHome setWeight={setWeight} />}
-                    />
+                    />   
                     <Route path="/allusers" exact element={<Allusers />} />
                     <Route
                       path="/statistics"

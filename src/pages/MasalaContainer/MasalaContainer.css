@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.masala-container{
+    padding-top: 45px;
+}
+.masalar{
+    padding: 30px 30px;
+}
+.masala-item{
+    box-shadow: 0px 0px 5px #d8d8d8;
+    border-radius: 3px 3px 2px 2px;
+    background-color: white;
+    width: 70%;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-top: 3px solid rgb(26, 237, 26);
+}
+.masala-title{
+    border-bottom: 1px solid #bac8cf;
+    padding-bottom: 5px;
+}
+.masala-user-image{
+    background-color: #fc6eb9;
+    color: white;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 6px; 
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+#masala-user-text{
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #5c6869;
+}
+.masala-body{
+    margin-top: 5px;
+    font-size: 17px;
+    color: #434343;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(134, 134, 134);
+    padding: 0px 5px;
+}
+@media screen and (max-width: 1000px){
+    .masala-item{
+        box-shadow: 0px 0px 5px #d8d8d8;
+        border-radius: 3px 3px 2px 2px;
+        background-color: white;  
+        width: 700px;
+        padding: 5px 10px;
+        margin-bottom: 15px;
+        border-top: 3px solid rgb(26, 237, 26);
+    }
+    
+}
+
+@media screen and (max-width: 700px){
+    .masala-item{
+        box-shadow: 0px 0px 5px #d8d8d8;
+        border-radius: 3px 3px 2px 2px;  
+        background-color: white;  
+        width: 100%;
+        padding: 5px 10px;
+        margin-bottom: 15px;
+        border-top: 3px solid rgb(26, 237, 26);
+    }
+    
+}
+@media screen and (max-width: 550px){
+    .masalar{
+        padding: 30px 10px;
+    }   
+    #masala-user-text{
+        font-size: 12px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;  
+        color: #5c6869;
+    }
+    .masala-body{
+        margin-top: 5px;  
+        font-size: 16px;  
+        color: #434343;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        color: rgb(134, 134, 134);  
+        padding: 0px 0px;  
+    }
+}

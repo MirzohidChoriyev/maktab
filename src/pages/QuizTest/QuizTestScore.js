@@ -1,12 +1,9 @@
 import { data } from "jquery";
 import React, { useEffect, useState } from "react";
 import "./QuizTest.css";
-import { Button } from "antd";
-import { datajson } from "../Tests/Data";
 import { formatTime } from "../HardTests/Content/utils";
-
 function QuizTestScore({ data, dedlineTime, setVisible, sanagich, change }) {
-  console.log(1811819, change);
+
   return (
     <div className="quiztest-score">
       <div className="qs-container">
@@ -25,7 +22,7 @@ function QuizTestScore({ data, dedlineTime, setVisible, sanagich, change }) {
         <div className="qs-body">
           <div className="qs-fan">
             <span id="qs-fan-item">
-              {datajson[localStorage.getItem("fanIndexId")].categorytitle}
+              {/*{datajson[localStorage.getItem("fanIndexId")].categorytitle}*/}
             </span>
             <span id="qs-fan-count">
               <span>{sanagich < 10 ? "0" + sanagich : sanagich}</span>

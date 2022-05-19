@@ -1,93 +1,131 @@
-import { Button, Modal } from 'antd';
-import { data } from 'jquery';
+import {Button, Modal, Table} from 'antd';
 import React, { useEffect, useState } from 'react'
-import { deleteData, getData, saveData } from './api';
 import "./TestAddData.css"
+import axios from "axios";
+import {url} from "../../../components/Utils/Api/Api";
 
 
 function TestAddData({setRefresh, refresh}) {
-    const [json, setJson] = useState([]);
-    const [textsee, setTextsee] = useState('');
-    const [show, setShow] = useState(false);
+    const [data, setData] = useState([]);
 
-    const getDataAll = async () => {
-        const response = await getData();
-        setJson(response.data);
-        console.log(response.data);
+const columns = [
+    {
+        key: '1',
+        title: "Id",
+        dataIndex: 'id'
+    },
+    {
+        key: '2',
+        title: "Questions id",
+        dataIndex: 'questions_id'
+    },
+    {
+        key: '3',
+        title: "Category id",
+        dataIndex: 'category_id'
+    },
+    {
+        key: '4',
+        title: "Class id",
+        dataIndex: 'class_id'
+    },
+    {
+        key: '5',
+        title: "Science id",
+        dataIndex: 'science_id'
+    },
+    {
+        key: '6',
+        title: "Question",
+        dataIndex: 'question'
+    },
+    {
+        key: '7',
+        title: "Answer",
+        dataIndex: 'answer'
+    },
+    {
+        key: '8',
+        title: "Option1",
+        dataIndex: 'answer1'
+    },
+    {
+        key: '9',
+        title: "Option1",
+        dataIndex: 'answer1'
+    },
+    {
+        key: '10',
+        title: "Option2",
+        dataIndex: 'answer2'
+    },
+    {
+        key: '11',
+        title: "Option3",
+        dataIndex: 'answer3'
+    },
+    {
+        key: '12',
+        title: "Option4",
+        dataIndex: 'answer4'
+    },
+    {
+        key: '13',
+        title: "Edit",
+        dataIndex: "edit",
+        render: function () {
+            return (
+                <button className="admindata-edit">
+                    <i className="fa fa-edit"></i>
+                    <span>Edit</span>
+                </button>
+            )
+        }
+    },
+    {
+        key: '14',
+        title: "Delete",
+        dataIndex: "delete",
+        render: (key, value) => {
+            return (
+                <button className="admindata-delete" onClick={() => delete_classes(key, value)}>
+                    <i className="fa fa-trash"></i>
+                    <span>Delete</span>
+                </button>
+            )
+        }
     }
+]
 
-    const deleteObject = async (i) => {
-        await deleteData(i);
-        getDataAll()
-    }
+    const getDataAll = () => {
+        axios({
+            url: `${url}/question/getall`,
+            method: 'GET'
+        }).then((response) => setData(response.data.object))
+            .catch((error) => console.log(error));
+    };
 
-    const refreshFunction = () => {
+useEffect(() =>{
+    getDataAll();
+}, [])
+
+    const delete_classes = (key, value) => {
+        axios({
+            url: `${url}/question/delete/${value.id}`,
+            method: 'DELETE'
+        }).then((response) => console.log(response))
+            .catch(error => console.log(error));
+
         getDataAll();
-        setRefresh("save");
-    }
-
-    useEffect(()=> {
-       getDataAll();
-    }, [])
-
-    useEffect(()=> {
-       refreshFunction(); 
-    }, [refresh])
-
-    const textSeeFunc = (text) => {
-        setShow(true);
-        setTextsee(text);
     }
 
   return (
     <div className='test-add-data'>
         <div className = "test-add-data-container">
-               <table id = "testadd-table">
-                   <thead>
-                     <tr>
-                         <th>T/R</th>
-                         <th id = "test-que-id">QId</th>
-                         <th>ClassId</th>
-                         <th>ScienceId</th>
-                         <th>Question</th>
-                         <th>Answer</th>
-                         <th>Option1</th>
-                         <th>Option2</th>
-                         <th>Option3</th>
-                         <th>Option4</th>
-                         <th>Edit</th>
-                         <th>Delete</th>
-                     </tr>
-                </thead>
-                
-                    <tbody>
-                     {
-                         json.map((item, index)=>{
-                             return(<tr>
-                         <td style = {{width: '35px', textAlign: "center", fontWeight: '600'}}>{index + 1}</td>
-                         <td id = "test-que-id">{item.id}</td>
-                         <td>{item.classId}</td>
-                         <td style={{textAlign: 'center', fontWeight: 'bold'}}>{item.scienceId}</td>
-                         <td>{item.question.substring(0, 20)}..<i className='fa fa-edit test-add-icon-see' onClick = {() => textSeeFunc(item.question)}></i></td>
-                         <td style={{textAlign: 'center', fontWeight: 'bold'}}>{item.answer}</td>
-                         <td>{item.answer1.substring(0, 20)}.. <i className='fa fa-edit test-add-icon-see'></i></td>
-                         <td>{item.answer2.substring(0, 20)}.. <i className='fa fa-edit test-add-icon-see'></i></td>
-                         <td>{item.answer3.substring(0, 20)}..<i className='fa fa-edit test-add-icon-see'></i></td>
-                         <td>{item.answer4.substring(0, 20)}..<i className='fa fa-edit test-add-icon-see'></i></td>
-                         <td><button className="classadddata-edit">Edit</button></td>
-                         <td><button  onClick={() => deleteObject(item.id)} className="classadddata-delete">Delete</button></td>
-                     </tr>)  
-                         })  
-                     }
-                </tbody>
-            </table>
+              <Table columns={columns} dataSource={data} className="question-data-table">
+
+              </Table>
         </div>
-        <Modal title = {"All data"} visible={show} footer = {false}>
-             <b style = {{color: "rgb(100, 100, 100)", fontSize: "15px"}}>{textsee}</b>
-             <hr />
-             <Button type = "primary" onClick={() => setShow(false)} danger>Close</Button>
-             <Button style = {{marginLeft: '6px'}} type = "primary">Copy</Button>
-        </Modal>
     </div>
   )
 }

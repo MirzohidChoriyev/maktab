@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.accaunt-login{
+    padding: 50px 0px;
+}
+.ant-message-class{
+}
+.accaunt-container{
+    width: 80%;
+    margin: auto;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 17px #dcdcdc;
+    padding: 40px 40px;
+    background: white;
+    border: 1px solid #d5d5d5;
+}
+.account-item1-o{
+    background: darkorange;
+}
+.account-image{
+}
+
+.login-title{
+    text-align: center;
+    font-size: 23px;
+    font-family: "Cabin", sans-serif;
+    font-weight: 600;
+    color: #888888;
+}
+
+.input-class, .select-class{
+    outline: none;
+    border: 1px solid #b2b2b2;
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 4px 7px;
+    font-size: 17px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.input-class:focus{
+    border: 1px solid deepskyblue;
+}
+
+.select-class{
+    padding: 6px 7px;
+}
+.label-class{
+    display: block;
+    font-size: 17px;
+    color: #6a6a6a;
+    font-weight: 500;
+}
+.account-item2{
+    padding: 10px 40px;
+
+}
+.login-body{
+    margin-top: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+#space{
+    color: crimson;
+    margin-right: 2px;
+}
+#accaunt-submit-o{
+    background: darkorange;
+    color: white;
+    font-size: 16px;
+    width: 100px;
+    margin-top: 10px;
+    border: 1px solid white;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px 0px;
+}
+#accaunt-submit-o:hover, #accaunt-submit-o:focus{
+    background: #f2a44c;
+}
+.label-class-checkbox{
+    margin-left: 4px;
+}
+#is_username{
+    color: red;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 1300px){
+    .accaunt-container{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 980px){
+    .accaunt-container{
+        width: 500px;
+    }
+    .account-item1{
+        display: none;
+    }
+    .account-item2{
+        padding: 0px 15px;
+    }
+    .login-body{
+        margin-top: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 600px){
+    .login-body{
+        margin-top: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
+    .accaunt-container{
+        padding: 30px 30px;
+    }
+}
+@media screen and (max-width: 530px){
+    .login-body{
+        margin-top: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
+    .accaunt-container{
+        padding: 30px 10px;
+        width: 100%;
+    }
+
+    .accaunt-login{
+        padding: 50px 0px;
+        padding: 50px 15px 30px 15px;
+    }
+}

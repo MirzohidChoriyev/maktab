@@ -1,9 +1,8 @@
 import React from "react";
 import "./TestsCategory.css";
 import { Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
-function TestsCategory({ item, index, openTestModal }) {
+function TestsCategory({ item, openTestModal }) {
   return (
     <Col lg={4} md={6} sm={12}>
       <div className="t-c-item">
@@ -28,7 +27,7 @@ function TestsCategory({ item, index, openTestModal }) {
             <span
               className="t-c-open-item"
               onClick={() => {
-                openTestModal(index);
+                openTestModal(item.id, item.class_id);
               }}
             >
               Kirish

@@ -1,13 +1,12 @@
 .t-c-item {
   width: auto;
   height: auto;
-  border: 1px solid gray;
   margin-bottom: 20px;
   border-radius: 5px;
-  box-shadow: 0px 0px 8px rgb(179, 179, 179);
+  box-shadow: 0px 0px 7px rgb(181, 181, 181);
 }
 .t-c-title {
-  background-color: rgb(7, 108, 155);
+  background-color: #854fff;
   border-radius: 5px 5px 0px 0px;
   font-size: 20px;
   color: white;
@@ -65,7 +64,7 @@
 }
 
 .t-c-open-item {
-  background-color: rgb(11, 116, 43);
+  background-color: #854fff;
   color: hsl(0, 0%, 100%);
   font-size: 13px;
   border-radius: 7px;
@@ -79,7 +78,7 @@
   cursor: pointer;
 }
 .t-c-open-item:hover {
-  background-color: rgb(12, 150, 53);
+  background-color: #a47dff;
 }
 .t-c-open {
   padding: 5px 0px;
@@ -93,14 +92,10 @@
   .t-c-item {
     width: auto;
     height: auto;
-    border: 1px solid gray;
     margin-bottom: 15px;
     border-radius: 5px;
-    box-shadow: 0px 0px 8px rgb(179, 179, 179);
   }
   .t-c-title {
-    background-color: rgb(7, 108, 155);
-    border-radius: 5px 5px 0px 0px;
     font-size: 18px;
     color: white;
     padding: 6px 0px 6px 20px;
@@ -165,7 +160,6 @@
     font-size: 13px;
   }
   .t-c-open-item {
-    background-color: rgb(11, 116, 43);
     color: hsl(0, 0%, 100%);
     font-size: 12px;
     border-radius: 7px;

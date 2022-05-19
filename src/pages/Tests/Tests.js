@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./Tests.css";
-import { datajson } from "./Data";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import TestsCategory from "../../components/TestsCategory/TestsCategory";
 import { Row } from "react-bootstrap";
 import $ from "jquery";
 import { Button, Modal } from "antd";
-import { Link } from "react-router-dom";
 import QuizTest from "../QuizTest/QuizTest";
 import QuizEnd from "../QuizTest/QuizTestContainer/QuizEnd";
 import QuizResult from "../QuizTest/QuizTestContainer/QuizResult";
 import quiztest from "../QuizTest/TestsData.json";
-import Notice from "../QuizTest/Notice/Notice";
 import axios from "axios";
 import {url} from "../../components/Utils/Api/Api";
 
@@ -23,7 +20,8 @@ function Tests() {
   const [results, setResults] = useState([]);
 
   const [show, setShow] = useState(false);
-  const [number, setNumber] = useState(0);
+  const [scienceId, setScienceId] = useState(0);
+  const [classId, setClassId] = useState(0);
   const [step, setStep] = useState(1);
   const [quizdata, setQuizdata] = useState([]);
   const [time, setTime] = useState(0);
@@ -55,11 +53,10 @@ function Tests() {
     }
   };
 
-  const okStep = (c, s, i) => {
+  const okStep = (class_id, science_id) => {
     setStep(2);
-    window.localStorage.setItem("sinfId", c);
-    window.localStorage.setItem("fanId", s);
-    window.localStorage.setItem("fanIndexId", i);
+    window.localStorage.setItem("sinfId", class_id);
+    window.localStorage.setItem("fanId", science_id);
 
     interval = setInterval(() => {
       setTime((time) => time + 1);
@@ -86,8 +83,9 @@ function Tests() {
     });
   };
 
-  const openTestModal = (e) => {
-    setNumber(e);
+  const openTestModal = (science_id, class_id) => {
+    setScienceId(science_id);
+    setClassId(class_id);
     showModal();
   };
 
@@ -95,17 +93,17 @@ function Tests() {
 
   const [filter, setFilter] = useState("");
   const searchText = (event) => {
-    setFilter(event.target.value);
+    setFilter(event.target.value); 
   };
 
   let dataSearch = data.filter((item) => {
     return Object.keys(item).some((key) =>
-      item[key]
+      item[key]  
         .toString()
         .toLowerCase()
         .includes(filter.toString().toLowerCase())
     );
-  });
+  }); 
 
   useEffect(() => {
     Toggle();
@@ -120,6 +118,7 @@ function Tests() {
       return "Testdan chiqib ketasizmi";
     };
   };
+
   useEffect(() => {
     if (step === 2) {
       refreshChange();
@@ -156,7 +155,7 @@ function Tests() {
                 <Row>
                   {dataSearch.map(
                     (item, index) =>
-                      Number(path) === item.classes.id && (
+                      Number(path) === item.class_id && (
                         <TestsCategory
                           key={item.id}
                           item={item}
@@ -189,23 +188,41 @@ function Tests() {
               <div className="tests-open">
                 <span className="tests-open-title">Fan nomi:</span>
                 <span className="tests-class test-open">
-
+                  {
+                    data.map((item, key) =>(
+                        item.id === scienceId && (<span>{item.science_name}</span>)
+                    ))
+                  }
                 </span>
               </div>
               <div className="tests-open">
                 <span className="tests-open-title">Ishlaganlar soni:</span>
-                <span className="tests-using test-open">10 ta</span>
+                <span className="tests-using test-open">
+                  {
+                    data.map((item, key) =>(
+                        item.id === scienceId && (<span>{item.open_counter} ta</span>)
+                    ))
+                  }
+                </span>
               </div>
               <div className="tests-open">
                 <span className="tests-open-title">Test soni:</span>
                 <span className="tests-count test-open">
-
+                  {
+                    data.map((item, key) =>(
+                        item.id === scienceId && (<span>{item.test_counter} ta</span>)
+                    ))
+                  }
                 </span>
               </div>
               <div className="tests-open" style={{ marginBottom: "20px" }}>
                 <span className="tests-open-title">Belgilangan vaqt:</span>
                 <span className="tests-time test-open">
-
+                  {
+                    data.map((item, key) =>(
+                        item.id === scienceId && (<span>{item.test_counter} ta</span>)
+                    ))
+                  }
                 </span>
               </div>
             </div>
@@ -217,7 +234,7 @@ function Tests() {
               type="primary"
               style={{ marginLeft: "4px" }}
               onClick={() => {
-                okStep(data[number].classId, data[number].scienseId, number);
+                okStep(classId, scienceId);
               }}
             >
               Boshlash

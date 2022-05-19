@@ -1,8 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Button, makeStyles } from "@mui/material";
-import $, { data } from "jquery";
 import "./QuizTest.css";
-import { Link } from "react-router-dom";
 import { Modal } from "antd";
 
 const initialValue = {
@@ -29,7 +27,7 @@ const initialValue = {
 };
 
 function QuizTestMain({
-  quiz,
+    data,
   quizlength,
   endStep,
   setEndStep,
@@ -44,7 +42,16 @@ function QuizTestMain({
   const [answer, setAnswer] = useState(initialValue);
   const [number, setNumber] = useState("");
   const [number1, setNumber1] = useState("");
+  const [quiz, setQuiz] = useState([]);
   console.log(endStep);
+
+  useEffect(() => {
+    setQuiz(data.filter(
+        (item) =>
+            Number(localStorage.getItem("sinfId")) === item.class_id &&
+            Number(localStorage.getItem("fanId")) === item.science_id
+    ));
+  }, [])
 
   const onChangeInput = (e, i) => {
     setAnswer({ ...answer, [e.target.name]: e.target.value });
@@ -133,42 +140,42 @@ function QuizTestMain({
         id: 3,
         answerItem: answer.answer3,
         questionItem: quiz[2].question.savol,
-      },
-      {
-        id: 4,
-        answerItem: answer.answer4,
-        questionItem: quiz[3].question.savol,
-      },
-      {
-        id: 5,
-        answerItem: answer.answer5,
-        questionItem: quiz[4].question.savol,
-      },
-      {
-        id: 6,
-        answerItem: answer.answer6,
-        questionItem: quiz[5].question.savol,
-      },
-      {
-        id: 7,
-        answerItem: answer.answer7,
-        questionItem: quiz[6].question.savol,
-      },
-      {
-        id: 8,
-        answerItem: answer.answer8,
-        questionItem: quiz[7].question.savol,
-      },
-      {
-        id: 9,
-        answerItem: answer.answer9,
-        questionItem: quiz[8].question.savol,
-      },
-      {
-        id: 10,
-        answerItem: answer.answer10,
-        questionItem: quiz[9].question.savol,
-      },
+      }
+      // {
+      //   id: 4,
+      //   answerItem: answer.answer4,
+      //   questionItem: quiz[3].question.savol,
+      // }
+      // {
+      //   id: 5,
+      //   answerItem: answer.answer5,
+      //   questionItem: quiz[4].question.savol,
+      // },
+      // {
+      //   id: 6,
+      //   answerItem: answer.answer6,
+      //   questionItem: quiz[5].question.savol,
+      // },
+      // {
+      //   id: 7,
+      //   answerItem: answer.answer7,
+      //   questionItem: quiz[6].question.savol,
+      // },
+      // {
+      //   id: 8,
+      //   answerItem: answer.answer8,
+      //   questionItem: quiz[7].question.savol,
+      // },
+      // {
+      //   id: 9,
+      //   answerItem: answer.answer9,
+      //   questionItem: quiz[8].question.savol,
+      // },
+      // {
+      //   id: 10,
+      //   answerItem: answer.answer10,
+      //   questionItem: quiz[9].question.savol,
+      // },
       // {
       //   id: 11,
       //   answerItem: answer.answer11,
@@ -250,25 +257,65 @@ function QuizTestMain({
               <div className="qm-item">
                 <div className="qm-item-question">
                   <span id="qm-question">
-                    {index + 1}. {quizItem.question.savol}
+                    {index + 1}. {quizItem.question}
                   </span>
                 </div>
                 <div className="qm-question-container">
-                  {quiz[index].question.choices.map((choice, i) => (
                     <div className="qm-item-answer">
-                      <label className="qm-label" key={i}>
+                      <label className="qm-label" key={index}>
                         <input
                           type="radio"
                           id="qm-label-input"
-                          value={choice}
-                          key={i}
+                          value={quizItem.answer}
+                          key={index}
                           name={`answer${index + 1}`}
                           onChange={(e) => onChangeInput(e, index)}
                         ></input>
-                        <span id="qm-answer">{choice}</span>
+                        <span id="qm-answer">{quizItem.answer}</span>
                       </label>
                     </div>
-                  ))}
+
+                  <div className="qm-item-answer">
+                    <label className="qm-label" key={index}>
+                      <input
+                          type="radio"
+                          id="qm-label-input"
+                          value={quizItem.answer}
+                          key={index}
+                          name={`answer${index + 1}`}
+                          onChange={(e) => onChangeInput(e, index)}
+                      ></input>
+                      <span id="qm-answer">{quizItem.answer}</span>
+                    </label>
+                  </div>
+
+                  <div className="qm-item-answer">
+                    <label className="qm-label" key={index}>
+                      <input
+                          type="radio"
+                          id="qm-label-input"
+                          value={quizItem.answer}
+                          key={index}
+                          name={`answer${index + 1}`}
+                          onChange={(e) => onChangeInput(e, index)}
+                      ></input>
+                      <span id="qm-answer">{quizItem.answer}</span>
+                    </label>
+                  </div>
+
+                  <div className="qm-item-answer">
+                    <label className="qm-label" key={index}>
+                      <input
+                          type="radio"
+                          id="qm-label-input"
+                          value={quizItem.answer}
+                          key={index}
+                          name={`answer${index + 1}`}
+                          onChange={(e) => onChangeInput(e, index)}
+                      ></input>
+                      <span id="qm-answer">{quizItem.answer}</span>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>

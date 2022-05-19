@@ -4,7 +4,7 @@
     height: auto;
     padding: 10px 30px;
     padding-bottom: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     color: white;
 }
@@ -62,7 +62,7 @@
         padding: 10px 20px;
         padding-right: 0px;
         padding-bottom: 15px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-size: 15px;
         color: white;
     }
