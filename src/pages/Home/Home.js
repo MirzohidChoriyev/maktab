@@ -9,7 +9,8 @@ import Topbar from "../../components/Topbar/Topbar";
 import MuiAlert from "@mui/material/Alert";
 import {Snackbar} from "@mui/material";
 import Stack from "@mui/material/Stack";
-
+import {Navigate} from 'react-router-dom'
+   
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -27,16 +28,20 @@ function Home({save, setSave}) {
         }
         setOpen(false);
     };
-
+  
     useEffect(() => {
         if(save === "saved"){
             handleClick();
         }
         setSave("");
-    }, [])
-
+    }, []);
+      
   return (
-    <div className="home">
+    <div>
+{
+    localStorage.getItem('token') !== null ? <Navigate to = "/login" /> :  
+        
+<div className="home">
         <Topbar />
         <Header />
         <Sidebar />
@@ -53,6 +58,8 @@ function Home({save, setSave}) {
                 </Alert>
             </Snackbar>
         </Stack>
+    </div>
+}
     </div>
   );
 }

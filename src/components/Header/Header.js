@@ -29,7 +29,7 @@ useEffect(() =>{
                 </div>
                 <div className="course-body">
                     <div className="row">
-                        {
+                        {   
                             data.map((item, i) =>(
                             <div className="col-lg-4 col-md-6 col-sm-12">
                                 <div className="course-item">

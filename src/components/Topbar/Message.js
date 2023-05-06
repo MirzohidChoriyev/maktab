@@ -2,6 +2,7 @@ import { Button } from '@material-ui/core';
 import { Modal } from 'antd'
 import SendIcon from '@mui/icons-material/Send';
 import React, { useState } from 'react'
+import $ from 'jquery'
 import axios from 'axios'
 import { url } from '../Utils/Api/Api';
 import MuiAlert from "@mui/material/Alert";
@@ -16,22 +17,26 @@ const initialValue = {
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-
+    
 function Message({setVisible, visible}) {
   const [json, setJson] = useState(initialValue);
   const {message} = json;
-
+  
   const data_save_message = () => {
-    axios({
-      url: `${url}/message/save`,
-      method: 'POST',
-      data: json
-    }).then((res) => handleClick())
-    .catch(err => handleClickError());  
-
-    setVisible(false);      
+    if(message !== ''){
+      axios({
+        url: `${url}/message/save`,
+        method: 'POST',
+        data: json
+      }).then((res) => handleClick())
+      .catch(err => handleClickError());  
+  
+      setVisible(false);      
+    } else {
+      $('.message-textarea').css({'border': '1px solid red'});
+    }
   }
-
+    
   const [open, setOpen] = useState(false);
   const [error_open, setErrorOpen] = useState(false);
 
@@ -54,9 +59,8 @@ function Message({setVisible, visible}) {
     if (reason === 'clickaway') {
         return;
     }
-    setErrorOpen(false);
+    setErrorOpen(false);  
 };
-
 
   const inputChange = (e) => {
     setJson({...json, [e.target.name]: e.target.value});
@@ -128,4 +132,4 @@ function Message({setVisible, visible}) {
   )
 }
 
-export default Message
+export default Message;

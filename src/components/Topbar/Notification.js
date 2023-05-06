@@ -8,7 +8,7 @@ import { url } from '../Utils/Api/Api';
 
 function Notification() {
   const [data, setData] = useState([]);
-
+   
   const data_get_all = () => {
       axios({
           url: `${url}/notification/getall`,
